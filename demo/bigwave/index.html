@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <title>BigWave</title>
+  <meta name="description" content="{{$metaDescription}}">
+  <meta name="keywords" content="{{$metaKeywords}}">
+
+  <link rel="shortcut icon" type="image/png" href="src/img/favicon.png" />
+  <link rel="stylesheet" rel="preload" href="src/css/fonts.min.css">
+  <link rel="stylesheet" href="src/css/styles.min.css">
+
+</head>
+
+<body>
+
+  <div id="external">
+    <div id="loader">
+      <style>
+        #w1,
+        #w2,
+        #w3,
+        #w4 {
+          transform-origin: center;
+          animation-timing-function: cubic-bezier(.175, .885, .32, 1.275)
+        }
+
+        #loaderGraphic #w1 {
+          animation: w1 3s infinite;
+          animation-delay: .2s
+        }
+
+        #loaderGraphic #w2 {
+          animation: w1 3s infinite;
+          animation-delay: .3s
+        }
+
+        #loaderGraphic #w3 {
+          animation: w1 3s infinite;
+          animation-delay: .4s
+        }
+
+        #loaderGraphic #w4 {
+          animation: w1 3s infinite;
+          animation-delay: .6s
+        }
+
+        @keyframes w1 {
+          0% {
+            opacity: .2;
+            transform: translateY(100%) scale(.6) rotate(30deg)
+          }
+
+          50% {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotate(0deg)
+          }
+
+          100% {
+            opacity: .2;
+            transform: translateY(100%) scale(.6) rotate(-30deg)
+          }
+        }
+
+        .stroke1 {
+          stroke-dasharray: 4400;
+          stroke-dashoffset: 4400;
+          transform-origin: calc(760.351px) calc(935.56px);
+          animation: s1 5s linear alternate infinite
+        }
+
+        .stroke0 {
+          transform-origin: calc(760.351px) calc(935.56px);
+          animation: s0 1s linear infinite
+        }
+
+        @keyframes s1 {
+          to {
+            transform: rotate(360deg);
+            stroke-dashoffset: 0
+          }
+        }
+
+        @keyframes s0 {
+          to {
+            transform: rotate(360deg)
+          }
+        }
+
+        #loaderGraphic,
+        .general-spinner {
+          max-height: 20vw;
+          width: 100px;
+          max-width: 20vh;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          z-index: 2
+        }
+
+        #loader {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 100vw;
+          height: 100vh;
+          margin: auto;
+          z-index: 99
+        }
+
+        #loader::before {
+          content: "";
+          display: block;
+          height: 100%;
+          width: 100%;
+          margin: 0;
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: var(--shadow-10);
+          opacity: .8
+        }
+
+      </style>
+      <svg id="loaderGraphic" width="100%" height="100%" viewBox="0 0 1144 1144" version="1.1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+        xmlns:serif="http://www.serif.com/"
+        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+        <g transform="matrix(1,0,0,1,-964,-6597)">
+          <g id="Artboard4" transform="matrix(1,0,0,1,-0.319445,3412.29)">
+            <rect x="964.319" y="3184.71" width="1143.75" height="1143.75" style="fill:none;" />
+            <g transform="matrix(0.770475,0,0,0.770475,950.363,3035.76)">
+              <circle cx="760.351" cy="935.56" r="703.612" style="fill:transparent" />
+              <clipPath id="_clip1">
+                <circle cx="760.351" cy="935.56" r="703.612" />
+              </clipPath>
+              <g clip-path="url(#_clip1)">
+                <g id="w4">
+                  <circle cx="760.351" cy="935.56" r="703.612" style="fill:rgb(254,0,65);" />
+                </g>
+                <g id="w3">
+                  <g transform="matrix(1.23573,0,0,0.999153,-593.397,-204.4)">
+                    <path
+                      d="M0,892.468C0,892.468 375.809,1366.28 776.959,926.205C1155.08,511.396 1536.35,632.539 1612.15,1225.61C1664.22,1633 2019.03,1515.31 2019.03,1515.31L1801.74,1729.28L1029.12,1979.84L0,1950.51L0,892.468Z"
+                      style="fill:rgb(200,0,49);" />
+                  </g>
+                </g>
+                <g id="w2">
+                  <g transform="matrix(1.23573,0,0,0.999153,-550.675,38.1617)">
+                    <path
+                      d="M0,1045.37C0,1045.37 430.546,1469.68 790.182,977.763C1133.4,508.31 1416.68,615.758 1574.8,1010.08C1664.62,1234.06 1698.48,1101.88 1698.48,1101.88L1801.74,1729.28L1029.12,1979.84L0,1950.51L0,1045.37Z"
+                      style="fill:rgb(129,0,29);" />
+                  </g>
+                </g>
+                <g id="w1">
+                  <g transform="matrix(1.08827,0,0,0.949498,-220.036,238.886)">
+                    <path
+                      d="M0,1045.37C0,1045.37 407.386,1442.17 790.182,977.763C1145.08,547.199 1503.82,769.71 1574.8,1010.08C1644.16,1244.91 1698.48,1101.88 1698.48,1101.88L1801.74,1729.28L1029.12,1979.84L0,1950.51L0,1045.37Z"
+                      style="fill:rgb(54,0,166);" />
+                  </g>
+                </g>
+              </g>
+              <g class="stroke0">
+                <circle class="stroke1" cx="760.351" cy="935.56" r="703.612"
+                  style="fill:none;stroke:rgb(254,0,65);stroke-width:60px;" />
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+
+  </div>
+  <div id="app">
+
+    <div class="header">
+      <a id="homeTrigger" style="margin: auto;display: grid;align-items: center;">
+        <img src="src/img/logo-light.png" class="logo dark-only">
+        <img src="src/img/logo.png" class="logo light-only">
+      </a>
+      <div class="spacer"></div>
+      <div class="menuTrigger mobile-only">
+        <i class="fas fa-times"></i>
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="menu desktop-only">
+        <a onclick="governanceInspector()" class="link">Governance</a>
+        <a onclick="stakingManager()" class="link">Stake</a>
+        <a href="" class="link">Docs</a>
+        <a onclick="setThemeLight()" class="link-btn dark-only">
+          <x class="desktop-only"><i class="fas fa-adjust"></i></x>
+          <x class="mobile-only">Light Theme</x>
+        </a>
+        <a onclick="setThemeDark()" class="link-btn light-only">
+          <x class="desktop-only"><i class="fas fa-adjust"></i></x>
+          <x class="mobile-only">Dark Theme</x>
+        </a>
+        <a class="link-btn btn-connect">
+          <x class="desktop-only"><i class="fas fa-wallet"></i></x>
+          <x class="mobile-only">Link Wallet</x>
+        </a>
+        <a id="btn-disconnect" style="display:none;" class="link-btn">
+          <x class="desktop-only"><i class="fas fa-unlink"></i></x>
+          <x class="mobile-only">Un-link Wallet</x>
+        </a>
+      </div>
+    </div>
+
+    <div id="appMain">
+      <div id="main">
+        <div id="graphParent">
+          <div id="graphControlsParent">
+            <div class="option-switch onOff sans-serif" id="graphControls">
+              <span class="selected" filter="24hr">24 HR</span>
+              <span filter="7day">7 DAY</span>
+            </div>
+          </div>
+          <div id="graph"></div>
+          <a class="btn" id="explorePool">Explore&nbsp;<span></span>&nbsp;<i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div id="exchangerUI" class="desktop-only">
+          <div id="exchangeInputGroup">
+            <div class="option-switch onOff sans-serif">
+              <span class="selected">Deposit</span>
+              <span>Withdraw</span>
+            </div>
+            <div class="input-container">
+              <div class="input-group">
+                <div id="sendDenom">
+                  <small>Choose a Token</small>
+                  <span id="currentSend" class="currentSend"></span>
+                  <div class="selection-drawer">
+                  </div>
+                </div>
+                <input id="dollarInput" type="text"
+                  pattern="(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([0-9]+[0-9]*)(\.([0-9]{1,20}))?)" value="10000">
+              </div>
+              <div class="input-group">
+                <div id="receiveDenom">
+                  <small>Pool group</small>
+                  <span id="currentReceive"></span>
+                </div>
+                <input id="tokenInput" value="">
+              </div>
+            </div>
+            <p class="help-text">Connect your wallet to complete this transaction.</p>
+            <a class="btn btn-connect"><i class="fas fa-wallet"></i>&nbsp;Connect Wallet</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pool-list-parent" id="plParent">
+        <h2>Pools</h2>
+        <table class="table">
+          <thead class="desktop-only">
+            <tr class="">
+              <th></th>
+              <th class="" scope="col">Token</th>
+              <th class="" scope="col">Current Selling</th>
+              <th class="" scope="col">24hr Change</th>
+              <th class="" scope="col">Pool Volume</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="pool-list" id="poolList"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="explorePage" class="data-explorer">
+      <h1 class="major">Explore Pools</h1>
+      <div>
+        <h1 id="poolHeader"></h1>
+        <div class="option-switch onOff sans-serif" id="exploreTabsControls">
+          <span class="selected" filter="assets">Assets</span>
+          <span filter="trades">Trades</span>
+          <span filter="swaps">Swaps</span>
+          <span filter="info">Info</span>
+        </div>
+      </div>
+      <div id="explorePayloads">
+        <div id="assetsDisplay" filter="assets">No Items found...</div>
+        <div id="tradesDisplay" filter="trades">No Items found...</div>
+        <div id="swapsDisplay" filter="swaps">No Items found...</div>
+        <div id="infoDisplay" filter="info">No Items found...</div>
+      </div>
+    </div>
+
+    <div id="stakingManager" class="data-explorer">
+      <h1 class="major">Staking</h1>
+
+      <div class="-flex">
+        <div id="rewardsSummary">
+          <div class="balance-organiser"></div>
+          <div class="balance-organiser prominent"></div>
+        </div>
+        <div id="stakeActions">
+          <div class="input-group">
+            <label>Amount</label>
+            <span class="currentSend"></span>
+            <div class="selection-drawer">
+            </div>
+            <input type="text" placeholder="0.00" value="">
+          </div>
+          <div class="-flex">
+            <a class="btn -disable">Claim</a>
+            <a class="btn" onclick="stakeCurrent()">Stake</a>
+            <a class="btn -disable">Exit</a>
+          </div>
+        </div>
+      </div>
+      <div class="pool-list-parent" id="plParent2">
+        <h2>Pools</h2>
+        <table class="table">
+          <thead class="desktop-only">
+            <tr class="">
+              <th></th>
+              <th class="" scope="col">Staking Ends</th>
+              <th class="" scope="col">BGW-T Staked</th>
+              <th class="" scope="col">Reward</th>
+              <th class="" scope="col">Volume</th>
+              <th class="" scope="col">Pool Address</th>
+            </tr>
+          </thead>
+          <tbody class="pool-list" id="poolList2"></tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div id="governanceInspector" class="data-explorer">
+      <h1 class="major">Governance</h1>
+      <div class="-flex">
+        <div id="walletSummary">
+          <div class="balance-organiser prominent"></div>
+          <a class="btn btn-connect"><i class="fas fa-wallet"></i>&nbsp;Connect Wallet</a>
+        </div>
+        <div id="governanceStatistics">
+          <div class="asset-organiser">
+            <label>Active<b id="activeVal"></b></label>
+            <span class="bar-gauge"><span id="activeGauge"></span></span>
+          </div>
+
+          <div class="asset-organiser">
+            <label>Inactive<b id="inactiveVal"></b></label>
+            <span class="bar-gauge"><span id="inactiveGauge"></span></span>
+          </div>
+
+          <div class="asset-organiser">
+            <label>Delegated<b id="delegatedVal"></b></label>
+            <span class="bar-gauge"><span id="delegatedGauge"></span></span>
+          </div>
+
+        </div>
+      </div>
+      <div class="pool-list-parent" id="plParent3">
+        <h2>Proposals</h2>
+        <table class="table">
+          <thead class="desktop-only">
+            <tr class="">
+              <th></th>
+              <th class="" scope="col">Name</th>
+              <th class="" scope="col">For</th>
+              <th class="" scope="col">Against</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="pool-list" id="poolList3"></tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div id="proposalInspector" class="data-explorer">
+      <h1 class="major">Proposal Details</h1>
+      <div class="-flex">
+        <div id="proposalSummary">
+
+        </div>
+        <div id="proposalVotes">
+          <h2>Votes</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-flex">
+      <span>2021 BigWave</span>
+      <div class="link-flex">
+        <a href="#"><i class="fas fa-mail-bulk"></i></a>
+        <a href="#"><i class="fab fa-reddit-alien"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-medium-m"></i></a>
+        <a href="#"><i class="fab fa-slack"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-vimeo-v"></i></a>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<script src="src/js/chart.min.js"></script>
+<script type="text/javascript" src="src/js/web3.min.js"></script>
+<script type="text/javascript" src="src/js/index.js"></script>
+<script type="text/javascript" src="src/js/index.u.min.js"></script>
+<script type="text/javascript" src="src/js/index.min.js"></script>
+<script type="text/javascript" src="src/js/fortmatic.js"></script>
+<script src="src/js/wallet-connect.js"></script>
+
+<script src="src/js/scripts.min.js"></script>
+<script src="src/js/demo.js"></script>
+
+</html>

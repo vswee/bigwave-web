@@ -1185,7 +1185,7 @@ h1.major {
   background-color: var(--medium-green);
   opacity: .2;
 }
-.table tbody tr,
+.table tbody:not(#poolList) tr,
   #tradesDisplay .table tbody tr, #swapsDisplay .table tbody tr, #poolList2 tr {
     display: flex;
     flex-direction: column;

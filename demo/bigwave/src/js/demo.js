@@ -3,7 +3,7 @@
 // OVERRIDE THE DEMO DATA FROM THE SITE
 // REFER TO THE SAMPLE.JSON FOR 
 //DEMO
-window.demo = true;
+window.demo = false;
 //END DEMO
 window.demo && (
   setTimeout(function () { window.notify("Demo mode enabled. This is a test notification. You must agree that this is a notification.", "good", "I Agree") }, 1500)

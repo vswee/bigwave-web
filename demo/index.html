@@ -10,7 +10,7 @@
   <meta name="keywords" content="{{$metaKeywords}}">
 
   <link rel="shortcut icon" type="image/png" href="bigwave/src/img/favicon.png" />
-  
+
   <link rel="stylesheet" rel="preload" href="bigwave/src/css/fonts.min.css">
   <link rel="stylesheet" href="bigwave/src/css/styles.min.css">
 
@@ -28,26 +28,53 @@
 
       <a href="bigwave" class="-link">Enter Bigwave&nbsp;<i class="fas fa-arrow-right"></i></a>
     </div>
-
-    <div id="hero">
-      <h1>
-        <x>This is </x>BigWave<x><br>Staking for ERC-20 Tokens and Token Pools</x>
-      </h1>
-      <p>
-        Exchange Stablecoins on the Ethereum Blockchain.<br>
-        Earn Rewards by supporting your favourite DeFi Projects.
-      </p>
-      <div id="cta">
-        <form>
-          <div class="input-group">
-            <input name="email" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-              placeholder="mail@example.com">
-            <a class="btn" type="submit">Signup</a>
-        </form>
+    <div>
+      <div id="hero">
+        <h1>
+          <x>This is </x>BigWave<x><br>Staking for ERC-20 Tokens and Token Pools</x>
+        </h1>
+        <p>
+          Exchange Stablecoins on the Ethereum Blockchain.<br>
+          Earn Rewards by supporting your favourite DeFi Projects.
+        </p>
+        <div id="cta">
+          <form>
+            <div class="input-group">
+              <input name="email" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                placeholder="mail@example.com">
+              <a class="btn" type="submit">Signup</a>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
 
+    <div id="sponsors">
+      <h2><i class="far fa-star"></i>&nbsp;Project Supporters</h2>
+      <div class="-flex">
+        <a href="#" alt="" title=""><img loading="lazy" style="animation-delay:.2s" class="sponsor-logo"
+            src="https://include.flat18.co.uk/img/service-logo-3A0B25.png"></a>
+        <a href="#" alt="" title=""><img loading="lazy" style="animation-delay:.4s" class="sponsor-logo"
+            src="https://include.flat18.co.uk/img/service-logo-3A0B26.png"></a>
+        <a href="#" alt="" title=""><img loading="lazy" style="animation-delay:.6s" class="sponsor-logo"
+            src="https://include.flat18.co.uk/img/service-logo-3A0B27.png"></a>
+        <a href="#" alt="" title=""><img loading="lazy" style="animation-delay:.8s" class="sponsor-logo"
+            src="https://include.flat18.co.uk/img/service-logo-3A0B28.png"></a>
+        <a href="#" alt="" title=""><img loading="lazy" style="animation-delay:1s" class="sponsor-logo"
+            src="https://include.flat18.co.uk/img/service-logo-3A0B29.png"></a>
+        <a href="#" alt="" title=""><img loading="lazy" style="animation-delay:1.2s" class="sponsor-logo"
+            src="https://include.flat18.co.uk/img/service-logo-3A0B25.png"></a>
+        <a href="#" alt="" title=""><img loading="lazy" style="animation-delay:1.4s" class="sponsor-logo"
+            src="https://include.flat18.co.uk/img/service-logo-3A0B26.png"></a>
+        <a href="#" alt="" title=""><img loading="lazy" style="animation-delay:1.6s" class="sponsor-logo"
+            src="https://include.flat18.co.uk/img/service-logo-3A0B27.png"></a>
+        <a href="#" alt="" title=""><img loading="lazy" style="animation-delay:1.8s" class="sponsor-logo"
+            src="https://include.flat18.co.uk/img/service-logo-3A0B28.png"></a>
+        <a href="#" alt="" title=""><img loading="lazy" style="animation-delay:2s" class="sponsor-logo"
+            src="https://include.flat18.co.uk/img/service-logo-3A0B29.png"></a>
+      </div>
+    </div>
+
+  </div>
   <div class="footer-flex">
     <span>2021 BigWave</span>
     <div class="link-flex">
@@ -66,6 +93,22 @@
 
 
   <style>
+    .sponsor-logo {
+      max-width: calc(100vw - 4rem);
+      width: calc(150px - 4rem);
+      margin: 2rem;
+      opacity: 0;
+      animation: softAppear 2s ease forwards 1;
+    }
+
+    h2 {
+      margin-left: 2rem;
+      margin-top: 4rem;
+      font-weight: 800;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.3rem;
+    }
+
     #app *:not(.-link, .-link > i) {
       opacity: 0;
       animation: softAppear 2s ease forwards 1;
@@ -77,7 +120,7 @@
       filter: none;
       background-color: unset;
       display: grid;
-      height: 100vh;
+      min-height: 100vh;
       grid-template-rows: auto 1fr auto;
       overflow: scroll;
     }

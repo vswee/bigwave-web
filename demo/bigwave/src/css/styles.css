@@ -105,6 +105,8 @@ a {
   background: var(--black);
   transition: .3s ease;
   margin-top: 15px;
+  opacity: 0;
+  animation: softAppear 1.3s ease forwards 1;
 }
 .overlap:hover > span img {
   margin-left: 15px;

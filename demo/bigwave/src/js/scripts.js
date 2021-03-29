@@ -674,7 +674,7 @@ function stakingManager(h) {
       var a = ``;
       var p = 0;
       Object.keys(as).forEach(function (ask) {
-        a += `<span title="${ask}"><img style="z-index:${p};"  loading="lazy" src="src/img/symbols/${as[ask].icon}"></span>`;
+        a += `<span title="${ask}"><img style="z-index:${p};animation-delay:${(p+1)*0.2}s"  loading="lazy" src="src/img/symbols/${as[ask].icon}"></span>`;
         p++;
       });
       var secondary = `

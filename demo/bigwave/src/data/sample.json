@@ -1,6 +1,7 @@
 {
   "tokens": {
     "TST0": {
+      "apy":"54.9",
       "name": "Test pool (ab token)",
       "icon": "0.png",
       "value": "1.01",
@@ -45,41 +46,6 @@
         1
       ],
       "assets": {
-        "XCV": {
-          "colour": "#00be4e",
-          "icon": "2.png",
-          "pc": "20",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "QWE": {
-          "colour": "#0091be",
-          "icon": "3.png",
-          "pc": "10",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "DFG": {
-          "colour": "#be8f00",
-          "icon": "4.png",
-          "pc": "5",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "ASD": {
-          "colour": "#be4700",
-          "icon": "5.png",
-          "pc": "30",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "IOP": {
-          "colour": "#0027be",
-          "icon": "6.png",
-          "pc": "10",
-          "amount": "1200995",
-          "value": "90000"
-        },
         "JKL": {
           "colour": "#2a00be",
           "icon": "7.png",
@@ -192,6 +158,7 @@
       }
     },
     "TST1": {
+      "apy":"4.5",
       "name": "Test pool (cd token)",
       "icon": "1.png",
       "value": "6.34",
@@ -383,6 +350,7 @@
       ]
     },
     "TST2": {
+      "apy":"2.01",
       "name": "Test pool (ef token)",
       "icon": "2.png",
       "value": "3.22",
@@ -392,34 +360,6 @@
       "address": "0xTYV000UIO",
       "supply": "2900000",
       "assets": {
-        "XCV": {
-          "colour": "#00be4e",
-          "icon": "2.png",
-          "pc": "20",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "QWE": {
-          "colour": "#0091be",
-          "icon": "3.png",
-          "pc": "10",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "DFG": {
-          "colour": "#be8f00",
-          "icon": "4.png",
-          "pc": "5",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "ASD": {
-          "colour": "#be4700",
-          "icon": "5.png",
-          "pc": "30",
-          "amount": "1200995",
-          "value": "90000"
-        },
         "IOP": {
           "colour": "#0027be",
           "icon": "6.png",
@@ -529,6 +469,14 @@
         }
       ],
       "details": "%3Ch3%3EVelit%3C%2Fh3%3E%0A%0A%3Cp%3EVeritatis%20nemo%20velit%20sit.%20Qui%20facere%20ut%20sint%20sapiente%20commodi%20beatae%20facilis.%20Dolore%20consequatur%20perferendis%20et.%20Aut%0A%20%20quod%20sequi%20qui%20quos.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Iure%20possimus%20illum%20rerum.%20Aperiam%20iusto%20excepturi%20aut%20non.%20Veniam%20est%20molestiae%20distinctio%20saepe%20doloribus%20sit%0A%20%20expedita%20possimus.%20Soluta%20officiis%20et%20et.%20Qui%20eius%20et%20laudantium%20adipisci%20delectus%20doloremque%20fuga%20rerum.%20Commodi%0A%20%20earum%20velit%20ut%20qui.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EPlaceat%20Non%20Architecto%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Molestias%20quia%20assumenda%20fuga.%20Eligendi%20debitis%20qui%20aut%20rem.%20Corrupti%20est%20quia%20asperiores%20esse%20natus%20exercitationem%20ut%0A%20%20eveniet.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EVoluptas%20maiores%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Et%20doloremque%20qui%20mollitia%20delectus%20nam.%20Alias%20ipsum%20vel%20voluptatem%20libero%20molestias.%20Aut%20qui%20distinctio%20sed%20quis%20aut.%0A%20%20Iusto%20molestiae%20autem%20repellendus.%20Sed%20autem%20illo%20non%20omnis%20labore%20voluptas.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Qui%20nam%20sed%20a%20voluptas.%20Culpa%20distinctio%20quo%20illum%20dolorum.%20Doloremque%20beatae%20aut%20autem%20laudantium.%20Accusamus%0A%20%20voluptatibus%20repellendus%20magni%20odio%20corrupti%20optio%20maiores.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Ut%20et%20nihil%20tenetur%20explicabo%20cupiditate%20ipsa.%20Aut%20veritatis%20sit%20fuga%20alias.%20Aut%20mollitia%20est%20aut%20nulla%20minus%0A%20%20voluptatem.%0A%3C%2Fp%3E%0A%0A%3Ch3%3ESed%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Sed%20dolor%20non%20placeat.%20Fuga%20fuga%20dolor%20ducimus%20iusto%20optio%20voluptatem%20ullam%20et.%20Fugiat%20possimus%20minus%20rerum%20omnis%20nisi%0A%20%20aspernatur.%20Eos%20est%20ea%20est%20blanditiis%20sit%20quis%20ut.%20Eligendi%20consequuntur%20quisquam%20reiciendis%20expedita.%20Quos%0A%20%20exercitationem%20iusto%20ab%20deleniti%20blanditiis%20nihil.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EIpsa%20voluptate%3C%2Fh3%3E%0A%0A%3Cp%3E%0ADoloremque%20exercitationem%20quisquam%20minus%20sit%20eum%20similique.%20Eos%20architecto%20nesciunt%20distinctio.%20Beatae%20aliquid%20omnis%20nam%0Aquis%20et%20eaque.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EReprehenderit%3C%2Fh3%3E%0A%0A%3Cp%3E%0ANon%20vero%20est%20dolorum.%20Voluptatem%20officiis%20est%20recusandae%20ducimus%20quis.%20Est%20eos%20voluptas%20quia%20error%20molestiae%20vitae%20minus%0Adolorem.%20Perferendis%20qui%20numquam%20esse%20minima%20ad.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Nisi%20velit%20sit%20qui%20deserunt%20iure%20quaerat%20sint.%20Architecto%20quis%20temporibus%20occaecati%20et%20neque%20quis.%20Qui%20minima%20quae%0A%20%20dolorem.%20Corporis%20mollitia%20ullam%20minus.%20Id%20voluptates%20soluta%20ut%20et%20totam.%20Modi%20officiis%20praesentium%20architecto%20itaque%0A%20%20dignissimos.%0A%3C%2Fp%3E%0A",
+      "staking": {
+        "start": "February 02, 2021, 11:00 PM UTC",
+        "end": "May 02, 2021, 10:00 PM UTC",
+        "balance": "15418527",
+        "rate": "500",
+        "volume": "16154185",
+        "tx": "0x959a2bf324c80540b91ee764ff196da1801176b18ec21399598d6f533241e166"
+      },
       "7d-average": [
         2.1,
         3.1,
@@ -566,6 +514,7 @@
       ]
     },
     "TST3": {
+      "apy":"95",
       "name": "Test pool (gh token)",
       "icon": "3.png",
       "value": "5.1",
@@ -586,41 +535,6 @@
           "colour": "#0091be",
           "icon": "3.png",
           "pc": "10",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "DFG": {
-          "colour": "#be8f00",
-          "icon": "4.png",
-          "pc": "5",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "ASD": {
-          "colour": "#be4700",
-          "icon": "5.png",
-          "pc": "30",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "IOP": {
-          "colour": "#0027be",
-          "icon": "6.png",
-          "pc": "10",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "JKL": {
-          "colour": "#2a00be",
-          "icon": "7.png",
-          "pc": "10",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "BNM": {
-          "colour": "#00be4e",
-          "icon": "8.png",
-          "pc": "14",
           "amount": "1200995",
           "value": "90000"
         },
@@ -712,6 +626,14 @@
         }
       ],
       "details": "%3Ch3%3EVelit%3C%2Fh3%3E%0A%0A%3Cp%3EVeritatis%20nemo%20velit%20sit.%20Qui%20facere%20ut%20sint%20sapiente%20commodi%20beatae%20facilis.%20Dolore%20consequatur%20perferendis%20et.%20Aut%0A%20%20quod%20sequi%20qui%20quos.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Iure%20possimus%20illum%20rerum.%20Aperiam%20iusto%20excepturi%20aut%20non.%20Veniam%20est%20molestiae%20distinctio%20saepe%20doloribus%20sit%0A%20%20expedita%20possimus.%20Soluta%20officiis%20et%20et.%20Qui%20eius%20et%20laudantium%20adipisci%20delectus%20doloremque%20fuga%20rerum.%20Commodi%0A%20%20earum%20velit%20ut%20qui.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EPlaceat%20Non%20Architecto%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Molestias%20quia%20assumenda%20fuga.%20Eligendi%20debitis%20qui%20aut%20rem.%20Corrupti%20est%20quia%20asperiores%20esse%20natus%20exercitationem%20ut%0A%20%20eveniet.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EVoluptas%20maiores%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Et%20doloremque%20qui%20mollitia%20delectus%20nam.%20Alias%20ipsum%20vel%20voluptatem%20libero%20molestias.%20Aut%20qui%20distinctio%20sed%20quis%20aut.%0A%20%20Iusto%20molestiae%20autem%20repellendus.%20Sed%20autem%20illo%20non%20omnis%20labore%20voluptas.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Qui%20nam%20sed%20a%20voluptas.%20Culpa%20distinctio%20quo%20illum%20dolorum.%20Doloremque%20beatae%20aut%20autem%20laudantium.%20Accusamus%0A%20%20voluptatibus%20repellendus%20magni%20odio%20corrupti%20optio%20maiores.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Ut%20et%20nihil%20tenetur%20explicabo%20cupiditate%20ipsa.%20Aut%20veritatis%20sit%20fuga%20alias.%20Aut%20mollitia%20est%20aut%20nulla%20minus%0A%20%20voluptatem.%0A%3C%2Fp%3E%0A%0A%3Ch3%3ESed%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Sed%20dolor%20non%20placeat.%20Fuga%20fuga%20dolor%20ducimus%20iusto%20optio%20voluptatem%20ullam%20et.%20Fugiat%20possimus%20minus%20rerum%20omnis%20nisi%0A%20%20aspernatur.%20Eos%20est%20ea%20est%20blanditiis%20sit%20quis%20ut.%20Eligendi%20consequuntur%20quisquam%20reiciendis%20expedita.%20Quos%0A%20%20exercitationem%20iusto%20ab%20deleniti%20blanditiis%20nihil.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EIpsa%20voluptate%3C%2Fh3%3E%0A%0A%3Cp%3E%0ADoloremque%20exercitationem%20quisquam%20minus%20sit%20eum%20similique.%20Eos%20architecto%20nesciunt%20distinctio.%20Beatae%20aliquid%20omnis%20nam%0Aquis%20et%20eaque.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EReprehenderit%3C%2Fh3%3E%0A%0A%3Cp%3E%0ANon%20vero%20est%20dolorum.%20Voluptatem%20officiis%20est%20recusandae%20ducimus%20quis.%20Est%20eos%20voluptas%20quia%20error%20molestiae%20vitae%20minus%0Adolorem.%20Perferendis%20qui%20numquam%20esse%20minima%20ad.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Nisi%20velit%20sit%20qui%20deserunt%20iure%20quaerat%20sint.%20Architecto%20quis%20temporibus%20occaecati%20et%20neque%20quis.%20Qui%20minima%20quae%0A%20%20dolorem.%20Corporis%20mollitia%20ullam%20minus.%20Id%20voluptates%20soluta%20ut%20et%20totam.%20Modi%20officiis%20praesentium%20architecto%20itaque%0A%20%20dignissimos.%0A%3C%2Fp%3E%0A",
+      "staking": {
+        "start": "February 02, 2021, 11:00 PM UTC",
+        "end": "May 02, 2021, 10:00 PM UTC",
+        "balance": "15418527",
+        "rate": "500",
+        "volume": "16154185",
+        "tx": "0x959a2bf324c80540b91ee764ff196da1801176b18ec21399598d6f533241e166"
+      },
       "7d-average": [
         2.1,
         3.1,
@@ -749,6 +671,7 @@
       ]
     },
     "TST4": {
+      "apy":"100",
       "name": "Test pool (ij token)",
       "icon": "4.png",
       "value": "1",
@@ -758,20 +681,6 @@
       "address": "0xTYV000UIO",
       "supply": "2900000",
       "assets": {
-        "XCV": {
-          "colour": "#00be4e",
-          "icon": "2.png",
-          "pc": "20",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "QWE": {
-          "colour": "#0091be",
-          "icon": "3.png",
-          "pc": "10",
-          "amount": "1200995",
-          "value": "90000"
-        },
         "DFG": {
           "colour": "#be8f00",
           "icon": "4.png",
@@ -895,6 +804,14 @@
         }
       ],
       "details": "%3Ch3%3EVelit%3C%2Fh3%3E%0A%0A%3Cp%3EVeritatis%20nemo%20velit%20sit.%20Qui%20facere%20ut%20sint%20sapiente%20commodi%20beatae%20facilis.%20Dolore%20consequatur%20perferendis%20et.%20Aut%0A%20%20quod%20sequi%20qui%20quos.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Iure%20possimus%20illum%20rerum.%20Aperiam%20iusto%20excepturi%20aut%20non.%20Veniam%20est%20molestiae%20distinctio%20saepe%20doloribus%20sit%0A%20%20expedita%20possimus.%20Soluta%20officiis%20et%20et.%20Qui%20eius%20et%20laudantium%20adipisci%20delectus%20doloremque%20fuga%20rerum.%20Commodi%0A%20%20earum%20velit%20ut%20qui.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EPlaceat%20Non%20Architecto%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Molestias%20quia%20assumenda%20fuga.%20Eligendi%20debitis%20qui%20aut%20rem.%20Corrupti%20est%20quia%20asperiores%20esse%20natus%20exercitationem%20ut%0A%20%20eveniet.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EVoluptas%20maiores%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Et%20doloremque%20qui%20mollitia%20delectus%20nam.%20Alias%20ipsum%20vel%20voluptatem%20libero%20molestias.%20Aut%20qui%20distinctio%20sed%20quis%20aut.%0A%20%20Iusto%20molestiae%20autem%20repellendus.%20Sed%20autem%20illo%20non%20omnis%20labore%20voluptas.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Qui%20nam%20sed%20a%20voluptas.%20Culpa%20distinctio%20quo%20illum%20dolorum.%20Doloremque%20beatae%20aut%20autem%20laudantium.%20Accusamus%0A%20%20voluptatibus%20repellendus%20magni%20odio%20corrupti%20optio%20maiores.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Ut%20et%20nihil%20tenetur%20explicabo%20cupiditate%20ipsa.%20Aut%20veritatis%20sit%20fuga%20alias.%20Aut%20mollitia%20est%20aut%20nulla%20minus%0A%20%20voluptatem.%0A%3C%2Fp%3E%0A%0A%3Ch3%3ESed%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Sed%20dolor%20non%20placeat.%20Fuga%20fuga%20dolor%20ducimus%20iusto%20optio%20voluptatem%20ullam%20et.%20Fugiat%20possimus%20minus%20rerum%20omnis%20nisi%0A%20%20aspernatur.%20Eos%20est%20ea%20est%20blanditiis%20sit%20quis%20ut.%20Eligendi%20consequuntur%20quisquam%20reiciendis%20expedita.%20Quos%0A%20%20exercitationem%20iusto%20ab%20deleniti%20blanditiis%20nihil.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EIpsa%20voluptate%3C%2Fh3%3E%0A%0A%3Cp%3E%0ADoloremque%20exercitationem%20quisquam%20minus%20sit%20eum%20similique.%20Eos%20architecto%20nesciunt%20distinctio.%20Beatae%20aliquid%20omnis%20nam%0Aquis%20et%20eaque.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EReprehenderit%3C%2Fh3%3E%0A%0A%3Cp%3E%0ANon%20vero%20est%20dolorum.%20Voluptatem%20officiis%20est%20recusandae%20ducimus%20quis.%20Est%20eos%20voluptas%20quia%20error%20molestiae%20vitae%20minus%0Adolorem.%20Perferendis%20qui%20numquam%20esse%20minima%20ad.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Nisi%20velit%20sit%20qui%20deserunt%20iure%20quaerat%20sint.%20Architecto%20quis%20temporibus%20occaecati%20et%20neque%20quis.%20Qui%20minima%20quae%0A%20%20dolorem.%20Corporis%20mollitia%20ullam%20minus.%20Id%20voluptates%20soluta%20ut%20et%20totam.%20Modi%20officiis%20praesentium%20architecto%20itaque%0A%20%20dignissimos.%0A%3C%2Fp%3E%0A",
+      "staking": {
+        "start": "February 02, 2021, 11:00 PM UTC",
+        "end": "May 02, 2021, 10:00 PM UTC",
+        "balance": "15418527",
+        "rate": "500",
+        "volume": "16154185",
+        "tx": "0x959a2bf324c80540b91ee764ff196da1801176b18ec21399598d6f533241e166"
+      },
       "7d-average": [
         2.1,
         3.1,
@@ -932,6 +849,7 @@
       ]
     },
     "TST5": {
+      "apy":"15",
       "name": "Test pool (kl token)",
       "icon": "5.png",
       "value": "1.2",
@@ -941,27 +859,6 @@
       "address": "0xTYV000UIO",
       "supply": "2900000",
       "assets": {
-        "XCV": {
-          "colour": "#00be4e",
-          "icon": "2.png",
-          "pc": "20",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "QWE": {
-          "colour": "#0091be",
-          "icon": "3.png",
-          "pc": "10",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "DFG": {
-          "colour": "#be8f00",
-          "icon": "4.png",
-          "pc": "5",
-          "amount": "1200995",
-          "value": "90000"
-        },
         "ASD": {
           "colour": "#be4700",
           "icon": "5.png",
@@ -1078,6 +975,14 @@
         }
       ],
       "details": "%3Ch3%3EVelit%3C%2Fh3%3E%0A%0A%3Cp%3EVeritatis%20nemo%20velit%20sit.%20Qui%20facere%20ut%20sint%20sapiente%20commodi%20beatae%20facilis.%20Dolore%20consequatur%20perferendis%20et.%20Aut%0A%20%20quod%20sequi%20qui%20quos.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Iure%20possimus%20illum%20rerum.%20Aperiam%20iusto%20excepturi%20aut%20non.%20Veniam%20est%20molestiae%20distinctio%20saepe%20doloribus%20sit%0A%20%20expedita%20possimus.%20Soluta%20officiis%20et%20et.%20Qui%20eius%20et%20laudantium%20adipisci%20delectus%20doloremque%20fuga%20rerum.%20Commodi%0A%20%20earum%20velit%20ut%20qui.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EPlaceat%20Non%20Architecto%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Molestias%20quia%20assumenda%20fuga.%20Eligendi%20debitis%20qui%20aut%20rem.%20Corrupti%20est%20quia%20asperiores%20esse%20natus%20exercitationem%20ut%0A%20%20eveniet.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EVoluptas%20maiores%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Et%20doloremque%20qui%20mollitia%20delectus%20nam.%20Alias%20ipsum%20vel%20voluptatem%20libero%20molestias.%20Aut%20qui%20distinctio%20sed%20quis%20aut.%0A%20%20Iusto%20molestiae%20autem%20repellendus.%20Sed%20autem%20illo%20non%20omnis%20labore%20voluptas.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Qui%20nam%20sed%20a%20voluptas.%20Culpa%20distinctio%20quo%20illum%20dolorum.%20Doloremque%20beatae%20aut%20autem%20laudantium.%20Accusamus%0A%20%20voluptatibus%20repellendus%20magni%20odio%20corrupti%20optio%20maiores.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Ut%20et%20nihil%20tenetur%20explicabo%20cupiditate%20ipsa.%20Aut%20veritatis%20sit%20fuga%20alias.%20Aut%20mollitia%20est%20aut%20nulla%20minus%0A%20%20voluptatem.%0A%3C%2Fp%3E%0A%0A%3Ch3%3ESed%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Sed%20dolor%20non%20placeat.%20Fuga%20fuga%20dolor%20ducimus%20iusto%20optio%20voluptatem%20ullam%20et.%20Fugiat%20possimus%20minus%20rerum%20omnis%20nisi%0A%20%20aspernatur.%20Eos%20est%20ea%20est%20blanditiis%20sit%20quis%20ut.%20Eligendi%20consequuntur%20quisquam%20reiciendis%20expedita.%20Quos%0A%20%20exercitationem%20iusto%20ab%20deleniti%20blanditiis%20nihil.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EIpsa%20voluptate%3C%2Fh3%3E%0A%0A%3Cp%3E%0ADoloremque%20exercitationem%20quisquam%20minus%20sit%20eum%20similique.%20Eos%20architecto%20nesciunt%20distinctio.%20Beatae%20aliquid%20omnis%20nam%0Aquis%20et%20eaque.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EReprehenderit%3C%2Fh3%3E%0A%0A%3Cp%3E%0ANon%20vero%20est%20dolorum.%20Voluptatem%20officiis%20est%20recusandae%20ducimus%20quis.%20Est%20eos%20voluptas%20quia%20error%20molestiae%20vitae%20minus%0Adolorem.%20Perferendis%20qui%20numquam%20esse%20minima%20ad.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Nisi%20velit%20sit%20qui%20deserunt%20iure%20quaerat%20sint.%20Architecto%20quis%20temporibus%20occaecati%20et%20neque%20quis.%20Qui%20minima%20quae%0A%20%20dolorem.%20Corporis%20mollitia%20ullam%20minus.%20Id%20voluptates%20soluta%20ut%20et%20totam.%20Modi%20officiis%20praesentium%20architecto%20itaque%0A%20%20dignissimos.%0A%3C%2Fp%3E%0A",
+      "staking": {
+        "start": "February 02, 2021, 11:00 PM UTC",
+        "end": "May 02, 2021, 10:00 PM UTC",
+        "balance": "15418527",
+        "rate": "500",
+        "volume": "16154185",
+        "tx": "0x959a2bf324c80540b91ee764ff196da1801176b18ec21399598d6f533241e166"
+      },
       "7d-average": [
         2.1,
         3.1,
@@ -1115,6 +1020,7 @@
       ]
     },
     "TST6": {
+      "apy":"5",
       "name": "Test pool (mn token)",
       "icon": "6.png",
       "value": "6.2",
@@ -1134,34 +1040,6 @@
         "QWE": {
           "colour": "#0091be",
           "icon": "3.png",
-          "pc": "10",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "DFG": {
-          "colour": "#be8f00",
-          "icon": "4.png",
-          "pc": "5",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "ASD": {
-          "colour": "#be4700",
-          "icon": "5.png",
-          "pc": "30",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "IOP": {
-          "colour": "#0027be",
-          "icon": "6.png",
-          "pc": "10",
-          "amount": "1200995",
-          "value": "90000"
-        },
-        "JKL": {
-          "colour": "#2a00be",
-          "icon": "7.png",
           "pc": "10",
           "amount": "1200995",
           "value": "90000"
@@ -1261,6 +1139,14 @@
         }
       ],
       "details": "%3Ch3%3EVelit%3C%2Fh3%3E%0A%0A%3Cp%3EVeritatis%20nemo%20velit%20sit.%20Qui%20facere%20ut%20sint%20sapiente%20commodi%20beatae%20facilis.%20Dolore%20consequatur%20perferendis%20et.%20Aut%0A%20%20quod%20sequi%20qui%20quos.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Iure%20possimus%20illum%20rerum.%20Aperiam%20iusto%20excepturi%20aut%20non.%20Veniam%20est%20molestiae%20distinctio%20saepe%20doloribus%20sit%0A%20%20expedita%20possimus.%20Soluta%20officiis%20et%20et.%20Qui%20eius%20et%20laudantium%20adipisci%20delectus%20doloremque%20fuga%20rerum.%20Commodi%0A%20%20earum%20velit%20ut%20qui.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EPlaceat%20Non%20Architecto%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Molestias%20quia%20assumenda%20fuga.%20Eligendi%20debitis%20qui%20aut%20rem.%20Corrupti%20est%20quia%20asperiores%20esse%20natus%20exercitationem%20ut%0A%20%20eveniet.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EVoluptas%20maiores%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Et%20doloremque%20qui%20mollitia%20delectus%20nam.%20Alias%20ipsum%20vel%20voluptatem%20libero%20molestias.%20Aut%20qui%20distinctio%20sed%20quis%20aut.%0A%20%20Iusto%20molestiae%20autem%20repellendus.%20Sed%20autem%20illo%20non%20omnis%20labore%20voluptas.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Qui%20nam%20sed%20a%20voluptas.%20Culpa%20distinctio%20quo%20illum%20dolorum.%20Doloremque%20beatae%20aut%20autem%20laudantium.%20Accusamus%0A%20%20voluptatibus%20repellendus%20magni%20odio%20corrupti%20optio%20maiores.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Ut%20et%20nihil%20tenetur%20explicabo%20cupiditate%20ipsa.%20Aut%20veritatis%20sit%20fuga%20alias.%20Aut%20mollitia%20est%20aut%20nulla%20minus%0A%20%20voluptatem.%0A%3C%2Fp%3E%0A%0A%3Ch3%3ESed%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Sed%20dolor%20non%20placeat.%20Fuga%20fuga%20dolor%20ducimus%20iusto%20optio%20voluptatem%20ullam%20et.%20Fugiat%20possimus%20minus%20rerum%20omnis%20nisi%0A%20%20aspernatur.%20Eos%20est%20ea%20est%20blanditiis%20sit%20quis%20ut.%20Eligendi%20consequuntur%20quisquam%20reiciendis%20expedita.%20Quos%0A%20%20exercitationem%20iusto%20ab%20deleniti%20blanditiis%20nihil.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EIpsa%20voluptate%3C%2Fh3%3E%0A%0A%3Cp%3E%0ADoloremque%20exercitationem%20quisquam%20minus%20sit%20eum%20similique.%20Eos%20architecto%20nesciunt%20distinctio.%20Beatae%20aliquid%20omnis%20nam%0Aquis%20et%20eaque.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EReprehenderit%3C%2Fh3%3E%0A%0A%3Cp%3E%0ANon%20vero%20est%20dolorum.%20Voluptatem%20officiis%20est%20recusandae%20ducimus%20quis.%20Est%20eos%20voluptas%20quia%20error%20molestiae%20vitae%20minus%0Adolorem.%20Perferendis%20qui%20numquam%20esse%20minima%20ad.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Nisi%20velit%20sit%20qui%20deserunt%20iure%20quaerat%20sint.%20Architecto%20quis%20temporibus%20occaecati%20et%20neque%20quis.%20Qui%20minima%20quae%0A%20%20dolorem.%20Corporis%20mollitia%20ullam%20minus.%20Id%20voluptates%20soluta%20ut%20et%20totam.%20Modi%20officiis%20praesentium%20architecto%20itaque%0A%20%20dignissimos.%0A%3C%2Fp%3E%0A",
+      "staking": {
+        "start": "February 02, 2021, 11:00 PM UTC",
+        "end": "May 02, 2021, 10:00 PM UTC",
+        "balance": "15418527",
+        "rate": "500",
+        "volume": "16154185",
+        "tx": "0x959a2bf324c80540b91ee764ff196da1801176b18ec21399598d6f533241e166"
+      },
       "7d-average": [
         2.1,
         3.1,
@@ -1298,6 +1184,7 @@
       ]
     },
     "TST7": {
+      "apy":"5",
       "name": "Test pool (op token)",
       "icon": "7.png",
       "value": "1.34",
@@ -1444,6 +1331,14 @@
         }
       ],
       "details": "%3Ch3%3EVelit%3C%2Fh3%3E%0A%0A%3Cp%3EVeritatis%20nemo%20velit%20sit.%20Qui%20facere%20ut%20sint%20sapiente%20commodi%20beatae%20facilis.%20Dolore%20consequatur%20perferendis%20et.%20Aut%0A%20%20quod%20sequi%20qui%20quos.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Iure%20possimus%20illum%20rerum.%20Aperiam%20iusto%20excepturi%20aut%20non.%20Veniam%20est%20molestiae%20distinctio%20saepe%20doloribus%20sit%0A%20%20expedita%20possimus.%20Soluta%20officiis%20et%20et.%20Qui%20eius%20et%20laudantium%20adipisci%20delectus%20doloremque%20fuga%20rerum.%20Commodi%0A%20%20earum%20velit%20ut%20qui.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EPlaceat%20Non%20Architecto%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Molestias%20quia%20assumenda%20fuga.%20Eligendi%20debitis%20qui%20aut%20rem.%20Corrupti%20est%20quia%20asperiores%20esse%20natus%20exercitationem%20ut%0A%20%20eveniet.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EVoluptas%20maiores%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Et%20doloremque%20qui%20mollitia%20delectus%20nam.%20Alias%20ipsum%20vel%20voluptatem%20libero%20molestias.%20Aut%20qui%20distinctio%20sed%20quis%20aut.%0A%20%20Iusto%20molestiae%20autem%20repellendus.%20Sed%20autem%20illo%20non%20omnis%20labore%20voluptas.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Qui%20nam%20sed%20a%20voluptas.%20Culpa%20distinctio%20quo%20illum%20dolorum.%20Doloremque%20beatae%20aut%20autem%20laudantium.%20Accusamus%0A%20%20voluptatibus%20repellendus%20magni%20odio%20corrupti%20optio%20maiores.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Ut%20et%20nihil%20tenetur%20explicabo%20cupiditate%20ipsa.%20Aut%20veritatis%20sit%20fuga%20alias.%20Aut%20mollitia%20est%20aut%20nulla%20minus%0A%20%20voluptatem.%0A%3C%2Fp%3E%0A%0A%3Ch3%3ESed%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Sed%20dolor%20non%20placeat.%20Fuga%20fuga%20dolor%20ducimus%20iusto%20optio%20voluptatem%20ullam%20et.%20Fugiat%20possimus%20minus%20rerum%20omnis%20nisi%0A%20%20aspernatur.%20Eos%20est%20ea%20est%20blanditiis%20sit%20quis%20ut.%20Eligendi%20consequuntur%20quisquam%20reiciendis%20expedita.%20Quos%0A%20%20exercitationem%20iusto%20ab%20deleniti%20blanditiis%20nihil.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EIpsa%20voluptate%3C%2Fh3%3E%0A%0A%3Cp%3E%0ADoloremque%20exercitationem%20quisquam%20minus%20sit%20eum%20similique.%20Eos%20architecto%20nesciunt%20distinctio.%20Beatae%20aliquid%20omnis%20nam%0Aquis%20et%20eaque.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EReprehenderit%3C%2Fh3%3E%0A%0A%3Cp%3E%0ANon%20vero%20est%20dolorum.%20Voluptatem%20officiis%20est%20recusandae%20ducimus%20quis.%20Est%20eos%20voluptas%20quia%20error%20molestiae%20vitae%20minus%0Adolorem.%20Perferendis%20qui%20numquam%20esse%20minima%20ad.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Nisi%20velit%20sit%20qui%20deserunt%20iure%20quaerat%20sint.%20Architecto%20quis%20temporibus%20occaecati%20et%20neque%20quis.%20Qui%20minima%20quae%0A%20%20dolorem.%20Corporis%20mollitia%20ullam%20minus.%20Id%20voluptates%20soluta%20ut%20et%20totam.%20Modi%20officiis%20praesentium%20architecto%20itaque%0A%20%20dignissimos.%0A%3C%2Fp%3E%0A",
+      "staking": {
+        "start": "February 02, 2021, 11:00 PM UTC",
+        "end": "May 02, 2021, 10:00 PM UTC",
+        "balance": "15418527",
+        "rate": "500",
+        "volume": "16154185",
+        "tx": "0x959a2bf324c80540b91ee764ff196da1801176b18ec21399598d6f533241e166"
+      },
       "7d-average": [
         2.1,
         3.1,
@@ -1481,6 +1376,7 @@
       ]
     },
     "TST8": {
+      "apy":"59",
       "name": "Test pool (qr token)",
       "icon": "8.png",
       "value": "25.4",
@@ -1627,6 +1523,14 @@
         }
       ],
       "details": "%3Ch3%3EVelit%3C%2Fh3%3E%0A%0A%3Cp%3EVeritatis%20nemo%20velit%20sit.%20Qui%20facere%20ut%20sint%20sapiente%20commodi%20beatae%20facilis.%20Dolore%20consequatur%20perferendis%20et.%20Aut%0A%20%20quod%20sequi%20qui%20quos.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Iure%20possimus%20illum%20rerum.%20Aperiam%20iusto%20excepturi%20aut%20non.%20Veniam%20est%20molestiae%20distinctio%20saepe%20doloribus%20sit%0A%20%20expedita%20possimus.%20Soluta%20officiis%20et%20et.%20Qui%20eius%20et%20laudantium%20adipisci%20delectus%20doloremque%20fuga%20rerum.%20Commodi%0A%20%20earum%20velit%20ut%20qui.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EPlaceat%20Non%20Architecto%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Molestias%20quia%20assumenda%20fuga.%20Eligendi%20debitis%20qui%20aut%20rem.%20Corrupti%20est%20quia%20asperiores%20esse%20natus%20exercitationem%20ut%0A%20%20eveniet.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EVoluptas%20maiores%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Et%20doloremque%20qui%20mollitia%20delectus%20nam.%20Alias%20ipsum%20vel%20voluptatem%20libero%20molestias.%20Aut%20qui%20distinctio%20sed%20quis%20aut.%0A%20%20Iusto%20molestiae%20autem%20repellendus.%20Sed%20autem%20illo%20non%20omnis%20labore%20voluptas.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Qui%20nam%20sed%20a%20voluptas.%20Culpa%20distinctio%20quo%20illum%20dolorum.%20Doloremque%20beatae%20aut%20autem%20laudantium.%20Accusamus%0A%20%20voluptatibus%20repellendus%20magni%20odio%20corrupti%20optio%20maiores.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Ut%20et%20nihil%20tenetur%20explicabo%20cupiditate%20ipsa.%20Aut%20veritatis%20sit%20fuga%20alias.%20Aut%20mollitia%20est%20aut%20nulla%20minus%0A%20%20voluptatem.%0A%3C%2Fp%3E%0A%0A%3Ch3%3ESed%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Sed%20dolor%20non%20placeat.%20Fuga%20fuga%20dolor%20ducimus%20iusto%20optio%20voluptatem%20ullam%20et.%20Fugiat%20possimus%20minus%20rerum%20omnis%20nisi%0A%20%20aspernatur.%20Eos%20est%20ea%20est%20blanditiis%20sit%20quis%20ut.%20Eligendi%20consequuntur%20quisquam%20reiciendis%20expedita.%20Quos%0A%20%20exercitationem%20iusto%20ab%20deleniti%20blanditiis%20nihil.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EIpsa%20voluptate%3C%2Fh3%3E%0A%0A%3Cp%3E%0ADoloremque%20exercitationem%20quisquam%20minus%20sit%20eum%20similique.%20Eos%20architecto%20nesciunt%20distinctio.%20Beatae%20aliquid%20omnis%20nam%0Aquis%20et%20eaque.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EReprehenderit%3C%2Fh3%3E%0A%0A%3Cp%3E%0ANon%20vero%20est%20dolorum.%20Voluptatem%20officiis%20est%20recusandae%20ducimus%20quis.%20Est%20eos%20voluptas%20quia%20error%20molestiae%20vitae%20minus%0Adolorem.%20Perferendis%20qui%20numquam%20esse%20minima%20ad.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Nisi%20velit%20sit%20qui%20deserunt%20iure%20quaerat%20sint.%20Architecto%20quis%20temporibus%20occaecati%20et%20neque%20quis.%20Qui%20minima%20quae%0A%20%20dolorem.%20Corporis%20mollitia%20ullam%20minus.%20Id%20voluptates%20soluta%20ut%20et%20totam.%20Modi%20officiis%20praesentium%20architecto%20itaque%0A%20%20dignissimos.%0A%3C%2Fp%3E%0A",
+      "staking": {
+        "start": "February 02, 2021, 11:00 PM UTC",
+        "end": "May 02, 2021, 10:00 PM UTC",
+        "balance": "15418527",
+        "rate": "500",
+        "volume": "16154185",
+        "tx": "0x959a2bf324c80540b91ee764ff196da1801176b18ec21399598d6f533241e166"
+      },
       "7d-average": [
         2.1,
         3.1,
@@ -1664,6 +1568,7 @@
       ]
     },
     "TST9": {
+      "apy":"1.5",
       "name": "Test pool (st token)",
       "icon": "9.png",
       "value": "0.34",
@@ -1810,6 +1715,14 @@
         }
       ],
       "details": "%3Ch3%3EVelit%3C%2Fh3%3E%0A%0A%3Cp%3EVeritatis%20nemo%20velit%20sit.%20Qui%20facere%20ut%20sint%20sapiente%20commodi%20beatae%20facilis.%20Dolore%20consequatur%20perferendis%20et.%20Aut%0A%20%20quod%20sequi%20qui%20quos.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Iure%20possimus%20illum%20rerum.%20Aperiam%20iusto%20excepturi%20aut%20non.%20Veniam%20est%20molestiae%20distinctio%20saepe%20doloribus%20sit%0A%20%20expedita%20possimus.%20Soluta%20officiis%20et%20et.%20Qui%20eius%20et%20laudantium%20adipisci%20delectus%20doloremque%20fuga%20rerum.%20Commodi%0A%20%20earum%20velit%20ut%20qui.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EPlaceat%20Non%20Architecto%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Molestias%20quia%20assumenda%20fuga.%20Eligendi%20debitis%20qui%20aut%20rem.%20Corrupti%20est%20quia%20asperiores%20esse%20natus%20exercitationem%20ut%0A%20%20eveniet.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EVoluptas%20maiores%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Et%20doloremque%20qui%20mollitia%20delectus%20nam.%20Alias%20ipsum%20vel%20voluptatem%20libero%20molestias.%20Aut%20qui%20distinctio%20sed%20quis%20aut.%0A%20%20Iusto%20molestiae%20autem%20repellendus.%20Sed%20autem%20illo%20non%20omnis%20labore%20voluptas.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Qui%20nam%20sed%20a%20voluptas.%20Culpa%20distinctio%20quo%20illum%20dolorum.%20Doloremque%20beatae%20aut%20autem%20laudantium.%20Accusamus%0A%20%20voluptatibus%20repellendus%20magni%20odio%20corrupti%20optio%20maiores.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Ut%20et%20nihil%20tenetur%20explicabo%20cupiditate%20ipsa.%20Aut%20veritatis%20sit%20fuga%20alias.%20Aut%20mollitia%20est%20aut%20nulla%20minus%0A%20%20voluptatem.%0A%3C%2Fp%3E%0A%0A%3Ch3%3ESed%3C%2Fh3%3E%0A%0A%3Cp%3E%0A%20%20Sed%20dolor%20non%20placeat.%20Fuga%20fuga%20dolor%20ducimus%20iusto%20optio%20voluptatem%20ullam%20et.%20Fugiat%20possimus%20minus%20rerum%20omnis%20nisi%0A%20%20aspernatur.%20Eos%20est%20ea%20est%20blanditiis%20sit%20quis%20ut.%20Eligendi%20consequuntur%20quisquam%20reiciendis%20expedita.%20Quos%0A%20%20exercitationem%20iusto%20ab%20deleniti%20blanditiis%20nihil.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EIpsa%20voluptate%3C%2Fh3%3E%0A%0A%3Cp%3E%0ADoloremque%20exercitationem%20quisquam%20minus%20sit%20eum%20similique.%20Eos%20architecto%20nesciunt%20distinctio.%20Beatae%20aliquid%20omnis%20nam%0Aquis%20et%20eaque.%0A%3C%2Fp%3E%0A%0A%3Ch3%3EReprehenderit%3C%2Fh3%3E%0A%0A%3Cp%3E%0ANon%20vero%20est%20dolorum.%20Voluptatem%20officiis%20est%20recusandae%20ducimus%20quis.%20Est%20eos%20voluptas%20quia%20error%20molestiae%20vitae%20minus%0Adolorem.%20Perferendis%20qui%20numquam%20esse%20minima%20ad.%0A%3C%2Fp%3E%0A%0A%3Cp%3E%0A%20%20Nisi%20velit%20sit%20qui%20deserunt%20iure%20quaerat%20sint.%20Architecto%20quis%20temporibus%20occaecati%20et%20neque%20quis.%20Qui%20minima%20quae%0A%20%20dolorem.%20Corporis%20mollitia%20ullam%20minus.%20Id%20voluptates%20soluta%20ut%20et%20totam.%20Modi%20officiis%20praesentium%20architecto%20itaque%0A%20%20dignissimos.%0A%3C%2Fp%3E%0A",
+      "staking": {
+        "start": "February 02, 2021, 11:00 PM UTC",
+        "end": "May 02, 2021, 10:00 PM UTC",
+        "balance": "15418527",
+        "rate": "500",
+        "volume": "16154185",
+        "tx": "0x959a2bf324c80540b91ee764ff196da1801176b18ec21399598d6f533241e166"
+      },
       "7d-average": [
         2.1,
         3.1,

@@ -463,12 +463,13 @@ function makeChart() {
 function setBalances() {
   window.ocToken = !window.ocToken ? "ETH" : window.ocToken;
   if (window.dataPayload && window.selectedPool && window.ocToken)
-  document.querySelectorAll(".-cbp").forEach(function (p) {
-    p.innerHTML = `Balance: ${formatCurrency.format(window.dataPayload.user.portfolio[window.selectedPool].balance)}`
-  })
+    document.querySelectorAll(".-cbp").forEach(function (p) {
+      p.innerHTML = `Balance: ${formatCurrency.format(window.dataPayload.user.portfolio[window.selectedPool].balance)}`
+    })
   document.querySelectorAll(".-cbt").forEach(function (p) {
     p.innerHTML = `Balance: ${formatCurrency.format(window.dataPayload.user.portfolio[window.ocToken.toUpperCase()].balance)}`
   })
+  updateBalancePreviewForStaking();
 }
 
 function makeHomePage() {
@@ -563,13 +564,13 @@ if (document.getElementById("receiveDenom") &&
     s.addEventListener("mouseleave", function (e) {
       e.currentTarget.classList.remove("open")
       e.currentTarget.parentNode.querySelectorAll(".-target").length > 0 && (
-      e.currentTarget.parentNode.querySelectorAll(".-target").forEach(function(s){s.setAttribute("_o", "0")}))
+        e.currentTarget.parentNode.querySelectorAll(".-target").forEach(function (s) { s.setAttribute("_o", "0") }))
     }),
-    s.addEventListener("click", function (e) {
-      e.currentTarget.classList.remove("open")
-      e.currentTarget.parentNode.querySelectorAll(".-target").length > 0 && (
-      e.currentTarget.parentNode.querySelectorAll(".-target").forEach(function(s){s.setAttribute("_o", "0")}))
-    })
+      s.addEventListener("click", function (e) {
+        e.currentTarget.classList.remove("open")
+        e.currentTarget.parentNode.querySelectorAll(".-target").length > 0 && (
+          e.currentTarget.parentNode.querySelectorAll(".-target").forEach(function (s) { s.setAttribute("_o", "0") }))
+      })
   })
 
   window.selling = availableTokens[0]
@@ -582,7 +583,7 @@ if (document.getElementById("receiveDenom") &&
       var a = e.currentTarget;
       a.hasAttribute("_o") ? a.getAttribute("_o") === '1' ? (o = 1, a.setAttribute("_o", "0")) : (o = 0, a.setAttribute("_o", "1")) : (o = 0, a.setAttribute("_o", "1"));
       document.querySelectorAll(".selection-drawer").forEach(function (f) { f.classList.remove("open") })
-      if(o===0){
+      if (o === 0) {
         if (a.parentNode.querySelectorAll(".selection-drawer")[0].classList.contains("open")) {
           a.parentNode.querySelectorAll(".selection-drawer")[0].classList.remove("open")
         } else {
@@ -669,6 +670,13 @@ function stakingManager(h) {
     document.getElementById("appMain") && (document.getElementById("appMain").classList.add("build-out"))
     document.getElementById("stakingManager") && (document.getElementById("stakingManager").classList.add("build-in"))
     if (window.currentStakingPool && window.dataPayload.user.portfolio[window.currentStakingPool]) {
+      var as = window.dataPayload.tokens[window.currentStakingPool].assets
+      var a = ``;
+      var p = 0;
+      Object.keys(as).forEach(function (ask) {
+        a += `<span title="${ask}"><img style="z-index:${p};"  loading="lazy" src="src/img/symbols/${as[ask].icon}"></span>`;
+        p++;
+      });
       var secondary = `
         <h3>Account balance: <span><img loading="lazy" style="height:1.5rem" src="src/img/icon.png">&nbsp;BigWave Token</span></h3>
     <p>${formatCurrency.format(window.dataPayload.user.balance)} BGW-T</p>
@@ -676,8 +684,18 @@ function stakingManager(h) {
       var primary = `
     <h2>Balance <span><img loading="lazy" style="height:1.5rem" src="src/img/symbols/${window.dataPayload.tokens[window.currentStakingPool].icon}">&nbsp;${window.dataPayload.tokens[window.currentStakingPool].name}</span></h2>
     <p>${formatCurrency.format(window.dataPayload.user.portfolio[window.currentStakingPool].balance)} BGW-T</p>
+    <div class="overlap">${a}</div>
     `;
       document.getElementById("stakeActions").style.display = "block"
+      document.getElementById("stakeAgainstCoin").style.display = ""
+      document.getElementById("stakeAgainstCoin").setAttribute("src", `src/img/symbols/${window.dataPayload.tokens[window.currentStakingPool].icon}`);
+      document.getElementById("apyValue") && (
+        document.getElementById("apyValue").innerHTML = `${window.dataPayload.tokens[window.currentStakingPool].apy}%`
+      )
+      document.getElementById("totalStakedValue") && (
+        document.getElementById("totalStakedValue").innerHTML = `${formatCurrency.format(window.dataPayload.user.portfolio[window.currentStakingPool].balance)}`
+      )
+    updateBalancePreviewForStaking()
     }
     else {
       var primary = `
@@ -713,11 +731,19 @@ function stakingManager(h) {
         document.getElementById("poolList2").append(tr)
       } else { }
     });
+    document.getElementById("updateBalancePreviewForStakingUITrigger") && (
+      document.getElementById("updateBalancePreviewForStakingUITrigger").addEventListener("click", function (e) { updateBalancePreviewForStaking() }), document.getElementById("updateBalancePreviewForStakingUITrigger").addEventListener("mouseleave", function (e) { updateBalancePreviewForStaking() })
+    )
   }
   else {
   }
 }
-
+function updateBalancePreviewForStaking() {
+  window.ocToken = !window.ocToken ? "ETH" : window.ocToken.toUpperCase();
+  document.getElementById("stakingViewTokenBalance") && window.dataPayload.user.portfolio[window.ocToken] ? (
+    document.getElementById("stakingViewTokenBalance").innerHTML = formatCurrency.format(window.dataPayload.user.portfolio[window.ocToken].balance)
+  ) : (document.getElementById("stakingViewTokenBalance").innerHTML = `0.00`)
+}
 function selectStakingPool(t, p) {
   if (!p) { return false; }
   else {

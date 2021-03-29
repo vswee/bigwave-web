@@ -308,12 +308,23 @@
           <div class="balance-organiser prominent"></div>
         </div>
         <div id="stakeActions">
+          <div id="stakeOrganiser">
+            <label>Total Staked</label>
+            <label>APY</label>
+            <span id="totalStakedValue"></span>
+            <span id="apyValue"></span>
+            <div class="overlap">
+              <span><img src="src/img/symbols/bgw-t.png"></span>
+              <span><img id="stakeAgainstCoin" style="display:none;"></span>
+            </div>
+          </div>
           <div class="input-group">
-            <label>Amount</label>
-            <span class="currentSend -trigger"></span>
+            <label>Use from balances:</label>
+            <span class="currentSend -trigger" id="updateBalancePreviewForStakingUITrigger"></span>
             <div class="selection-drawer -token-options">
             </div>
             <input type="text" placeholder="0.00" value="">
+            <small>Available Balance: <span id="stakingViewTokenBalance"></span></small>
           </div>
           <div class="-flex">
             <a class="btn -disable">Claim</a>

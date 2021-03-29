@@ -261,7 +261,7 @@ function fetchApplicationData(m) {
   xhr.onload = function () {
     if (200 === xhr.status && xhr.responseText.length > 0) {
       var data = JSON.parse(xhr.responseText);
-      window.poolPayload = data;
+      window.dataPayload = data;
       fetching = false
       makeHomePage()
       wHist()
@@ -294,7 +294,7 @@ ww = window.innerWidth;
 window.onresize = function () {
   wh = window.innerHeight;
   ww = window.innerWidth;
-  if (window.selectedPool && window.poolPayload) {
+  if (window.selectedPool && window.dataPayload) {
     makeChart();
   }
 };
@@ -312,11 +312,11 @@ window.onfocus = function () {
 
 var chartData;
 function makeChart() {
-  if (window.poolPayload && window.selectedPool) {
-    var p = window.poolPayload.tokens;
+  if (window.dataPayload && window.selectedPool) {
+    var p = window.dataPayload.tokens;
     var s = window.selectedPool;
   }
-  else if (!window.poolPayload || !window.selectedPool) { return }
+  else if (!window.dataPayload || !window.selectedPool) { return }
   var c = document.getElementById("graph");
   c.style.display = "none";
   if (c) {
@@ -460,14 +460,27 @@ function makeChart() {
   saniExc()
 }
 
+function setBalances() {
+  window.ocToken = !window.ocToken ? "ETH" : window.ocToken;
+  if (window.dataPayload && window.selectedPool && window.ocToken)
+    document.querySelectorAll(".-cbp").forEach(function (p) {
+      p.innerHTML = `Balance: ${formatCurrency.format(window.dataPayload.user.portfolio[window.selectedPool].balance)}`
+    })
+  document.querySelectorAll(".-cbt").forEach(function (p) {
+    p.innerHTML = `Balance: ${formatCurrency.format(window.dataPayload.user.portfolio[window.ocToken.toUpperCase()].balance)}`
+  })
+  updateBalancePreviewForStaking();
+}
+
 function makeHomePage() {
-  var data = window.poolPayload;
+  var data = window.dataPayload;
   document.getElementById("poolList").innerHTML = ``;
   var _e = 0;
   Object.keys(data.tokens).forEach(function (key) {
     var tr = document.createElement("tr");
     if (!window.selectedPool) {
       window.selectedPool = key;
+      setBalances();
       makeChart();
       tr.classList.add("selected");
     }
@@ -496,6 +509,7 @@ function selectPool(t, k) {
   window.selectedPool = k;
   document.getElementById("poolList").querySelectorAll(".selected").forEach(function (e) { e.classList.remove("selected") });
   t.classList.add("selected");
+  setBalances()
   makeChart()
 }
 
@@ -536,7 +550,7 @@ if (document.getElementById("receiveDenom") &&
   var receive = document.getElementById("receiveDenom"),
     send = document.getElementById("sendDenom");
 
-  document.querySelectorAll(".selection-drawer").forEach(function (e) {
+  document.querySelectorAll(".selection-drawer.-token-options").forEach(function (e) {
     availableTokens.forEach(function (v) {
       var option = document.createElement("span")
       option.setAttribute("onclick", `changeSender(this, '${v}')`)
@@ -549,20 +563,32 @@ if (document.getElementById("receiveDenom") &&
   document.querySelectorAll(".selection-drawer").forEach(function (s) {
     s.addEventListener("mouseleave", function (e) {
       e.currentTarget.classList.remove("open")
-    })
+      e.currentTarget.parentNode.querySelectorAll(".-target").length > 0 && (
+        e.currentTarget.parentNode.querySelectorAll(".-target").forEach(function (s) { s.setAttribute("_o", "0") }))
+    }),
+      s.addEventListener("click", function (e) {
+        e.currentTarget.classList.remove("open")
+        e.currentTarget.parentNode.querySelectorAll(".-target").length > 0 && (
+          e.currentTarget.parentNode.querySelectorAll(".-target").forEach(function (s) { s.setAttribute("_o", "0") }))
+      })
   })
 
   window.selling = availableTokens[0]
   document.querySelectorAll(".currentSend").forEach(function (e) { e.innerHTML = `<span><img loading="lazy" style="height:1.5rem" src="src/img/symbols/${availableTokens[0]}.png">&nbsp;${availableTokens[0]}&nbsp;<i class="fas fa-caret-down"></i></span>` })
 
 
-  document.querySelectorAll(".currentSend").forEach(function (d) {
-    d.addEventListener("click", function (e) {
+  document.querySelectorAll(".selection-drawer").forEach(function (d) {
+    d.parentNode.querySelectorAll(".-trigger")[0].addEventListener("click", function (e) {
+      var o;
+      var a = e.currentTarget;
+      a.hasAttribute("_o") ? a.getAttribute("_o") === '1' ? (o = 1, a.setAttribute("_o", "0")) : (o = 0, a.setAttribute("_o", "1")) : (o = 0, a.setAttribute("_o", "1"));
       document.querySelectorAll(".selection-drawer").forEach(function (f) { f.classList.remove("open") })
-      if (e.currentTarget.parentNode.querySelectorAll(".selection-drawer")[0].classList.contains("open")) {
-        e.currentTarget.parentNode.querySelectorAll(".selection-drawer")[0].classList.remove("open")
-      } else {
-        e.currentTarget.parentNode.querySelectorAll(".selection-drawer")[0].classList.add("open");
+      if (o === 0) {
+        if (a.parentNode.querySelectorAll(".selection-drawer")[0].classList.contains("open")) {
+          a.parentNode.querySelectorAll(".selection-drawer")[0].classList.remove("open")
+        } else {
+          a.parentNode.querySelectorAll(".selection-drawer")[0].classList.add("open");
+        }
       }
     })
   })
@@ -570,8 +596,10 @@ if (document.getElementById("receiveDenom") &&
 }
 
 function changeSender(t, n) {
+  window.ocToken = n
   t.parentNode.classList.remove("open")
   document.querySelectorAll(".currentSend").forEach(function (e) { e.innerHTML = `<span><img loading="lazy" style="height:1.5rem" src="src/img/symbols/${n}.png">&nbsp;${n}&nbsp;<i class="fas fa-caret-down"></i></span>`; })
+  setBalances()
 }
 
 document.querySelectorAll(".option-switch").forEach(function (x) {
@@ -581,6 +609,17 @@ document.querySelectorAll(".option-switch").forEach(function (x) {
         f.classList.remove("selected");
       });
       t.currentTarget.classList.add("selected");
+      if (t.currentTarget.hasAttribute("data")) {
+        var s = t.currentTarget.getAttribute("data").split(",")
+        switch (s[0]) {
+          case "exMethod":
+            document.querySelectorAll(".send-receive-language").forEach(function (l) {
+              l.innerHTML = `${s[1].substring(0, 1).toUpperCase()}${s[1].substring(1).toLowerCase()} `
+            })
+            break;
+          default:
+        }
+      }
     })
   })
 })
@@ -626,25 +665,42 @@ function explorePool(p) {
 
 function stakingManager(h) {
   if (!h) { window.location = "#stake" }
-  if (window.poolPayload) {
+  if (window.dataPayload) {
     document.querySelectorAll(".data-explorer").forEach(function (e) { e.classList.remove("build-in") });
     document.getElementById("appMain") && (document.getElementById("appMain").classList.add("build-out"))
     document.getElementById("stakingManager") && (document.getElementById("stakingManager").classList.add("build-in"))
-    if (window.currentStakingPool && window.poolPayload.user.portfolio[window.currentStakingPool]) {
+    if (window.currentStakingPool && window.dataPayload.user.portfolio[window.currentStakingPool]) {
+      var as = window.dataPayload.tokens[window.currentStakingPool].assets
+      var a = ``;
+      var p = 0;
+      Object.keys(as).forEach(function (ask) {
+        a += `<span title="${ask}"><img style="z-index:${p};animation-delay:${(p+1)*0.2}s"  loading="lazy" src="src/img/symbols/${as[ask].icon}"></span>`;
+        p++;
+      });
       var secondary = `
         <h3>Account balance: <span><img loading="lazy" style="height:1.5rem" src="src/img/icon.png">&nbsp;BigWave Token</span></h3>
-    <p>${formatCurrency.format(window.poolPayload.user.balance)} BGW-T</p>
+    <p>${formatCurrency.format(window.dataPayload.user.balance)} BGW-T</p>
     `;
       var primary = `
-    <h2>Balance <span><img loading="lazy" style="height:1.5rem" src="src/img/symbols/${window.poolPayload.tokens[window.currentStakingPool].icon}">&nbsp;${window.poolPayload.tokens[window.currentStakingPool].name}</span></h2>
-    <p>${formatCurrency.format(window.poolPayload.user.portfolio[window.currentStakingPool].balance)} BGW-T</p>
+    <h2>Balance <span><img loading="lazy" style="height:1.5rem" src="src/img/symbols/${window.dataPayload.tokens[window.currentStakingPool].icon}">&nbsp;${window.dataPayload.tokens[window.currentStakingPool].name}</span></h2>
+    <p>${formatCurrency.format(window.dataPayload.user.portfolio[window.currentStakingPool].balance)} BGW-T</p>
+    <div class="overlap">${a}</div>
     `;
       document.getElementById("stakeActions").style.display = "block"
+      document.getElementById("stakeAgainstCoin").style.display = ""
+      document.getElementById("stakeAgainstCoin").setAttribute("src", `src/img/symbols/${window.dataPayload.tokens[window.currentStakingPool].icon}`);
+      document.getElementById("apyValue") && (
+        document.getElementById("apyValue").innerHTML = `${window.dataPayload.tokens[window.currentStakingPool].apy}%`
+      )
+      document.getElementById("totalStakedValue") && (
+        document.getElementById("totalStakedValue").innerHTML = `${formatCurrency.format(window.dataPayload.user.portfolio[window.currentStakingPool].balance)}`
+      )
+    updateBalancePreviewForStaking()
     }
     else {
       var primary = `
     <h3>Account balance: <span><img loading="lazy" style="height:1.5rem" src="src/img/icon.png">&nbsp;BigWave Token</span></h3>
-    <p>${formatCurrency.format(window.poolPayload.user.balance)} BGW-T</p>
+    <p>${formatCurrency.format(window.dataPayload.user.balance)} BGW-T</p>
     `;
       var secondary = ""
     }
@@ -655,13 +711,13 @@ function stakingManager(h) {
     })
     document.getElementById("poolList2").innerHTML = ``;
     var _f = 0;
-    Object.keys(window.poolPayload.tokens).forEach(function (key) {
+    Object.keys(window.dataPayload.tokens).forEach(function (key) {
       var tr = document.createElement("tr");
       tr.style['animation-delay'] = `${_f / 10}s`;
       _f++;
       if (window.currentStakingPool && window.currentStakingPool === key) { tr.classList.add("selected") }
-      if (window.poolPayload.tokens[key] && window.poolPayload.tokens[key].staking) {
-        var e = window.poolPayload.tokens[key];
+      if (window.dataPayload.tokens[key] && window.dataPayload.tokens[key].staking) {
+        var e = window.dataPayload.tokens[key];
         tr.innerHTML = `<td><div class="badge">
           <img loading="lazy" class="token-icon-mini" src="src/img/symbols/${e.icon}"><span>${key}</span>
           <span class="mobile-only l-imp-txt">${e.name}</span>
@@ -675,11 +731,19 @@ function stakingManager(h) {
         document.getElementById("poolList2").append(tr)
       } else { }
     });
+    document.getElementById("updateBalancePreviewForStakingUITrigger") && (
+      document.getElementById("updateBalancePreviewForStakingUITrigger").addEventListener("click", function (e) { updateBalancePreviewForStaking() }), document.getElementById("updateBalancePreviewForStakingUITrigger").addEventListener("mouseleave", function (e) { updateBalancePreviewForStaking() })
+    )
   }
   else {
   }
 }
-
+function updateBalancePreviewForStaking() {
+  window.ocToken = !window.ocToken ? "ETH" : window.ocToken.toUpperCase();
+  document.getElementById("stakingViewTokenBalance") && window.dataPayload.user.portfolio[window.ocToken] ? (
+    document.getElementById("stakingViewTokenBalance").innerHTML = formatCurrency.format(window.dataPayload.user.portfolio[window.ocToken].balance)
+  ) : (document.getElementById("stakingViewTokenBalance").innerHTML = `0.00`)
+}
 function selectStakingPool(t, p) {
   if (!p) { return false; }
   else {
@@ -697,25 +761,25 @@ function stakeCurrent() {
 
 function governanceInspector(h) {
   if (!h) { window.location = "#governance" }
-  if (window.poolPayload && document.getElementById("governanceInspector")) {
+  if (window.dataPayload && document.getElementById("governanceInspector")) {
     document.querySelectorAll(".data-explorer").forEach(function (e) { e.classList.remove("build-in") });
     document.getElementById("appMain") && (document.getElementById("appMain").classList.add("build-out"))
     document.getElementById("governanceInspector").classList.add("build-in")
 
     document.getElementById("governanceInspector").querySelectorAll(".balance-organiser")[0].innerHTML = `<h3>Account balance: <span><img loading="lazy" style="height:1.5rem" src="src/img/icon.png">&nbsp;BigWave Token</span></h3>
-    <p>${formatCurrency.format(window.poolPayload.user.balance)} BGW-T</p>`;
+    <p>${formatCurrency.format(window.dataPayload.user.balance)} BGW-T</p>`;
 
-    window.poolPayload.governance.statistics.active && (
-      document.getElementById("activeGauge").style.transform = `translateX(${window.poolPayload.governance.statistics.active.pc}%)`,
-      document.getElementById("activeVal").innerHTML = ` ${formatCurrency.format(window.poolPayload.governance.statistics.active.value)} BWV-T`
+    window.dataPayload.governance.statistics.active && (
+      document.getElementById("activeGauge").style.transform = `translateX(${window.dataPayload.governance.statistics.active.pc}%)`,
+      document.getElementById("activeVal").innerHTML = ` ${formatCurrency.format(window.dataPayload.governance.statistics.active.value)} BWV-T`
     )
-    window.poolPayload.governance.statistics.inactive && (document.getElementById("inactiveGauge").style.transform = `translateX(${window.poolPayload.governance.statistics.inactive.pc}%)`,
-      document.getElementById("inactiveVal").innerHTML = ` ${formatCurrency.format(window.poolPayload.governance.statistics.inactive.value)} BWV-T`)
-    window.poolPayload.governance.statistics.delegated && (document.getElementById("delegatedGauge").style.transform = `translateX(${window.poolPayload.governance.statistics.delegated.pc}%)`,
-      document.getElementById("delegatedVal").innerHTML = ` ${formatCurrency.format(window.poolPayload.governance.statistics.delegated.value)} BWV-T`)
+    window.dataPayload.governance.statistics.inactive && (document.getElementById("inactiveGauge").style.transform = `translateX(${window.dataPayload.governance.statistics.inactive.pc}%)`,
+      document.getElementById("inactiveVal").innerHTML = ` ${formatCurrency.format(window.dataPayload.governance.statistics.inactive.value)} BWV-T`)
+    window.dataPayload.governance.statistics.delegated && (document.getElementById("delegatedGauge").style.transform = `translateX(${window.dataPayload.governance.statistics.delegated.pc}%)`,
+      document.getElementById("delegatedVal").innerHTML = ` ${formatCurrency.format(window.dataPayload.governance.statistics.delegated.value)} BWV-T`)
 
-    window.poolPayload.governance.proposals && (
-      g = window.poolPayload.governance.proposals,
+    window.dataPayload.governance.proposals && (
+      g = window.dataPayload.governance.proposals,
       tbody = ``,
       _g = 0,
       g.forEach(function (e) {
@@ -743,13 +807,13 @@ function governanceInspector(h) {
 function inspectProposal(p) {
   if (!p) { return false; }
   p = Number(p)
-  if (window.poolPayload && window.poolPayload.governance.proposals && document.getElementById("proposalInspector")) {
+  if (window.dataPayload && window.dataPayload.governance.proposals && document.getElementById("proposalInspector")) {
     document.querySelectorAll(".data-explorer").forEach(function (e) { e.classList.remove("build-in") });
     document.getElementById("appMain") && (document.getElementById("appMain").classList.add("build-out"))
     document.getElementById("proposalInspector").classList.add("build-in")
 
     var t = false
-    window.poolPayload.governance.proposals.forEach(function (e) {
+    window.dataPayload.governance.proposals.forEach(function (e) {
       e.id && e.id === p && (t = e)
     })
 
@@ -791,9 +855,9 @@ function openPageElement() {
   var _a = 1;
   document.getElementById("explorePage") && (
     document.getElementById("explorePage").classList.add("build-in"),
-    window.poolPayload && window.selectedPool && (
-      window.poolPayload.tokens[window.selectedPool].assets && (
-        assets = window.poolPayload.tokens[window.selectedPool].assets,
+    window.dataPayload && window.selectedPool && (
+      window.dataPayload.tokens[window.selectedPool].assets && (
+        assets = window.dataPayload.tokens[window.selectedPool].assets,
         document.getElementById("assetsDisplay") && (document.getElementById("assetsDisplay").innerHTML = ""),
         Object.keys(assets).forEach(function (key) {
           if (document.getElementById("assetsDisplay")) {
@@ -811,13 +875,13 @@ function openPageElement() {
           }
         })
       ),
-      window.poolPayload.tokens[window.selectedPool].trades && (
-        trades = window.poolPayload.tokens[window.selectedPool].trades,
+      window.dataPayload.tokens[window.selectedPool].trades && (
+        trades = window.dataPayload.tokens[window.selectedPool].trades,
         tbody = ``,
         _b = 0,
         trades.forEach(function (trade) {
           if (document.getElementById("assetsDisplay")) {
-            var exRate = window.poolPayload.tokens[window.selectedPool].value;
+            var exRate = window.dataPayload.tokens[window.selectedPool].value;
             var time = trade.time;
             var ts = new Date(time * 1000);
             ts = `${ts.getFullYear()} ${monthName(ts.getMonth())} ${ts.getDate()} ${ts.getHours()}.${ts.getMinutes() < 10 ? '0' + ts.getMinutes() : ts.getMinutes()}`;
@@ -851,13 +915,13 @@ function openPageElement() {
         </tbody>
       </table>`)
       ),
-      window.poolPayload.tokens[window.selectedPool].swaps && (
-        swaps = window.poolPayload.tokens[window.selectedPool].swaps,
+      window.dataPayload.tokens[window.selectedPool].swaps && (
+        swaps = window.dataPayload.tokens[window.selectedPool].swaps,
         tbody = ``,
         _c = 0,
         swaps.forEach(function (exc) {
           if (document.getElementById("assetsDisplay")) {
-            var exRate = window.poolPayload.tokens[window.selectedPool].value;
+            var exRate = window.dataPayload.tokens[window.selectedPool].value;
             var time = exc.time;
             var ts = new Date(time * 1000);
             ts = `${ts.getFullYear()} ${monthName(ts.getMonth())} ${ts.getDate()} ${ts.getHours()}.${ts.getMinutes() < 10 ? '0' + ts.getMinutes() : ts.getMinutes()}`;
@@ -889,14 +953,14 @@ function openPageElement() {
       </table>`)
       ),
       document.getElementById("infoDisplay") && (
-        tok = window.poolPayload.tokens[window.selectedPool],
+        tok = window.dataPayload.tokens[window.selectedPool],
         address = `${tok.address.substring(0, 4)}...${tok.address.substring(tok.address.length - 4)}`,
         document.getElementById("infoDisplay").innerHTML = `<ul style="list-style:none">
         <li>Volume: ${formatCurrency.format(tok.volume)} ${window.selectedPool}</li>
         <li>Value: ${formatDollar.format(tok.volume * tok.value)}</li>
         <li>Supply: ${formatCurrency.format(tok.supply)} ${window.selectedPool}</li>
         <li>Address: ${address}</li>
-        </ul>`
+        </ul><br><br>${decodeURIComponent(tok.details)}`
       )
     ),
 
@@ -933,7 +997,7 @@ function wHist() {
           closePageElement()
           break;
         case "explore":
-          window.selectedPool = _p[1] && window.poolPayload.tokens[_p[1]] ? _p[1] : !window.selectedPool ? "error" : window.selectedPool;
+          window.selectedPool = _p[1] && window.dataPayload.tokens[_p[1]] ? _p[1] : !window.selectedPool ? "error" : window.selectedPool;
           openPageElement()
           break;
         case "stake":

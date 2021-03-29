@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <title>BigWave</title>
+  <meta name="description" content="A DAO-Governed, Cross-Chain, Permissionless, Sector-Based Index Fund-Management Protocol for Institutional Investors">
+  <meta name="keywords" content="{{$metaKeywords}}">
+
+  <link rel="shortcut icon" type="image/png" href="../bigwave/src/img/favicon.png" />
+  
+  <link rel="stylesheet" rel="preload" href="../bigwave/src/css/fonts.min.css">
+  <link rel="stylesheet" href="../bigwave/src/css/styles.min.css">
+  <script>window.pageName="landing";</script>
+  <script>window.currentApplicationLanguage="ru";</script>
+</head>
+
+<body>
+
+  <div id="app">
+
+    <div class="header">
+      <a id="homeTrigger" style="margin: auto;display: grid;align-items: center;">
+        <img src="../bigwave/src/img/logo-light.png" class="logo">
+      </a>
+      <div class="spacer"></div>
+
+      <a href="../bigwave" class="-link">Enter Bigwave&nbsp;<i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div id="hero">
+      <h1>
+        <x>русский язык This is </x>BigWave<x><br>Staking for ERC-20 Tokens and Token Pools</x>
+      </h1>
+      <p>
+        Exchange Stablecoins on the Ethereum Blockchain.<br>
+        Earn Rewards by supporting your favourite DeFi Projects.
+      </p>
+      <div id="cta">
+        <form>
+          <div class="input-group">
+            <input name="email" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              placeholder="mail@example.com">
+            <a class="btn" type="submit">Signup</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-flex">
+    <span>2021 BigWave</span>
+    <div class="link-flex">
+      <a href="#" title="email"><i class="fas fa-mail-bulk"></i></a>
+      <a href="#" title="telegram"><i class="fab fa-telegram-plane"></i></a>
+      <a href="#" title="discourse"><i class="fab fa-discourse"></i></a>
+      <a href="#" title="reddit"><i class="fab fa-reddit-alien"></i></a>
+      <a href="#" title="discord"><i class="fab fa-discord"></i></a>
+      <a href="#" title="twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" title="medium"><i class="fab fa-medium-m"></i></a>
+      <a href="#" title="slack"><i class="fab fa-slack"></i></a>
+      <a href="#" title="github"><i class="fab fa-github"></i></a>
+      <a href="#" title="vimeo"><i class="fab fa-vimeo-v"></i></a>
+    </div>
+    <div id="appLanguage" title="applicationLanguage">
+      <span class="-lng -trigger"><span id="currentLanguage"></span></span>
+      <div class="selection-drawer"></div>
+    </div>
+  </div>
+
+  </div>
+
+
+  <style>
+    #app *:not(.-link, .-link > i) {
+      opacity: 0;
+      animation: softAppear 2s ease forwards 1;
+      color: #fefefe;
+
+    }
+
+    #app {
+      filter: none;
+      background-color: unset;
+      display: grid;
+      height: 100vh;
+      grid-template-rows: auto 1fr auto;
+      overflow: scroll;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-family: "Montserrat", sans-serif;
+      animation-delay: .3s;
+    }
+
+    h1 x {
+      font-weight: 200;
+      animation-delay: .4s;
+
+    }
+
+    #hero {
+      padding: 2rem;
+    }
+
+    .header,
+    .footer-flex {
+      background: #110726;
+      box-shadow: 0 15px 40px -15px #0a011c;
+    }
+
+    #hero p {
+      margin-top: 6rem;
+      font-size: 1.5rem;
+      line-height: 2;
+      animation-delay: .5s;
+
+    }
+
+    .btn,
+    .input-group input {
+      font-size: 1.4rem;
+      padding: 1rem 2rem;
+    }
+
+    .input-group input {
+      width: 300px;
+      max-width: 90vw;
+    }
+
+    #cta {
+      margin-top: 6rem;
+      animation-delay: .7s;
+
+    }
+
+    body {
+      background-image: url(bg2.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+
+    }
+
+    .-link {
+      color: var(--red);
+      border-radius: 5px;
+      line-height: 1;
+      font-size: 1rem;
+      display: inline-flex;
+      align-content: center;
+      align-items: center;
+      padding: 4px 1rem;
+      transition: .2s ease;
+    }
+
+    .-link:hover {
+      background: var(--light-green);
+      color: var(--dark-green);
+    }
+
+    @media (max-width: 750px) {
+      .header {
+        margin: 0 !important;
+        padding: 1rem;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        border-radius: 0;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .-link {
+        background: var(--light-green);
+        color: var(--dark-green);
+        border-radius: 2rem;
+        line-height: 1;
+        font-size: 1rem;
+        display: inline-flex;
+        align-content: center;
+        align-items: center;
+        padding: 4px 1rem;
+      }
+    }
+
+  </style>
+<script type="text/javascript" src="../bigwave/src/js/language.min.js"></script>
+
+</body>
+
+</html>

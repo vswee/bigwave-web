@@ -586,6 +586,7 @@ p {
 .selection-drawer .sel {
   padding: .5rem;
   position: relative;
+  color: var(--white);
 }
 
 .selection-drawer .sel span, .currentSend span, #currentReceive span {

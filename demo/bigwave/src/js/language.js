@@ -69,19 +69,21 @@ function consumeXHR(xhr, pre) {
         ))
     });
     document.getElementById("app").classList.remove("-loading");
-    document.querySelectorAll(".-lng.-trigger")[0].addEventListener("click", function (e) {
-      var o;
-      var a = e.currentTarget;
-      a.hasAttribute("_o") ? a.getAttribute("_o") === '1' ? (o = 1, a.setAttribute("_o", "0")) : (o = 0, a.setAttribute("_o", "1")) : (o = 0, a.setAttribute("_o", "1"));
-      document.querySelectorAll(".selection-drawer").forEach(function (f) { f.classList.remove("open") })
-      if (o === 0) {
-        if (a.parentNode.querySelectorAll(".selection-drawer")[0].classList.contains("open")) {
-          a.parentNode.querySelectorAll(".selection-drawer")[0].classList.remove("open")
-        } else {
-          a.parentNode.querySelectorAll(".selection-drawer")[0].classList.add("open");
+    if (!window.dataPayload) {
+      document.querySelectorAll(".-lng.-trigger")[0].addEventListener("click", function (e) {
+        var o;
+        var a = e.currentTarget;
+        a.hasAttribute("_o") ? a.getAttribute("_o") === '1' ? (o = 1, a.setAttribute("_o", "0")) : (o = 0, a.setAttribute("_o", "1")) : (o = 0, a.setAttribute("_o", "1"));
+        document.querySelectorAll(".selection-drawer").forEach(function (f) { f.classList.remove("open") })
+        if (o === 0) {
+          if (a.parentNode.querySelectorAll(".selection-drawer")[0].classList.contains("open")) {
+            a.parentNode.querySelectorAll(".selection-drawer")[0].classList.remove("open")
+          } else {
+            a.parentNode.querySelectorAll(".selection-drawer")[0].classList.add("open");
+          }
         }
-      }
-    })
+      })
+    }
   } else {
     document.getElementById("app").classList.remove("-loading");
   }

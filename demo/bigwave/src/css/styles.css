@@ -1301,42 +1301,48 @@ h1.major {
     margin-top: 0;
     margin-bottom: 0;
   }
-  #tradesDisplay .table tbody tr.tr-buy, #tradesDisplay .table tbody tr.tr-sell {
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-  }
-  #tradesDisplay .table tbody tr.tr-buy::after, #tradesDisplay .table tbody tr.tr-sell::after, #tradesDisplay .table tbody tr.tr-buy::before, #tradesDisplay .table tbody tr.tr-sell::before {
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: -2rem;
-    text-align: right;
-    padding: 1rem;
-    font-weight: 900;
-    z-index: 0;
-  }
-  #tradesDisplay .table tbody tr.tr-buy::after {
-    content: "BUY";
-    color: var(--red);
-  }
-  #tradesDisplay .table tbody tr.tr-buy::before {
-    content: "";
-    background-color: var(--red);
-    opacity: .2;
-  }
-  #tradesDisplay .table tbody tr.tr-sell::after {
-    content: "SELL";
-    color: var(--medium-green);
-  }
-  #tradesDisplay .table tbody tr.tr-sell::before {
-    content: "";
-    background-color: var(--medium-green);
-    opacity: .2;
-  }
-  .table tbody tr, #tradesDisplay .table tbody tr, #swapsDisplay .table tbody tr, #poolList2 tr {
+  #tradesDisplay .table tbody tr.tr-buy,
+#tradesDisplay .table tbody tr.tr-sell {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#tradesDisplay .table tbody tr.tr-buy::after,
+#tradesDisplay .table tbody tr.tr-sell::after,
+#tradesDisplay .table tbody tr.tr-buy::before,
+#tradesDisplay .table tbody tr.tr-sell::before  {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: -2rem;
+  text-align: right;
+  padding: 1rem;
+  font-weight: 900;
+  z-index: 0;
+}
+#tradesDisplay .table tbody tr.tr-buy::after {
+  content: "BUY";
+  color: var(--red);
+}
+#tradesDisplay .table tbody tr.tr-buy::before{
+  content: "";
+  background-color: var(--red);
+  opacity: .2;
+}
+#tradesDisplay .table tbody tr.tr-sell::after {
+  content: "SELL";
+  color: var(--medium-green);
+}
+#tradesDisplay .table tbody tr.tr-sell::before{
+  content: "";
+  background-color: var(--medium-green);
+  opacity: .2;
+}
+.table tbody:not(#poolList) tr,
+  #tradesDisplay .table tbody tr, #swapsDisplay .table tbody tr, #poolList2 tr {
     display: flex;
     flex-direction: column;
     background: var(--light-20);
@@ -1411,4 +1417,8 @@ h1.major {
   #stakeActions {
     margin-top: 2rem;
   }
+  #appLanguage {
+    margin-left: auto;
+    margin-right: 0;
+}
 }

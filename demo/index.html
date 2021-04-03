@@ -6,35 +6,46 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
   <title>BigWave</title>
-  <meta name="description" content="A DAO-Governed Cross-Chain Permissionless Sector-based index fund Management Protocol for institutional investors">
+  <meta name="description"
+    content="A DAO-Governed Cross-Chain Permissionless Sector-based index fund Management Protocol for institutional investors">
   <meta name="keywords" content="{{$metaKeywords}}">
 
   <link rel="shortcut icon" type="image/png" href="bigwave/src/img/favicon.png" />
 
   <link rel="stylesheet" rel="preload" href="bigwave/src/css/fonts.min.css">
   <link rel="stylesheet" href="bigwave/src/css/styles.min.css">
-  <script>window.pageName="landing";</script>
+  <script>window.pageName = "landing";</script>
 </head>
 
 <body>
 
   <div id="app">
+    <div class="header">
+      <a id="homeTrigger" style="margin: auto;display: grid;align-items: center;">
+        <img src="bigwave/src/img/logo-light.png" class="logo">
+      </a>
+      <div class="spacer"></div>
+
+      <a href="bigwave" class="-link">Enter Bigwave&nbsp;<i class="fas fa-arrow-right"></i></a>
+    </div>
 
     <div>
       <div id="hero">
-        <h1><img src="bigwave/src/img/logo-large.svg" class="logo" style="width: 300px;max-width: 90vw;margin-left: -1rem;">
-          <x><br>Let’s Ride the Waves with Wales!</x>
+        <h1><x>Let’s Ride the Waves with Whales!</x>
         </h1>
-        <a href="bigwave" class="-link">Enter Bigwave&nbsp;<i class="fas fa-arrow-right"></i></a>
         <p>
-          <b>Bigwave</b> is A DAO-Governed Cross-Chain Permissionless Sector-based index fund Management Protocol for institutional investors.
+          <b>Bigwave</b> is A DAO-Governed Cross-Chain Permissionless Sector-based index fund Management Protocol for
+          institutional investors.
           <br>
           <br>
           <i class="fas fa-check-circle" style="color: var(--light-green);"></i>
-          <span style="display: inline-block;width: calc(100% - 4rem);vertical-align: top;padding-left: 1rem;">Institutional investors create indexed tokens that represents their portfolios.</span>
+          <span
+            style="display: inline-block;width: calc(100% - 4rem);vertical-align: top;padding-left: 1rem;">Institutional
+            investors create indexed tokens that represents their portfolios.</span>
           <br>
           <i class="fas fa-check-circle" style="color: var(--light-green);"></i>
-          <span style="display: inline-block;width: calc(100% - 4rem);vertical-align: top;padding-left: 1rem;">Retail investors get access to investment tools like a Wall Street money manager - with one click.</span>
+          <span style="display: inline-block;width: calc(100% - 4rem);vertical-align: top;padding-left: 1rem;">Retail
+            investors get access to investment tools like a Wall Street money manager - with one click.</span>
         </p>
         <div id="cta">
           <form>
@@ -98,9 +109,138 @@
 
 
   <style>
- .sponsor-logo{max-width:calc(100vw - 4rem);width:calc(200px - 4rem);margin:2rem;opacity:0;animation:softAppear 2s ease forwards 1}h2{margin-left:2rem;margin-top:4rem;font-weight:800;font-family:Montserrat,sans-serif;font-size:1.3rem}#app :not(.-link,.-link>i){opacity:0;animation:softAppear 2s ease forwards 1;color:#fefefe}#app{filter:none;background-color:unset;display:grid;min-height:100vh;grid-template-rows:1fr auto;overflow:scroll}h1{font-size:4rem;font-family:Montserrat,sans-serif;animation-delay:.3s}h1 x{font-weight:200;animation-delay:.4s}#hero{padding:2rem}.footer-flex,.header{background:#110726;box-shadow:0 15px 40px -15px #0a011c}#hero p{margin-top:6rem;font-size:1.5rem;line-height:2;animation-delay:.5s}.btn,.input-group input{font-size:1.4rem;padding:1rem 2rem}.input-group input{width:300px;max-width:90vw}#cta{margin-top:6rem;animation-delay:.7s}body{background-image:url(bg2.svg);background-size:cover;background-repeat:no-repeat}.-link{color:#afa2c4;border-radius:5px;line-height:1;font-size:1rem;display:inline-flex;align-content:center;align-items:center;padding:1rem 2rem;transition:.2s ease;background:var(--medium)}.-link,input{box-shadow:0 10px 30px -10px var(--shadow-10)}.-link:hover{background:var(--light-green);color:var(--dark-green)}@media (max-width:750px){.header{margin:0!important;padding:1rem;width:100vw!important;max-width:100vw!important;border-radius:0}h1{font-size:2.5rem}.-link{background:var(--light-green);color:var(--dark-green);border-radius:2rem;line-height:1;font-size:1rem;display:inline-flex;align-content:center;align-items:center;padding:4px 1rem}}
+    .sponsor-logo {
+      max-width: calc(100vw - 4rem);
+      width: calc(200px - 4rem);
+      margin: 2rem;
+      opacity: 0;
+      animation: softAppear 2s ease forwards 1
+    }
+
+    h2 {
+      margin-left: 2rem;
+      margin-top: 4rem;
+      font-weight: 800;
+      font-family: Montserrat, sans-serif;
+      font-size: 1.3rem
+    }
+
+    #app :not(.-link, .-link>i) {
+      opacity: 0;
+      animation: softAppear 2s ease forwards 1;
+      color: #fefefe
+    }
+
+    #app {
+      filter: none;
+      background-color: unset;
+      display: grid;
+      min-height: 100vh;
+      grid-template-rows: 1fr auto;
+      overflow: scroll
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-family: Montserrat, sans-serif;
+      animation-delay: .3s
+    }
+
+    h1 x {
+      font-weight: 200;
+      animation-delay: .4s
+    }
+
+    #hero {
+      padding: 2rem
+    }
+
+    .footer-flex,
+    .header {
+      background: #110726;
+      box-shadow: 0 15px 40px -15px #0a011c
+    }
+
+    #hero p {
+      margin-top: 6rem;
+      font-size: 1.5rem;
+      line-height: 2;
+      animation-delay: .5s
+    }
+
+    .btn,
+    .input-group input {
+      font-size: 1.4rem;
+      padding: 1rem 2rem
+    }
+
+    .input-group input {
+      width: 300px;
+      max-width: 90vw
+    }
+
+    #cta {
+      margin-top: 6rem;
+      animation-delay: .7s
+    }
+
+    body {
+      background-image: url(bg2.svg);
+      background-size: cover;
+      background-repeat: no-repeat
+    }
+
+    .-link {
+      color: #afa2c4;
+      border-radius: 5px;
+      line-height: 1;
+      font-size: 1rem;
+      display: inline-flex;
+      align-content: center;
+      align-items: center;
+      padding: 4px 1rem;
+      transition: .2s ease;
+      background: var(--medium)
+    }
+
+    .-link,
+    input {
+      box-shadow: 0 10px 30px -10px var(--shadow-10)
+    }
+
+    .-link:hover {
+      background: var(--light-green);
+      color: var(--dark-green)
+    }
+
+    @media (max-width:750px) {
+      .header {
+        margin: 0 !important;
+        padding: 1rem;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        border-radius: 0
+      }
+
+      h1 {
+        font-size: 2.5rem
+      }
+
+      .-link {
+        background: var(--light-green);
+        color: var(--dark-green);
+        border-radius: 2rem;
+        line-height: 1;
+        font-size: 1rem;
+        display: inline-flex;
+        align-content: center;
+        align-items: center;
+        padding: 4px 1rem
+      }
+    }
+
   </style>
-<script type="text/javascript" src="bigwave/src/js/language.min.js"></script>
+  <script type="text/javascript" src="bigwave/src/js/language.min.js"></script>
 
 </body>
 

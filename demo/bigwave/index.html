@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
   <title>BigWave</title>
-  <meta name="description" content="A DAO-Governed, Cross-Chain, Permissionless, Sector-Based Index Fund-Management Protocol for Institutional Investors">
+  <meta name="description" content="{{$metaDescription}}">
   <meta name="keywords" content="{{$metaKeywords}}">
 
   <link rel="shortcut icon" type="image/png" href="src/img/favicon.png" />
   <link rel="stylesheet" rel="preload" href="src/css/fonts.min.css">
   <link rel="stylesheet" href="src/css/styles.min.css">
-
+  <script>window.applicationLanguage = 'en';</script>
 </head>
 
 <body>
@@ -189,29 +189,25 @@
         <img src="src/img/logo.png" class="logo light-only">
       </a>
       <div class="spacer"></div>
-      <div class="menuTrigger mobile-only">
+      <div class="menuTrigger mobile-only"
+        onclick="this.classList.contains(`open`) ? (this.classList.remove(`open`)) : (this.classList.add(`open`))">
         <i class="fas fa-times"></i>
         <i class="fas fa-bars"></i>
       </div>
       <div class="menu desktop-only">
-        <a onclick="governanceInspector()" class="link">Governance</a>
-        <a onclick="stakingManager()" class="link">Stake</a>
-        <a href="" class="link">Docs</a>
-        <a onclick="setThemeLight()" class="link-btn dark-only">
-          <x class="desktop-only"><i class="fas fa-adjust"></i></x>
-          <x class="mobile-only">Light Theme</x>
+        <a v-for="m in data.__data[applicationLanguage].ui.menu" v-if="m.link.length>0" v-bind:href="m.link"
+          v-bind:class="m.class" v-bind:id="m.id" v-bind:style="m.style">
+          <span v-for="s in m.span" v-bind:class="s.class">
+            <i v-for="i in s.icon" v-bind:class="i.class"></i>{{s.title}}
+          </span>
+          {{m.title}}
         </a>
-        <a onclick="setThemeDark()" class="link-btn light-only">
-          <x class="desktop-only"><i class="fas fa-adjust"></i></x>
-          <x class="mobile-only">Dark Theme</x>
-        </a>
-        <a class="link-btn btn-connect">
-          <x class="desktop-only"><i class="fas fa-wallet"></i></x>
-          <x class="mobile-only">Link Wallet</x>
-        </a>
-        <a id="btn-disconnect" style="display:none;" class="link-btn">
-          <x class="desktop-only"><i class="fas fa-unlink"></i></x>
-          <x class="mobile-only">Un-link Wallet</x>
+        <a v-for="m in data.__data[applicationLanguage].ui.menu" v-if="m.click.length>0" v-bind:onclick="m.click"
+          v-bind:class="m.class" v-bind:id="m.id" v-bind:style="m.style">
+          <span v-for="s in m.span" v-bind:class="s.class">
+            <i v-for="i in s.icon" v-bind:class="i.class"></i>{{s.title}}
+          </span>
+          {{m.title}}
         </a>
       </div>
     </div>
@@ -232,32 +228,48 @@
         <div id="exchangerUI" class="desktop-only">
           <div id="exchangeInputGroup">
             <div class="option-switch onOff sans-serif">
-              <span class="selected" data="exMethod,deposit">Deposit</span>
-              <span data="exMethod,withdraw">Withdraw</span>
+              <span class="selected">{{data.__data[applicationLanguage].ui.buttons.deposit}}</span>
+              <span>{{data.__data[applicationLanguage].ui.buttons.withdraw}}</span>
             </div>
             <div class="input-container">
               <div class="input-group">
-                <div id="sendDenom" class="input-organiser">
-                  <small class="current-balance -cbt"></small>
-                  <small><span class="send-receive-language">Deposit </span>Token</small>
-                  <span id="currentSend" class="currentSend -trigger"></span>
-                  <div class="selection-drawer -token-options">
+                <div id="sendDenom">
+                  <small>Choose a Token</small>
+                  <div class="input-group-flex">
+                    <span class="currentSend"
+                      v-bind:onclick="data.depositTokens.length > 1 ? 'document.querySelectorAll(`.selection-drawer`).forEach(function (f) { f.classList.remove(`open`) });this.parentNode.querySelector(`.selection-drawer`).classList.contains(`open`)?(this.parentNode.querySelector(`.selection-drawer`).classList.remove(`open`)):(this.parentNode.querySelector(`.selection-drawer`).classList.add(`open`))' : 'return false;'">
+                      <span v-for="i in data.depositTokens" v-if="$data.__depositSelection===i.name">
+                        <img style="height:1.5rem" v-bind:src="i.icon">&nbsp;{{i.name}}&nbsp;
+                        <i v-if="data.depositTokens.length > 1" class="fas fa-caret-down"></i>
+                      </span>
+                    </span>
+                    <div class="selection-drawer" onmouseleave="this.classList.remove('open')">
+                      <span v-for="i in data.depositTokens" class="sel"
+                        v-bind:onclick="'this.parentNode.classList.remove(`open`); window.__pool.__depositSelection=`' + i.name +'`'">
+                        <span><img loading="lazy" style="height:1.5rem" v-bind:src="i.icon">&nbsp;{{i.name}}</span>
+                      </span>
+                    </div>
+                    <input id="dollarInput" type="text"
+                      pattern="(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([0-9]+[0-9]*)(\.([0-9]{1,20}))?)"
+                      value="10000">
                   </div>
-                <input id="dollarInput" type="text"
-                  pattern="(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([0-9]+[0-9]*)(\.([0-9]{1,20}))?)" value="10000">
+                  <small style="text-align:center">1 ETH : {{data.blockchain.eth_bgwt}} {{data.__data[applicationLanguage].token.name}}</small>
+
                 </div>
               </div>
               <div class="input-group">
-                <div id="receiveDenom" class="input-organiser">
-                  <small class="current-balance -cbp"></small>
+                <div id="receiveDenom">
                   <small>Pool group</small>
-                  <span id="currentReceive"></span>
-                <input id="tokenInput" value="">
+                  <div class="input-group-flex">
+                    <span id="currentReceive"></span>
+                    <input id="tokenInput" value="">
+                  </div>
                 </div>
               </div>
             </div>
-            <p class="help-text">Connect your wallet to complete this transaction.</p>
-            <a class="btn btn-connect"><i class="fas fa-wallet"></i>&nbsp;Connect Wallet</a>
+            <p class="help-text">{{data.__data[applicationLanguage].ui.labels.helpConnect}}</p>
+            <a class="btn btn-connect"><i
+                class="fas fa-wallet"></i>&nbsp;{{data.__data[applicationLanguage].ui.labels.connect}}</a>
           </div>
         </div>
       </div>
@@ -275,7 +287,38 @@
               <th></th>
             </tr>
           </thead>
-          <tbody class="pool-list" id="poolList"></tbody>
+          <tbody class="pool-list" id="poolList">
+            <tr v-for="(i, itemObjKey) in data.tokens" v-bind:style="'animation-delay:' + (itemObjKey+0.01)/10 + 's'"
+              v-bind:class="selected===i.tid? 'selected' : '' "
+              v-bind:onclick="'selectPool(`' + i.tid + '`, ' + itemObjKey + ')'">
+
+              <td>
+                <div class="badge">
+                  <img loading="lazy" class="token-icon-mini" v-bind:src="i.icon"><span>{{i.tid}}</span>
+                  <span class="mobile-only l-imp-txt">{{i.name}}</span>
+                </div>
+              </td>
+              <td class="desktop-only">{{i.name}}</td>
+              <td>${{i.value}}
+                <span class="mobile-only">
+                  <span v-bind:class="i['24hr-change-percent'] > 0 ? 'good' : 'bad'">
+                    <i v-bind:class="'fas fa-arrow-' + i['24hr-change-percent'] > 0 ? 'up' : 'down'"></i>
+                    {{i['24hr-change-percent']}}
+                    %</span>
+                </span>
+              </td>
+
+              <td class="desktop-only"><span v-bind:class="i['24hr-change-percent'] > 0 ? 'good' : 'bad'">
+                  <i v-bind:class="'fas fa-arrow-' + i['24hr-change-percent'] > 0 ? 'up' : 'down'"></i>
+                  {{i['24hr-change-percent']}}
+                  %</span></td>
+
+              <td class="desktop-only">$ {{i.volume}}</td>
+
+              <td class="desktop-only" style="padding:0"><a style="padding:1rem"
+                  v-bind:onclick="'window.location=`#explore=' + i.tid +'`'"><i class="fas fa-caret-right"></i></a></td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -283,7 +326,9 @@
     <div id="explorePage" class="data-explorer">
       <h1 class="major">Explore Pools</h1>
       <div>
-        <h1 id="poolHeader"></h1>
+        <h1 id="poolHeader">
+          <img loading="lazy" style="height:2rem" v-bind:src="data.tokens[selectedIndex].icon">&nbsp;{{selected}} Pool
+        </h1>
         <div class="option-switch onOff sans-serif" id="exploreTabsControls">
           <span class="selected" filter="assets">Assets</span>
           <span filter="trades">Trades</span>
@@ -292,10 +337,82 @@
         </div>
       </div>
       <div id="explorePayloads">
-        <div id="assetsDisplay" filter="assets">No Items found...</div>
-        <div id="tradesDisplay" filter="trades">No Items found...</div>
-        <div id="swapsDisplay" filter="swaps">No Items found...</div>
-        <div id="infoDisplay" filter="info">No Items found...</div>
+        <div id="assetsDisplay" filter="assets">
+          <div class="asset-organiser" v-for="(i, itemObjKey) in data.tokens[selectedIndex].assets"
+            v-bind:style="'animation-delay:' + (itemObjKey+0.01)/10 + 's'">
+            <img loading="lazy" style="height:2.5rem" v-bind:src="i.icon">&nbsp;
+            <div class="txt">
+              <h2>{{i.name}}</h2>
+              <p>{{formatCurrency(i.amount)}} {{i.name}} = {{formatDollar(i.value)}}
+                <br>Provides {{i.pc}}% of {{selected}} Pool liquidity.
+              </p>
+            </div><span class="bar-gauge"><span
+                v-bind:style="'transform:translateX(' + i.pc +'%);background-color:' + i.colour"></span></span>
+          </div>
+        </div>
+        <div id="tradesDisplay" filter="trades">
+          <table class="table">
+            <thead class="desktop-only">
+              <tr class="">
+                <th class="" scope="col">Time</th>
+                <th class="" scope="col">Input</th>
+                <th class="" scope="col">Type</th>
+                <th class="" scope="col">Output</th>
+                <th class="" scope="col">Transaction</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(i, itemObjKey) in data.tokens[selectedIndex].trades"
+                v-bind:style="'animation-delay:' + (itemObjKey+0.01)/10 + 's'" v-bind:class="'tr-' + i.type">
+                <td>
+                  <div class="date-approx"><span>{{__ts(i.time)}}</span><small>{{timeDifference(i.time)}}</small></div>
+                </td>
+                <td>{{ !i.input ? Number(i.output) * data.tokens[selectedIndex].value + ' ' + selected : i.input + ' ' +
+                  i.currency }}</td>
+                <td><span v-bind:class="'desktop-only ' + i.type">{{i.type}}</span></td>
+                <td>{{ !i.output ? Number(i.input) / data.tokens[selectedIndex].value + ' ' + selected : i.output + ' '
+                  + i.currency}}</td>
+                <td><a v-bind:href="i.tx">{{i.tx.substring(0, 4) + '...' + i.tx.substring(i.tx.length - 4)}}&nbsp;<i
+                      class="fas fa-external-link-alt"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="swapsDisplay" filter="swaps">
+          <table class="table">
+            <thead class="desktop-only">
+              <tr class="">
+                <th class="" scope="col">Time</th>
+                <th class="" scope="col">Input</th>
+                <th class="" scope="col">Output</th>
+                <th class="" scope="col">Transaction</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(i, itemObjKey) in data.tokens[selectedIndex].swaps"
+                v-bind:style="'animation-delay:' + (itemObjKey+0.01)/10 + 's'">
+                <td>
+                  <div class="date-approx"><span>{{__ts(i.time)}}</span><small>{{timeDifference(i.time)}}</small></div>
+                </td>
+                <td>{{ !i.input ? Number(i.output) * data.tokens[selectedIndex].value + ' ' + selected : i.input + ' ' +
+                  i.currency }}</td>
+                <td>{{ !i.output ? Number(i.input) / data.tokens[selectedIndex].value + ' ' + selected : i.output + ' '
+                  + i.currency}}</td>
+                <td><a v-bind:href="i.tx">{{i.tx.substring(0, 4) + '...' + i.tx.substring(i.tx.length - 4)}}&nbsp;<i
+                      class="fas fa-external-link-alt"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="infoDisplay" filter="info">
+          <ul style="list-style:none">
+            <li>Volume: {{formatCurrency(data.tokens[selectedIndex].volume)}} {{selected}}</li>
+            <li>Value: {{formatDollar(data.tokens[selectedIndex].volume * data.tokens[selectedIndex].value)}}</li>
+            <li>Supply: {{formatCurrency(data.tokens[selectedIndex].supply)}} {{selected}}</li>
+            <li>Address: {{data.tokens[selectedIndex].address.substring(0, 4) + '...' +
+              data.tokens[selectedIndex].address.substring(data.tokens[selectedIndex].address.length - 4)}}</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -303,32 +420,81 @@
       <h1 class="major">Staking</h1>
 
       <div class="-flex">
-        <div id="rewardsSummary">
-          <div class="balance-organiser"></div>
-          <div class="balance-organiser prominent"></div>
+        <div id="rewardsSummary" v-if="data.user.portfolio[$data.__stakingSelection]">
+          <div class="balance-organiser">
+            <h3>Account balance: <span><img loading="lazy" style="height:1.5rem"
+                  src="src/img/icon.png">&nbsp;{{data.__data[applicationLanguage].token.name_long}}</span></h3>
+            <p>{{formatCurrency(data.user.balance)}} {{data.__data[applicationLanguage].token.name}}</p>
+          </div>
+          <div class="balance-organiser prominent" v-for="t in data.tokens" v-if="t.tid===$data.__stakingSelection">
+            <h2>Balance <span><img loading="lazy" style="height:1.5rem" v-bind:src="t.icon">&nbsp;{{t.name}}</span></h2>
+            <p>{{formatCurrency(data.user.portfolio[$data.__stakingSelection].balance)}}
+              {{data.__data[applicationLanguage].token.name}}</p>
+          </div>
         </div>
-        <div id="stakeActions">
+        <div id="rewardsSummary" v-else>
+          <div class="balance-organiser prominent">
+            <h3>Account balance: <span><img loading="lazy" style="height:1.5rem"
+                  src="src/img/icon.png">&nbsp;{{data.__data[applicationLanguage].token.name_long}}</span></h3>
+            <p>{{formatCurrency(data.user.balance)}} {{data.__data[applicationLanguage].token.name}}</p>
+          </div>
+        </div>
+        <div id="stakeActions" v-for="t in data.tokens"
+          v-bind:style="t.tid===$data.__stakingSelection?'display:block':'display:none'">
           <div id="stakeOrganiser">
             <label>Total Staked</label>
             <label>APY</label>
-            <span id="totalStakedValue"></span>
-            <span id="apyValue"></span>
+            <span v-for="e in data.tokens" v-if="e.tid===$data.__stakingSelection">
+              {{formatHumanise(e.staking.volume)}}
+            </span>
+
+            <span v-for="e in data.tokens" v-if="e.tid===$data.__stakingSelection">
+              {{e.staking.rate}} %
+            </span>
             <div class="overlap">
-              <span><img src="src/img/symbols/bgw-t.png"></span>
-              <span><img id="stakeAgainstCoin" style="display:none;"></span>
+              <span v-for="i in data.depositTokens" v-if="$data.__depositSelection===i.name">
+                <img v-bind:src="i.icon">
+              </span>
+              <span v-for="t in data.tokens" v-if="t.tid===$data.__stakingSelection">
+                <img v-bind:src="t.icon">
+              </span>
             </div>
           </div>
           <div class="input-group">
-            <label>Use from balances:</label>
-            <span class="currentSend -trigger" id="updateBalancePreviewForStakingUITrigger"></span>
-            <div class="selection-drawer -token-options">
+            <label>Wallet Balance: {{formatCurrency(data.user.ether.balance)}}</label>
+            <br>
+            <label>Your Stake: {{formatCurrency(data.user.ether.balance)}}</label>
+          </div>
+          <div class="input-group">
+            <div class="input-group-flex">
+              <label>Your Rewards: {{formatCurrency(data.user.ether.balance)}}</label>
+              <a class="btn -disable" style="margin-left: auto;">Claim</a>
+              </div>
             </div>
-            <input type="text" placeholder="0.00" value="">
-            <small>Available Balance: <span id="stakingViewTokenBalance"></span></small>
+          <div class="input-group">
+
+            <small>Stake Amount:</small>
+            <div class="input-group-flex">
+              <span class="currentSend"
+                v-bind:onclick="data.depositTokens.length > 1 ? 'document.querySelectorAll(`.selection-drawer`).forEach(function (f) { f.classList.remove(`open`) });this.parentNode.querySelector(`.selection-drawer`).classList.contains(`open`)?(this.parentNode.querySelector(`.selection-drawer`).classList.remove(`open`)):(this.parentNode.querySelector(`.selection-drawer`).classList.add(`open`))' : 'return false;'">
+                <span v-for="i in data.depositTokens" v-if="$data.__depositSelection===i.name">
+                  <img style="height:1.5rem" v-bind:src="i.icon">&nbsp;{{i.name}}&nbsp;
+                  <i v-if="data.depositTokens.length > 1" class="fas fa-caret-down"></i>
+                </span>
+              </span>
+              <div class="selection-drawer" onmouseleave="this.classList.remove('open')">
+                <span v-for="i in data.depositTokens" class="sel"
+                  v-bind:onclick="'this.parentNode.classList.remove(`open`); window.__pool.__depositSelection=`' + i.name +'`'">
+                  <span><img loading="lazy" style="height:1.5rem" v-bind:src="i.icon">&nbsp;{{i.name}}</span>
+                </span>
+              </div>
+              <input style="max-width: 100px;margin-right: 1rem;" id="dollarInput" type="text"
+                pattern="(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([0-9]+[0-9]*)(\.([0-9]{1,20}))?)"
+                value="10000">
+            <a class="btn" onclick="stakeCurrent()" style="margin-left: auto;">Stake</a>
+            </div>
           </div>
           <div class="-flex">
-            <a class="btn -disable">Claim</a>
-            <a class="btn" onclick="stakeCurrent()">Stake</a>
             <a class="btn -disable">Exit</a>
           </div>
         </div>
@@ -339,14 +505,31 @@
           <thead class="desktop-only">
             <tr class="">
               <th></th>
-              <th class="" scope="col">Staking Ends</th>
-              <th class="" scope="col">BGW-T Staked</th>
+              <th class="" scope="col">APY</th>
+              <th class="" scope="col">{{data.__data[applicationLanguage].token.name}} Liquidity</th>
               <th class="" scope="col">Reward</th>
               <th class="" scope="col">Volume</th>
               <th class="" scope="col">Pool Address</th>
             </tr>
           </thead>
-          <tbody class="pool-list" id="poolList2"></tbody>
+          <tbody class="pool-list" id="poolList2">
+            <tr v-for="(e, itemObjKey) in data.tokens" v-bind:style="'animation-delay:' + (itemObjKey+0.01)/10 + 's'"
+              v-if="e.staking" v-bind:onclick="'selectStakingPool(' + itemObjKey + ', `' + e.tid + '`)'"
+              v-bind:class="e.tid===$data.__stakingSelection?'selected':''">
+              <td>
+                <div class="badge">
+                  <img loading="lazy" class="token-icon-mini" v-bind:src="e.icon"><span>{{e.tid}}</span>
+                  <span class="mobile-only l-imp-txt">{{e.tid}}</span>
+                </div>
+              </td>
+              <td>{{e.staking.rate}} %</td>
+              <td>{{formatCurrency(e.staking.volume)}} {{e.tid}}</td>
+              <td>{{formatCurrency(e.staking.rate)}} {{data.__data[applicationLanguage].token.name}}/day</td>
+              <td>{{formatCurrency(e.staking.balance)}} {{data.__data[applicationLanguage].token.name}}</td>
+              <td><a v-bind:href="'https://etherscan.io/address/' + e.staking.tx">{{e.staking.tx.substring(0, 4) +'...'
+                  + e.staking.tx.substring(e.staking.tx.length - 4)}}<i class="fas fa-external-link-alt"></i></a></td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -356,23 +539,41 @@
       <h1 class="major">Governance</h1>
       <div class="-flex">
         <div id="walletSummary">
-          <div class="balance-organiser prominent"></div>
+          <div class="balance-organiser prominent">
+
+            <h3>Account balance: <span><img loading="lazy" style="height:1.5rem" src="src/img/icon.png">&nbsp;BigWave
+                Token</span></h3>
+            <p>{{formatCurrency(data.user.balance)}} {{data.__data[applicationLanguage].token.name}}</p>
+
+          </div>
           <a class="btn btn-connect"><i class="fas fa-wallet"></i>&nbsp;Connect Wallet</a>
         </div>
         <div id="governanceStatistics">
           <div class="asset-organiser">
-            <label>Active<b id="activeVal"></b></label>
-            <span class="bar-gauge"><span id="activeGauge"></span></span>
+            <label>Active<b id="activeVal">
+                {{formatCurrency(data.governance.statistics.active.value)}}
+                {{data.__data[applicationLanguage].token.name}}
+              </b></label>
+            <span class="bar-gauge"><span id="activeGauge"
+                v-bind:style="'transform:translateX(' + data.governance.statistics.active.pc + '%)'"></span></span>
           </div>
 
           <div class="asset-organiser">
-            <label>Inactive<b id="inactiveVal"></b></label>
-            <span class="bar-gauge"><span id="inactiveGauge"></span></span>
+            <label>Inactive<b id="inactiveVal">
+                {{formatCurrency(data.governance.statistics.inactive.value)}}
+                {{data.__data[applicationLanguage].token.name}}
+              </b></label>
+            <span class="bar-gauge"><span id="inactiveGauge"
+                v-bind:style="'transform:translateX(' + data.governance.statistics.inactive.pc + '%)'"></span></span>
           </div>
 
           <div class="asset-organiser">
-            <label>Delegated<b id="delegatedVal"></b></label>
-            <span class="bar-gauge"><span id="delegatedGauge"></span></span>
+            <label>Delegated<b id="delegatedVal">
+                {{formatCurrency(data.governance.statistics.delegated.value)}}
+                {{data.__data[applicationLanguage].token.name}}
+              </b></label>
+            <span class="bar-gauge"><span id="delegatedGauge"
+                v-bind:style="'transform:translateX(' + data.governance.statistics.delegated.pc + '%)'"></span></span>
           </div>
 
         </div>
@@ -389,7 +590,25 @@
               <th></th>
             </tr>
           </thead>
-          <tbody class="pool-list" id="poolList3"></tbody>
+          <tbody class="pool-list" id="poolList3">
+            <tr v-for="(i, itemObjKey) in data.governance.proposals"
+              v-bind:style="'animation-delay:' + (itemObjKey+0.01)/10 + 's'">
+              <td>
+                <div class="status-badge"><span>{{i.status}}</span></div>
+              </td>
+              <td>{{i.name}}<br><a>0x • {{i.id}}&nbsp;<i class="fas fa-info-circle"></i></a></td>
+              <td>{{formatInt(i.for)}} {{data.__data[applicationLanguage].token.name}}<br>
+                <span class="bar-gauge for"><span
+                    v-bind:style="'transform: translateX(' + (i.for / (i.for + i.against)) * 100 + '%);'"></span></span>
+              </td>
+              <td>{{formatInt(i.against)}} {{data.__data[applicationLanguage].token.name}}<br>
+                <span class="bar-gauge against"><span
+                    v-bind:style="'transform: translateX('+ (i.against / (i.for + i.against)) * 100 +'%);'"></span></span>
+              </td>
+              <td><a v-bind:href="'#inspect-proposal='+ i.id">{{i.status==='open' ? 'View' : 'Vote' }}&nbsp;<i
+                    class="fas fa-check-circle"></i></a></td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -397,12 +616,37 @@
 
     <div id="proposalInspector" class="data-explorer">
       <h1 class="major">Proposal Details</h1>
-      <div class="-flex">
+      <div class="-flex" v-for="(i, itemObjKey) in data.governance.proposals" v-if="i.id==$data.__proposalInspector">
         <div id="proposalSummary">
+          <h2>{{i.name}} ({{i.id}})<br><br>
+            <div class="status-badge"><span>{{i.status}}</span></div>
+          </h2>
+          <div class="stack-inset">
+            <div>
+              <div class="status-badge"><span>for</span></div>{{formatInt(i.for)}}
+              {{data.__data[applicationLanguage].token.name}}<br>
+              <span class="bar-gauge for"><span
+                  v-bind:style="'transform: translateX(' + (i.for / (i.for + i.against)) * 100 + '%);'"></span></span>
+            </div>
+            <div>
+              <div class="status-badge"><span>against</span></div>{{formatInt(i.against)}}
+              {{data.__data[applicationLanguage].token.name}}<br>
+              <span class="bar-gauge against"><span
+                  v-bind:style="'transform: translateX(' + (i.against / (i.for + i.against)) * 100 + '%);'"></span></span>
+            </div>
+          </div>
 
+          <div>
+            <p>{{i['info-text']}}</p>
+          </div>
         </div>
         <div id="proposalVotes">
           <h2>Votes</h2>
+          <div class="asset-organiser" v-for="e in i.votes">
+            <p><span class="status-badge">{{e.type}}</span>&nbsp;&nbsp;&nbsp;<b>{{formatCurrency(e.value)}}</b> &nbsp;<a
+                v-bind:href="'https://etherscan.io/address/' + e.tx">{{e.tx.substring(0, 4) + '...' +
+                e.tx.substring(e.tx.length - 4)}}<i class="fas fa-external-link-alt"></i></a></p>
+          </div>
         </div>
       </div>
     </div>
@@ -410,20 +654,23 @@
     <div class="footer-flex">
       <span>2021 BigWave</span>
       <div class="link-flex">
-        <a href="#" title="email"><i class="fas fa-mail-bulk"></i></a>
-        <a href="#" title="telegram"><i class="fab fa-telegram-plane"></i></a>
-        <a href="#" title="discourse"><i class="fab fa-discourse"></i></a>
-        <a href="#" title="reddit"><i class="fab fa-reddit-alien"></i></a>
-        <a href="#" title="discord"><i class="fab fa-discord"></i></a>
-        <a href="#" title="twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" title="medium"><i class="fab fa-medium-m"></i></a>
-        <a href="#" title="slack"><i class="fab fa-slack"></i></a>
-        <a href="#" title="github"><i class="fab fa-github"></i></a>
-        <a href="#" title="vimeo"><i class="fab fa-vimeo-v"></i></a>
+        <a v-for="l in data.__data[applicationLanguage].social" v-bind:href="l.link"><i v-if="l.icon.length>0"
+            v-bind:class="l.icon"></i>{{l.name}}</a>
       </div>
       <div id="appLanguage" title="applicationLanguage">
-        <span class="-lng -trigger"><span id="currentLanguage"></span></span>
-        <div class="selection-drawer"></div>
+        <span class="-lng -trigger"
+          onclick="document.querySelectorAll(`.selection-drawer`).forEach(function (f) { f.classList.remove(`open`) });this.parentNode.querySelector(`.selection-drawer`).classList.contains('open')?(this.parentNode.querySelector(`.selection-drawer`).classList.remove('open')):(this.parentNode.querySelector(`.selection-drawer`).classList.add('open'))">
+          <span id="currentLanguage">
+            <span v-for="l in data.__data.availableLanguages">
+              <img loading="lazy" style="height:1.5rem" v-if="l.id===applicationLanguage" v-bind:src="l.icon"></span>
+          </span>
+        </span>
+        <div class="selection-drawer" onmouseleave="this.classList.remove('open')">
+          <a v-for="l in data.__data.availableLanguages" class="sel" v-bind:href="l.id">
+            <span><img loading="lazy" style="height:1.5rem" v-bind:src="l.icon">{{l.name}}</span>
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -438,8 +685,10 @@
 <script type="text/javascript" src="src/js/fortmatic.js"></script>
 <script src="src/js/wallet-connect.js"></script>
 
+<script src="src/js/vue.min.js"></script>
+<script src="src/data/sample.js"></script>
 <script src="src/js/scripts.min.js"></script>
-<script src="src/js/language.min.js"></script>
 <script src="src/js/demo.js"></script>
+
 
 </html>

@@ -218,5 +218,5 @@ async function onDisconnect() {
 window.addEventListener('load', async () => {
   init();
   // document.querySelectorAll(".btn-connect").forEach(function(e){e.addEventListener("click", onConnect);})
-  document.querySelector("#btn-disconnect").addEventListener("click", onDisconnect);
+  // document.querySelector("#btn-disconnect").addEventListener("click", onDisconnect);
 });

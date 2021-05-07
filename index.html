@@ -3,6 +3,7 @@
   font-family:'Courier New', Courier, monospace;
   line-height: 2;
   }
+  s{opacity: .2;}
   </style>
   
 <h1>Readme.md</h1>
@@ -22,17 +23,25 @@ If this occurs, please try the following:
 </p>
 
 <h2>Developer Notes</h2>
-<p>
+<p><s>
   This is a bespoke design and build -customary for flat18 projects.<br>
   The front end is written in minimal shorthand and uses expressive naming to make function maintenance easy.
   <br>Installation should also be straightforward thanks to the simple data-model.
+</s></p>
+
+<p>
+  This is a clone of a completed project. The UI is now a Vue.js reactive application with the scope to manipulate all elements via reactive declarations.<br><b>This codebase comprises of nearly 1000 fewer lines of custom code!</b>
+  <br>The framework is deployed on a single level for readability and simplicity.
 </p>
 
 <h3>The data model</h3>
 <p>
+  <s>
   Multiple redundancies are written into the UI handling, however the majority of the data labels and objects are essential to the UI creation flow.
-  The sample data is included in the src folder which is available via a direct url (for quick inspection) or in the project repository.
+  The sample data is included in the src folder which is available via a direct url (for quick inspection) or in the project repository.</s>
 </p>
+
+<p>A linear json object is deployed in the form of an array which can be broken into chunks depending on the final deployment method. i.e. restricting access to certain data blocks etc.</p>
 
 <h3>The design system</h3>
 <p>
@@ -42,7 +51,12 @@ If this occurs, please try the following:
 
 <h2>Notes to the Backend Dev</h2>
 
-<p>This site is built using a single-page approach which is an experimental method to reduce crawling and robots by making fewer actual, or server-acknowledged directories and subfolders. You may choose to change this model when installing the site. Be sure to replicate the necessary frontend javascript on the pages which require it and make use of the modular design of the html to create templates accordingly.</p>
+<p>
+  <s>
+  This site is built using a single-page approach which is an experimental method to reduce crawling and robots by making fewer actual, or server-acknowledged directories and subfolders. You may choose to change this model when installing the site. Be sure to replicate the necessary frontend javascript on the pages which require it and make use of the modular design of the html to create templates accordingly.</s>
+</p>
+<p>This application is built using Vue.js with basic custom triggers to keep parity with previous iteration.</p>
+<p>The data payload is delivered as a js script inclusion in html</p>
 
 <h2>Project Demo</h2>
 <p>Follow the following link to view the project demo: <a href="demo">Link to site demo</a></p>

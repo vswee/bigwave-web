@@ -275,7 +275,13 @@ function fetchApplicationData(m) {
         __proposalInspector: false,
         __stakingSelection: false,
         __depositSelection: window.poolPayload.depositTokens[0].name,
-        applicationLanguage: window.applicationLanguage
+        applicationLanguage: window.applicationLanguage,
+        page: false,
+        tab: false,
+        lb: window.poolPayload.tokens,
+        lbSwitch:{market:"auto",can:{pause:false,swap:false,weight:false,token:false,whitelist:false,limit:false}},
+        lbWeight: 0,
+        lbTime:Date.now()
       };
       fetching = false
       makeHomePage()
@@ -449,6 +455,30 @@ function makeHomePage() {
     el: `#app`,
     data: window.__pool,
     methods: {
+      manualExister: function (e) {
+        var r = false, c = 0, a = window.__pool.lb;
+        a.forEach(function (t) {
+          t.tid === e && t.engaged && (r = true);
+          c++
+        })
+        return r
+      },
+      percent: function(e,n){return percent(e,n)},
+      multiply: function (e, v) {
+        if (window.__pool.lbSwitch.market !== 'auto') { return "-";}
+        var i, a = window.__pool.lb;
+        a.forEach(function (t) {
+          !t.amount &&( t.amount = 0);
+          t.tid === e && (i = Number(t.amount));
+        })
+        i = i * v.value;
+        i = i <= 0 ? "-" : i.toFixed(2);
+        return i;
+      },
+      rN: function(b, c){
+          const n = Math.random()*(c-b) + b
+          return Math.floor(n)
+        },
       formatCurrency: function (value) {
         return formatCurrency.format(value)
       },
@@ -479,7 +509,56 @@ function selectPool(k, i) {
   window.__pool.selectedIndex = i;
   makeChart(i)
 }
+function lbSet(e, v, g, r) {
+  a = window.__pool.lb, c=0;
+  a.forEach(function (t) {
+    t.tid === e && (t[g] = v);
+  })
+  g==='weight'&&(
+  a.forEach(function (t) {
+    t.engaged === true && (c+=Number(t[g]))
+  }),
+    window.__pool.lbWeight = c)
+  window.__pool.lbTime = Date.now();
+  if (r) { return v;}
+}
+function pushByKey(e) {
+  const p = window.__pool.lb;
+  var i = false;
+  p.forEach(function (t) {
+    t.tid === e && (t.engaged = true,
+      lbSet(e, 1, `weight`)
+      );
+  })
+  window.__pool.lb.sort(function (a, b) {
+    return a.engaged - b.engaged;
+  })
+  window.__pool.lbTime = Date.now();
+}
 
+function replaceByKey(e, d) {
+  const p = window.__pool.lb;
+  var c = 0;
+  var i = false;
+  p.forEach(function (t) {
+    t.tid === e && (t.engaged = false, t.weight=0);
+    d!=='destroy' && t.tid === d && (t.engaged = true,lbSet(e, 1, `weight`));
+  })
+  window.__pool.lb.sort(function (a, b) {
+    return a.engaged - b.engaged;
+  })
+  window.__pool.lbTime = Date.now()
+}
+
+function percent(e, n) {
+  var i, a = window.__pool.lb;
+  a.forEach(function (t) {
+    t.tid === e && (i = t.weight);
+  })
+  var p = Number(i) / Number(n);
+  p = isNaN(p) || p>1 || p<0 ? 0 : (Number(i) / Number(n))*100;
+  return (p).toFixed(2)
+}
 
 if (document.getElementById("dollarInput")) {
   document.getElementById("dollarInput").addEventListener("input", function (e) {
@@ -524,7 +603,7 @@ document.querySelectorAll(".option-switch").forEach(function (x) {
 Array.prototype.slice.call(document.getElementById("graphControls").children).forEach(function (e) {
   e.addEventListener("click", function (t) {
     window.graphFilter = t.currentTarget.getAttribute("filter");
-    makeChart();
+    makeChart(window.selectedPoolIndex);
   })
 })
 
@@ -535,19 +614,6 @@ UIWorkingInit();
 document.getElementById("explorePool") && (
   document.getElementById("explorePool").addEventListener("click", function () {
     explorePool();
-  }),
-  Array.prototype.slice.call(document.getElementById("exploreTabsControls").children).forEach(function (e) {
-    e.addEventListener("click", function (t) {
-      var f = t.currentTarget.hasAttribute("filter") ? t.currentTarget.getAttribute("filter") : false;
-      document.getElementById("explorePayloads").querySelectorAll("div").forEach(function (d) {
-        if (d.hasAttribute("filter")) {
-          if (d.getAttribute("filter") == f) { d.style.display = "flex" }
-          else {
-            d.style.display = "none";
-          }
-        }
-      })
-    })
   })
 )
 
@@ -562,9 +628,6 @@ function explorePool(p) {
 
 function stakingManager(h) {
   if (!h) { window.location = "#stake" }
-    document.querySelectorAll(".data-explorer").forEach(function (e) { e.classList.remove("build-in") });
-    document.getElementById("appMain") && (document.getElementById("appMain").classList.add("build-out"))
-    document.getElementById("stakingManager") && (document.getElementById("stakingManager").classList.add("build-in"))
 }
 
 function selectStakingPool(t, p) {
@@ -586,20 +649,13 @@ function stakeCurrent() {
 function governanceInspector(h) {
   if (!h) { window.location = "#governance" }
   if (window.poolPayload && document.getElementById("governanceInspector")) {
-    document.querySelectorAll(".data-explorer").forEach(function (e) { e.classList.remove("build-in") });
-    document.getElementById("appMain") && (document.getElementById("appMain").classList.add("build-out"))
-    document.getElementById("governanceInspector").classList.add("build-in")
   }
 }
 
 function inspectProposal(p) {
   if (!p) { return false; }
   p = Number(p)
-  if (window.poolPayload && window.poolPayload.governance.proposals && document.getElementById("proposalInspector")) {
-    document.querySelectorAll(".data-explorer").forEach(function (e) { e.classList.remove("build-in") });
-    document.getElementById("appMain") && (document.getElementById("appMain").classList.add("build-out"))
-    document.getElementById("proposalInspector").classList.add("build-in")
-
+  if (window.poolPayload && window.poolPayload.governance.proposals) {
     window.__pool.__proposalInspector = p;
 
     var t = false
@@ -611,22 +667,24 @@ function inspectProposal(p) {
 }
 
 function openPageElement() {
-  document.querySelectorAll(".data-explorer").forEach(function (e) { e.classList.remove("build-in") });
-  document.getElementById("explorePage").classList.add("build-in") 
-  document.getElementById("appMain").classList.add("build-out")
+}
+
+function manageInvestorPools() {
+  if (0 <= 2 && window.__pool.lb.length>=2) {
+    for (i = 0; i < 2; i++){
+      window.__pool.lb[i].engaged=true
+      window.__pool.lb[i].weight=1
+      window.__pool.lb[i].percent=50
+    }
+  }
 }
 
 function closePageElement(n) {
-  document.getElementById(n) ? (
+  window.__pool.page = false;
+  window.__pool.tab = false;
+  document.getElementById(n) && (
     document.getElementById(n).classList.remove("build-in")
-  ) :
-    (
-      document.querySelectorAll(".data-explorer").forEach(function (e) { e.classList.remove("build-in") })
-    );
-
-  document.getElementById("appMain") && (
-    document.getElementById("appMain").classList.remove("build-out")
-  )
+  );
 }
 
 function wHist() {
@@ -643,15 +701,24 @@ function wHist() {
           break;
         case "explore":
           window.selectedPool = _p[1] && window.poolPayload.tokens[_p[1]] ? _p[1] : !window.selectedPool ? "error" : window.selectedPool;
+          window.__pool.page = "explore";
           openPageElement()
           break;
+        case "manage":
+          window.__pool.tab = _p[1] ? _p[1] : "";
+          window.__pool.page = "manage";
+          manageInvestorPools()
+          break;
         case "stake":
+          window.__pool.page = "stake";
           stakingManager(true)
           break;
         case "governance":
+          window.__pool.page = "governance";
           governanceInspector(true)
           break;
         case "inspect-proposal":
+          window.__pool.page = "inspect-proposal";
           inspectProposal(_p[1])
           break;
         default:

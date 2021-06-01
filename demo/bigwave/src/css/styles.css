@@ -1,10 +1,11 @@
 :root {
+  --blue:#31e7ff;
   --light: #6702FF;
   --medium: #4400AA;
   --dark: #280058;
   --orange: #F55600;
   --red: #F00058;
-  --light-green: #41FFAA;
+  --light-green: #1bfc97;
   --medium-green: #00a85d;
   --dark-green: #005c32;
   --yellow: #FFCA4F;
@@ -111,6 +112,18 @@ a {
 }
 .overlap:hover > span:nth-of-type(2) {
   margin-left: 15px;
+}
+.overlap.o-multi{
+  padding-left: .5rem;
+  top: 0;
+  left: 0;
+}
+.overlap.o-multi > span {
+  margin-left: -.5rem;
+  transition: .3s ease;
+}
+.overlap.o-multi:hover > span {
+  margin-left: 5px;
 }
 #stakeOrganiser {
   display: grid;
@@ -471,12 +484,64 @@ p {
   grid-template-columns: 5fr 4fr;
 }
 
-.pool-list a {
-  margin: auto 5px;
-  transform: .1s linear;
+.d-flex.flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
-.pool-list a:hover {
+.d-flex.flex-column a{
+  padding: .25rem 0;
+}
+
+.form-group-flex {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  z-index:1;
+  border-radius: 10px;
+  overflow: hidden;
+  align-items: end;
+}
+
+.form-group-flex .form-section .input-group {
+  background: var(--black);
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+.form-group-flex .form-section .input-group:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.input-group h4 {
+  margin: 0 0 5px 0;
+}
+
+.form-group-flex > div{
+  margin:1rem;
+}
+
+.form-group-flex::before {
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  display:block;
+  z-index: -1;
+  background: var(--white);
+  opacity:.05;
+}
+
+.pool-list a, a.gen {
+  margin: auto 5px;
+  transform: .1s linear;
+  display: inline-block;
+}
+
+.pool-list a:hover, a.gen:hover {
   background-color: var(--medium-green);
   color: #e9e6ee;
   padding: 1px 5px;
@@ -490,7 +555,6 @@ p {
 }
 
 .pool-list-parent {
-  margin-top: 2rem;
   padding: 2rem;
 }
 
@@ -511,6 +575,10 @@ p {
   position: relative;
   opacity: 0;
   animation: softAppear 1s ease forwards 1;
+}
+#poolCreator tr{
+  transition: .2s linear;
+  animation: softAppear .2s ease forwards 1;
 }
 
 .pool-list tr.selected {
@@ -690,7 +758,7 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   border-radius: 100px;
-  box-shadow: 0 .5rem 1rem -.5rem var(--shadow-10);
+  box-shadow: 0 .5rem 1rem -.5rem var(--shadow-10), 0 0 2px 0px var(--white);
   margin: auto auto 2rem auto;
   left: 0;
   right: 0;
@@ -749,12 +817,35 @@ p {
   opacity: .7;
   background-color: transparent;
   transition: .2s ease;
+  width:100%;
+}
+
+.sub-ui.input-group input, .sub-ui.input-group.warn input:focus{
+  box-shadow: 0 0 0 1px;
+  display: inline-block;
+  background: var(--black) !important;
+  opacity: 1;
+  outline-width: 0;
+  outline: 0;
+  max-width: 50px;
+  padding: .5rem .25rem;
+  text-align: right;
+  border-radius: .25rem;
+}
+
+.sub-ui.input-group.warn input {
+  color: var(--red) !important;
+}
+
+ 
+
+input:focus {
+  outline-width: 0;
 }
 
 .input-group input:focus {
   background: var(--light-20);
   opacity: 1;
-  outline-width: 0;
 }
 
 .current-balance {
@@ -809,14 +900,13 @@ overflow: hidden;
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
-  background: var(--red);
+  box-shadow: 0 0 0 1px var(--white), 0 5px 15px -25px var(--shadow-10);
   padding: .25rem 1rem;
   border-radius: 5px;
-  font-family: "Montserrat";
-  color: #e9e6ee;
-  opacity: .9;
-  text-transform: uppercase;
-  font-weight: 800;
+  font-family: Montserrat;
+  color: var(--white);
+  opacity: .6;
+  font-weight: 500;
   margin: .5rem;
 }
 
@@ -826,16 +916,13 @@ overflow: hidden;
 
 .btn:hover {
   opacity: 1;
-  box-shadow: 0 5px 15px -5px var(--shadow-10);
+  box-shadow: 0 0 0 1px var(--white), 0 5px 15px -5px var(--shadow-10);
 }
 
 .btn:hover>i.fa-arrow-right {
   padding-left: 1rem;
 }
 
-.btn-connect:hover {
-  background-color: var(--orange);
-}
 
 .btn.-disable:hover, .btn.-disable {
   box-shadow: none;
@@ -1263,6 +1350,7 @@ h1.major {
   }
   .option-switch.onOff {
     border-radius: 1rem;
+    box-shadow: none;
   }
   .floating-tooltip-2 {
     left: 0;
@@ -1361,7 +1449,13 @@ h1.major {
     margin-bottom: 1rem;
     padding: 1rem 0;
   }
-  #tradesDisplay .table tbody tr td, #swapsDisplay .table tbody tr td, #poolList2 tr td {
+  .table tbody tr td input{
+    width: 80%;
+    max-width: 80% !important;
+    padding: .5rem 1rem !important;
+    margin-top: .5rem;
+  }
+  #tradesDisplay .table tbody tr td, #swapsDisplay .table tbody tr td, #poolList2 tr td,#poolCreator tbody tr td, #exploreWhalePoolsTable tr td {
     padding: 0 1rem;
   }
   #rewardsSummary {
@@ -1371,20 +1465,57 @@ h1.major {
   .balance-organiser h3 span img, .balance-organiser h2 span img {
     display: none;
   }
-  #governanceInspector .table tbody tr td, #swapsDisplay .table tbody tr td, #tradesDisplay .table tbody tr td:not(:nth-of-type(3)), #poolList2 tr td:not(:nth-of-type(1)) {
+  #governanceInspector .table tbody tr td, #swapsDisplay .table tbody tr td, #tradesDisplay .table tbody tr td:not(:nth-of-type(3)), #poolList2 tr td:not(:nth-of-type(1)), #poolCreator tbody tr td:not(:nth-of-type(1)), #exploreWhalePoolsTable tr td {
     padding-top: 20px;
     padding-bottom: 1rem;
     position: relative;
     overflow: hidden;
     z-index: 1;
   }
-  #governanceInspector .table tbody tr td::before, #swapsDisplay .table tbody tr td::before, #tradesDisplay .table tbody tr td:not(:nth-of-type(3))::before, #poolList2 tr td:not(:nth-of-type(1))::before {
+  #governanceInspector .table tbody tr td::before, #swapsDisplay .table tbody tr td::before, #tradesDisplay .table tbody tr td:not(:nth-of-type(3))::before, #poolList2 tr td:not(:nth-of-type(1))::before, #poolCreator tbody tr td:not(:nth-of-type(1))::before, #exploreWhalePoolsTable tr td::before {
     font-size: 12px;
     font-family: "Montserrat";
     font-weight: 400;
     position: absolute;
     top: 5px;
     opacity: .5;
+  }
+  #exploreWhalePoolsTable tr td:nth-of-type(1)::before {
+    content: "Pool Address";
+  }
+  #exploreWhalePoolsTable tr td:nth-of-type(2)::before {
+    content: "Pool Assets";
+  }
+  #exploreWhalePoolsTable tr td:nth-of-type(3)::before {
+    content: "Swap fee";
+  }
+  #exploreWhalePoolsTable tr td:nth-of-type(4)::before {
+    content: "Market cap";
+  }
+  #exploreWhalePoolsTable tr td:nth-of-type(5)::before {
+    content: "My liquidity";
+  }
+  #exploreWhalePoolsTable tr td:nth-of-type(6)::before {
+    content: "Volume (24hr)";
+  }
+
+  #poolCreator tbody tr td:nth-of-type(2)::before {
+    content: "My Balance";
+  }
+  #poolCreator tbody tr td:nth-of-type(3)::before {
+    content: "Weights";
+  }
+  #poolCreator tbody tr td:nth-of-type(4)::before {
+    content: "Percent";
+  }
+  #poolCreator tbody tr td:nth-of-type(5)::before {
+    content: "Amount";
+  }
+  #poolCreator tbody tr td:nth-of-type(6)::before {
+    content: "Price";
+  }
+  #poolCreator tbody tr td:nth-of-type(7)::before {
+    content: "Total";
   }
   #poolList2 tr td:nth-of-type(2)::before {
     content: "Finishes";

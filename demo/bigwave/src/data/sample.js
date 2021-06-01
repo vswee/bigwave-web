@@ -183,11 +183,27 @@ window.poolPayload = {
         ],
         buttons: {
           deposit: "Deposit",
-          withdraw: "Withdraw"
+          withdraw: "Withdraw",
+          explore: "Explore",
+          managePools: "Manage Pools"
         },
         labels: {
           connect: "Connect Wallet",
           helpConnect: "Connect your wallet to complete this transaction."
+        },
+        table: {
+          heading: {
+            token: "Token",
+            currentSelling: "Current Selling",
+            twentyFourHrChange: "24hr Change",
+            poolVolume: "Pool Volume",
+            price: "Price",
+            myBalance:"My Balance",
+            weights:"Weights",
+            percent:"Percent",
+            amount:"Amount",
+            totalValue: "Total Value"
+          }
         }
       }
     }
@@ -244,7 +260,7 @@ window.poolPayload = {
           name: "ABC",
           colour: "#00be4e",
           icon: "src/img/symbols/2.png",
-          pc: "20",
+          pc: "85",
           amount: "1200995",
           value: "90000"
         },
@@ -261,46 +277,6 @@ window.poolPayload = {
           colour: "#be8f00",
           icon: "src/img/symbols/4.png",
           pc: "5",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "JKL",
-          colour: "#be4700",
-          icon: "src/img/symbols/5.png",
-          pc: "30",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "MNO",
-          colour: "#0027be",
-          icon: "src/img/symbols/6.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "PQR",
-          colour: "#2a00be",
-          icon: "src/img/symbols/7.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "STU",
-          colour: "#00be4e",
-          icon: "src/img/symbols/8.png",
-          pc: "14",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "VWX",
-          colour: "#5f00be",
-          icon: "src/img/symbols/9.png",
-          pc: "1",
           amount: "1200995",
           value: "90000"
         }
@@ -406,26 +382,10 @@ window.poolPayload = {
       supply: "2900000",
       assets: [
         {
-          name: "ABC",
-          colour: "#00be4e",
-          icon: "src/img/symbols/2.png",
-          pc: "20",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "DEF",
-          colour: "#0091be",
-          icon: "src/img/symbols/3.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
           name: "GHI",
           colour: "#be8f00",
           icon: "src/img/symbols/4.png",
-          pc: "5",
+          pc: "60",
           amount: "1200995",
           value: "90000"
         },
@@ -442,30 +402,6 @@ window.poolPayload = {
           colour: "#0027be",
           icon: "src/img/symbols/6.png",
           pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "PQR",
-          colour: "#2a00be",
-          icon: "src/img/symbols/7.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "STU",
-          colour: "#00be4e",
-          icon: "src/img/symbols/8.png",
-          pc: "14",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "VWX",
-          colour: "#5f00be",
-          icon: "src/img/symbols/9.png",
-          pc: "1",
           amount: "1200995",
           value: "90000"
         }
@@ -606,18 +542,10 @@ window.poolPayload = {
       supply: "2900000",
       assets: [
         {
-          name: "ABC",
-          colour: "#00be4e",
-          icon: "src/img/symbols/2.png",
-          pc: "20",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
           name: "DEF",
           colour: "#0091be",
           icon: "src/img/symbols/3.png",
-          pc: "10",
+          pc: "65",
           amount: "1200995",
           value: "90000"
         },
@@ -634,38 +562,6 @@ window.poolPayload = {
           colour: "#be4700",
           icon: "src/img/symbols/5.png",
           pc: "30",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "MNO",
-          colour: "#0027be",
-          icon: "src/img/symbols/6.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "PQR",
-          colour: "#2a00be",
-          icon: "src/img/symbols/7.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "STU",
-          colour: "#00be4e",
-          icon: "src/img/symbols/8.png",
-          pc: "14",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "VWX",
-          colour: "#5f00be",
-          icon: "src/img/symbols/9.png",
-          pc: "1",
           amount: "1200995",
           value: "90000"
         }
@@ -801,7 +697,7 @@ window.poolPayload = {
           name: "ABC",
           colour: "#00be4e",
           icon: "src/img/symbols/2.png",
-          pc: "20",
+          pc: "89",
           amount: "1200995",
           value: "90000"
         },
@@ -810,46 +706,6 @@ window.poolPayload = {
           colour: "#0091be",
           icon: "src/img/symbols/3.png",
           pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "GHI",
-          colour: "#be8f00",
-          icon: "src/img/symbols/4.png",
-          pc: "5",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "JKL",
-          colour: "#be4700",
-          icon: "src/img/symbols/5.png",
-          pc: "30",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "MNO",
-          colour: "#0027be",
-          icon: "src/img/symbols/6.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "PQR",
-          colour: "#2a00be",
-          icon: "src/img/symbols/7.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "STU",
-          colour: "#00be4e",
-          icon: "src/img/symbols/8.png",
-          pc: "14",
           amount: "1200995",
           value: "90000"
         },
@@ -989,30 +845,7 @@ window.poolPayload = {
       address: "0xTYV000UIO",
       supply: "2900000",
       assets: [
-        {
-          name: "ABC",
-          colour: "#00be4e",
-          icon: "src/img/symbols/2.png",
-          pc: "20",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "DEF",
-          colour: "#0091be",
-          icon: "src/img/symbols/3.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "GHI",
-          colour: "#be8f00",
-          icon: "src/img/symbols/4.png",
-          pc: "5",
-          amount: "1200995",
-          value: "90000"
-        },
+        
         {
           name: "JKL",
           colour: "#be4700",
@@ -1033,23 +866,7 @@ window.poolPayload = {
           name: "PQR",
           colour: "#2a00be",
           icon: "src/img/symbols/7.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "STU",
-          colour: "#00be4e",
-          icon: "src/img/symbols/8.png",
-          pc: "14",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "VWX",
-          colour: "#5f00be",
-          icon: "src/img/symbols/9.png",
-          pc: "1",
+          pc: "60",
           amount: "1200995",
           value: "90000"
         }
@@ -1190,58 +1007,10 @@ window.poolPayload = {
           value: "90000"
         },
         {
-          name: "DEF",
-          colour: "#0091be",
-          icon: "src/img/symbols/3.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "GHI",
-          colour: "#be8f00",
-          icon: "src/img/symbols/4.png",
-          pc: "5",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "JKL",
-          colour: "#be4700",
-          icon: "src/img/symbols/5.png",
-          pc: "30",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
           name: "MNO",
           colour: "#0027be",
           icon: "src/img/symbols/6.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "PQR",
-          colour: "#2a00be",
-          icon: "src/img/symbols/7.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "STU",
-          colour: "#00be4e",
-          icon: "src/img/symbols/8.png",
-          pc: "14",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "VWX",
-          colour: "#5f00be",
-          icon: "src/img/symbols/9.png",
-          pc: "1",
+          pc: "80",
           amount: "1200995",
           value: "90000"
         }
@@ -1373,35 +1142,12 @@ window.poolPayload = {
       address: "0xTYV000UIO",
       supply: "2900000",
       assets: [
-        {
-          name: "ABC",
-          colour: "#00be4e",
-          icon: "src/img/symbols/2.png",
-          pc: "20",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "DEF",
-          colour: "#0091be",
-          icon: "src/img/symbols/3.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
+        
         {
           name: "GHI",
           colour: "#be8f00",
           icon: "src/img/symbols/4.png",
           pc: "5",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "JKL",
-          colour: "#be4700",
-          icon: "src/img/symbols/5.png",
-          pc: "30",
           amount: "1200995",
           value: "90000"
         },
@@ -1417,23 +1163,7 @@ window.poolPayload = {
           name: "PQR",
           colour: "#2a00be",
           icon: "src/img/symbols/7.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "STU",
-          colour: "#00be4e",
-          icon: "src/img/symbols/8.png",
-          pc: "14",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "VWX",
-          colour: "#5f00be",
-          icon: "src/img/symbols/9.png",
-          pc: "1",
+          pc: "85",
           amount: "1200995",
           value: "90000"
         }
@@ -1565,51 +1295,12 @@ window.poolPayload = {
       address: "0xTYV000UIO",
       supply: "2900000",
       assets: [
-        {
-          name: "ABC",
-          colour: "#00be4e",
-          icon: "src/img/symbols/2.png",
-          pc: "20",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "DEF",
-          colour: "#0091be",
-          icon: "src/img/symbols/3.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "GHI",
-          colour: "#be8f00",
-          icon: "src/img/symbols/4.png",
-          pc: "5",
-          amount: "1200995",
-          value: "90000"
-        },
+        
         {
           name: "JKL",
           colour: "#be4700",
           icon: "src/img/symbols/5.png",
           pc: "30",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "MNO",
-          colour: "#0027be",
-          icon: "src/img/symbols/6.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "PQR",
-          colour: "#2a00be",
-          icon: "src/img/symbols/7.png",
-          pc: "10",
           amount: "1200995",
           value: "90000"
         },
@@ -1625,7 +1316,7 @@ window.poolPayload = {
           name: "VWX",
           colour: "#5f00be",
           icon: "src/img/symbols/9.png",
-          pc: "1",
+          pc: "56",
           amount: "1200995",
           value: "90000"
         }
@@ -1774,22 +1465,6 @@ window.poolPayload = {
           value: "90000"
         },
         {
-          name: "GHI",
-          colour: "#be8f00",
-          icon: "src/img/symbols/4.png",
-          pc: "5",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "JKL",
-          colour: "#be4700",
-          icon: "src/img/symbols/5.png",
-          pc: "30",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
           name: "MNO",
           colour: "#0027be",
           icon: "src/img/symbols/6.png",
@@ -1798,26 +1473,10 @@ window.poolPayload = {
           value: "90000"
         },
         {
-          name: "PQR",
-          colour: "#2a00be",
-          icon: "src/img/symbols/7.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "STU",
-          colour: "#00be4e",
-          icon: "src/img/symbols/8.png",
-          pc: "14",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
           name: "VWX",
           colour: "#5f00be",
           icon: "src/img/symbols/9.png",
-          pc: "1",
+          pc: "60",
           amount: "1200995",
           value: "90000"
         }
@@ -1949,38 +1608,7 @@ window.poolPayload = {
       address: "0xTYV000UIO",
       supply: "2900000",
       assets: [
-        {
-          name: "ABC",
-          colour: "#00be4e",
-          icon: "src/img/symbols/2.png",
-          pc: "20",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "DEF",
-          colour: "#0091be",
-          icon: "src/img/symbols/3.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "GHI",
-          colour: "#be8f00",
-          icon: "src/img/symbols/4.png",
-          pc: "5",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "JKL",
-          colour: "#be4700",
-          icon: "src/img/symbols/5.png",
-          pc: "30",
-          amount: "1200995",
-          value: "90000"
-        },
+        
         {
           name: "MNO",
           colour: "#0027be",
@@ -1993,23 +1621,7 @@ window.poolPayload = {
           name: "PQR",
           colour: "#2a00be",
           icon: "src/img/symbols/7.png",
-          pc: "10",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "STU",
-          colour: "#00be4e",
-          icon: "src/img/symbols/8.png",
-          pc: "14",
-          amount: "1200995",
-          value: "90000"
-        },
-        {
-          name: "VWX",
-          colour: "#5f00be",
-          icon: "src/img/symbols/9.png",
-          pc: "1",
+          pc: "90",
           amount: "1200995",
           value: "90000"
         }

@@ -21,4 +21,4 @@ app.post('/signup', function (req, res) {
   });
 })
 
-app.listen(3000, () => console.log('Server started on 3000'))
+app.listen(3001, () => console.log('Server started on 3001'))

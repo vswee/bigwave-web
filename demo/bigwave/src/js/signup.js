@@ -1,5 +1,4 @@
 const signupAPI = 'https://bigwave.app/api/signup'
-// const signupAPI = 'http://localhost:3000/signup'
 
 const signup = document.getElementById('btn-signup')
 const email = document.getElementById('tb-email')
@@ -26,23 +25,7 @@ signup.addEventListener('click', () => {
         )
       }, 1500)
     })
-  // axios({
-  //   method: 'post',
-  //   url: signupAPI,
-  //   data: { email: email.value }
-  // }).then(response => {
-  //   setTimeout(() => { 
-  //     notify(
-  //       "Thanks for signing up with us",
-  //       "good",
-  //       "OK"
-  //     )
-  //   }, 1500)
-  // })
 })
-  
-
-
 
 const notify = (t, c, s, f) => {
   var n = document.createElement("div");

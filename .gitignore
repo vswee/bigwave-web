@@ -1,3 +1,5 @@
 f18project.conf
 node_modules
 .DS_Store
+signup-data.txt
+# this data file should not be part of git as it will replace the data for new builds when we push

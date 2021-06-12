@@ -8,7 +8,7 @@ var app = express()
 app.use(express.json())
 app.use(cors())
 
-app.post('/signup', function (req, res) {
+app.post('/api/signup', function (req, res) {
   const { email } = req.body
   console.log(email)
   

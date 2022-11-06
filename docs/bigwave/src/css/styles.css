@@ -255,8 +255,8 @@ p {
 }
 
 .header, .footer-flex {
-  max-width: 95vw;
-  width: 1200px;
+  max-width: 95vw !important;
+  width: 1200px !important;
   margin-left: auto;
   margin-right: auto
 }

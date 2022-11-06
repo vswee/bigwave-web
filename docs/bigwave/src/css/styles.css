@@ -1,5 +1,5 @@
 :root {
-  --blue:#31e7ff;
+  --blue: #31e7ff;
   --light: #6702FF;
   --medium: #4400AA;
   --dark: #280058;
@@ -15,7 +15,7 @@
   --light-20: rgba(128, 44, 253, 0.2);
   --dark-only: block;
   --light-only: none;
-  --grey: rgb(145, 130, 148);
+  --grey: rgb(145, 130, 148)
 }
 
 .body-theme-override-light, :root {
@@ -24,7 +24,7 @@
   --shadow-10: rgb(29, 22, 39);
   --light-20: rgba(206, 183, 240, 0.2);
   --light-only: block;
-  --dark-only: none;
+  --dark-only: none
 }
 
 @media (prefers-color-scheme:dark) {
@@ -34,15 +34,16 @@
     --shadow-10: #000;
     --light-20: rgba(128, 44, 253, 0.2);
     --dark-only: block;
-    --light-only: none;
+    --light-only: none
   }
+
   .body-theme-override-light {
     --white: #2a282c;
     --black: #e9e6ee;
     --shadow-10: rgb(29, 22, 39);
     --light-20: rgba(206, 183, 240, 0.2);
     --light-only: block;
-    --dark-only: none;
+    --dark-only: none
   }
 }
 
@@ -52,7 +53,7 @@
   --shadow-10: #000;
   --light-20: rgba(128, 44, 253, 0.2);
   --dark-only: block;
-  --light-only: none;
+  --light-only: none
 }
 
 .dark-only {
@@ -66,121 +67,136 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Fira Code', 'Montserrat';
+  font-family: 'Fira Code', Montserrat;
   background-color: var(--black);
   color: var(--white);
-  font-weight: 200;
+  font-weight: 200
 }
 
 a {
   text-decoration: none;
   color: var(--medium-green);
-  cursor: pointer;
+  cursor: pointer
 }
 
 .input-organiser {
-  text-align: left;
+  text-align: left
 }
 
-.input-organiser>span, .input-organiser>input {
+.input-organiser>input, .input-organiser>span {
   display: inline-block;
   max-width: 50%;
-  vertical-align: middle;
+  vertical-align: middle
 }
 
 .input-organiser>small {
   display: block;
-  width: 100%;
+  width: 100%
 }
-.overlap{
+
+.overlap {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding-left: 1rem;
-  margin-top: 15px;
+  margin-top: 15px
 }
-.overlap > span > img{
+
+.overlap>span>img {
   height: 4rem;
   width: 4rem;
   box-shadow: 0 0 0 5px var(--black), 0 5px 20px -5px var(--shadow-10);
   border-radius: 4rem;
-  background: var(--white);
+  background: var(--white)
 }
-.overlap > span:nth-of-type(2) {
+
+.overlap>span:nth-of-type(2) {
   margin-left: -.5rem;
-  transition: .3s ease;
+  transition: .3s ease
 }
-.overlap:hover > span:nth-of-type(2) {
-  margin-left: 15px;
+
+.overlap:hover>span:nth-of-type(2) {
+  margin-left: 15px
 }
-.overlap.o-multi{
+
+.overlap.o-multi {
   padding-left: .5rem;
   top: 0;
-  left: 0;
+  left: 0
 }
-.overlap.o-multi > span {
+
+.overlap.o-multi>span {
   margin-left: -.5rem;
-  transition: .3s ease;
+  transition: .3s ease
 }
-.overlap.o-multi:hover > span {
-  margin-left: 5px;
+
+.overlap.o-multi:hover>span {
+  margin-left: 5px
 }
+
 #stakeOrganiser {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3,auto);
+  grid-template-rows: repeat(3, auto)
 }
-#stakeOrganiser > .overlap{
+
+#stakeOrganiser>.overlap {
   grid-column: 1/3;
-  margin: auto;
+  margin: auto
 }
-#stakeOrganiser{
-  margin-bottom: 2rem;
+
+#stakeOrganiser {
+  margin-bottom: 2rem
 }
-#stakeOrganiser > label {
+
+#stakeOrganiser>label {
   opacity: .5;
-  font-size: .9rem;
+  font-size: .9rem
 }
-#stakeOrganiser > span{
+
+#stakeOrganiser>span {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 600
 }
-#stakeOrganiser > label:nth-of-type(2),
-#stakeOrganiser > span:nth-of-type(2) {
-  text-align: right;
+
+#stakeOrganiser>label:nth-of-type(2), #stakeOrganiser>span:nth-of-type(2) {
+  text-align: right
 }
-.sn, .option-switch, .currentSend, tr, a, .sn>*, .option-switch>*, .currentSend>*, tr>*, a>* {
+
+.currentSend, .currentSend>*, .option-switch, .option-switch>*, .sn, .sn>*, a, a>*, tr, tr>* {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
+  user-select: none
 }
-#appLanguage, #appLanguage *{
-  animation-duration: .2s !important;
+
+#appLanguage, #appLanguage * {
+  animation-duration: .2s !important
 }
+
 #appLanguage .selection-drawer.open {
   position: absolute;
   bottom: 1rem;
-  right: 2rem;
+  right: 2rem
 }
 
 #appLanguage img {
   width: 2rem;
   border-radius: 5px;
   vertical-align: middle;
-  display: inline-block;
+  display: inline-block
 }
 
 #appLanguage {
-  margin-left: 2rem;
+  margin-left: 2rem
 }
 
 p {
-  font-family: "Montserrat";
+  font-family: Montserrat;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 400
 }
 
 .buy {
@@ -200,16 +216,16 @@ p {
   display: inline-block;
   text-transform: uppercase;
   font-weight: 600;
-  font-family: "Montserrat";
-  font-size: .8rem;
+  font-family: Montserrat;
+  font-size: .8rem
 }
 
 .buy::before {
-  background-color: var(--red);
+  background-color: var(--red)
 }
 
 .sell::before {
-  background-color: var(--medium-green);
+  background-color: var(--medium-green)
 }
 
 .buy::before, .sell::before {
@@ -220,37 +236,44 @@ p {
   height: 100%;
   width: 100%;
   opacity: .1;
-  content: "";
+  content: ""
 }
 
 .mobile-only {
-  display: none;
+  display: none
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box
 }
 
 #app {
   background-color: var(--black);
   color: var(--white);
   filter: blur(5px);
-  transform-origin: center;
+  transform-origin: center
 }
 
-#app>div, .header {
+.header, .footer-flex {
   max-width: 95vw;
   width: 1200px;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto
+}
+
+#app>div{
+  max-width: 95vw;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto
 }
 
 #appMain:not(.build-out) {
-  animation: softAppear 1s ease forwards 1;
+  animation: softAppear 1s ease forwards 1
 }
 
 #appMain, .data-explorer {
-  margin-top: 2rem;
+  margin-top: 2rem
 }
 
 .build-out {
@@ -264,19 +287,22 @@ p {
 @keyframes handleBuildOutStylesForTiming {
   0% {
     transform: scale(1);
-    opacity: 1;
+    opacity: 1
   }
+
   50% {
-    transform: scale(0.9);
-    opacity: 0;
+    transform: scale(.9);
+    opacity: 0
   }
+
   99% {
     transform: scale(0);
-    opacity: 0;
+    opacity: 0
   }
+
   100% {
-    height: 0px;
-    position: absolute;
+    height: 0;
+    position: absolute
   }
 }
 
@@ -286,75 +312,77 @@ p {
   transform: scale(1.1);
   opacity: 0;
   background-color: var(--black);
-  min-height: calc(100vh - 180px);
+  min-height: calc(100vh - 180px)
 }
 
 .data-explorer.build-in {
   display: block;
-  animation: build-in-page .3s ease forwards 1;
+  animation: build-in-page .3s ease forwards 1
 }
 
 @keyframes build-in-page {
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1)
   }
 }
 
 .data-explorer>div {
   transform: translateY(20px);
-  opacity: 0;
+  opacity: 0
 }
 
 .data-explorer.build-in>div {
-  animation: softAppear 1.3s ease forwards 1;
+  animation: softAppear 1.3s ease forwards 1
 }
 
 @keyframes softAppear {
   0% {
     transform: translateY(20px);
-    opacity: 0;
+    opacity: 0
   }
+
   50% {
     transform: translateY(20px);
-    opacity: 0;
+    opacity: 0
   }
+
   100% {
-    transform: translateY(0px);
-    opacity: 1;
+    transform: translateY(0);
+    opacity: 1
   }
 }
 
 #explorePayloads>div:first-child {
-  display: flex;
+  display: flex
 }
 
 #explorePayloads>div:not(:first-child) {
-  display: none;
+  display: none
 }
 
 .bar-gauge, .bar-gauge>span {
   width: 100%;
   display: block;
   height: 1.5rem;
-  border-radius: 1.5rem;
+  border-radius: 1.5rem
 }
 
 .bar-gauge {
   position: relative;
   background-color: var(--light-20);
   overflow: hidden;
-  box-shadow: 0 10px 20px -10px var(--shadow-10);
+  box-shadow: 0 10px 20px -10px var(--shadow-10)
 }
 
 .bar-gauge>span {
   position: absolute;
-  right: 100%;
+  right: 100%
 }
 
 #assetsDisplay {
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap
 }
 
 .asset-organiser {
@@ -370,34 +398,34 @@ p {
   border-radius: 1rem;
   box-shadow: 0 10px 20px -10px var(--shadow-10);
   opacity: 0;
-  animation: softAppear 1s ease forwards 1;
+  animation: softAppear 1s ease forwards 1
 }
 
 .asset-organiser img {
   grid-column: 1/2;
   grid-row: 1/3;
-  margin: auto 2rem auto auto;
+  margin: auto 2rem auto auto
 }
 
 .asset-organiser .bar-gauge {
   grid-column: 2/3;
-  grid-row: 2/3;
+  grid-row: 2/3
 }
 
 .asset-organiser .txt {
   grid-column: 2/3;
-  grid-row: 1/2;
+  grid-row: 1/2
 }
 
 .date-approx {
   display: flex;
   flex-direction: column;
-  max-width: 250px;
+  max-width: 250px
 }
 
 .date-approx>small {
   opacity: .6;
-  font-size: .8rem;
+  font-size: .8rem
 }
 
 .header {
@@ -407,43 +435,43 @@ p {
   margin-bottom: 1rem;
   padding: .4rem 1rem;
   background: var(--black);
-  border-radius: 1rem;
+  border-radius: 1rem
 }
 
 .logo {
   width: 150px;
   max-width: 50vw;
-  margin: auto;
+  margin: auto
 }
 
 .menu {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap
 }
 
 .menu a {
   padding: .5rem 1rem;
   margin: auto;
-  font-family: "Montserrat";
+  font-family: Montserrat;
   font-weight: 400;
   color: var(--white);
   text-decoration: none;
   border-radius: .6rem;
-  transition: .2s linear;
+  transition: .2s linear
 }
 
 .menu a:hover {
   color: var(--white);
-  background-color: var(--light-20);
+  background-color: var(--light-20)
 }
 
 .bad {
-  color: var(--red);
+  color: var(--red)
 }
 
 .good {
-  color: var(--medium-green);
+  color: var(--medium-green)
 }
 
 .badge {
@@ -452,7 +480,7 @@ p {
   align-items: center;
   border-radius: .5rem;
   overflow: hidden;
-  position: relative;
+  position: relative
 }
 
 .badge::before {
@@ -465,32 +493,32 @@ p {
   z-index: 0;
   top: 0;
   left: 0;
-  opacity: .2;
+  opacity: .2
 }
 
 .badge img, .badge span {
   position: relative;
   z-index: 2;
   margin: .25rem;
-  transition: .2s linear;
+  transition: .2s linear
 }
 
 .badge img {
-  height: 2rem;
+  height: 2rem
 }
 
 #main {
   display: grid;
-  grid-template-columns: 5fr 4fr;
+  grid-template-columns: 5fr 4fr
 }
 
 .d-flex.flex-column {
   display: flex;
-  flex-direction: column;
+  flex-direction: column
 }
 
-.d-flex.flex-column a{
-  padding: .25rem 0;
+.d-flex.flex-column a {
+  padding: .25rem 0
 }
 
 .form-group-flex {
@@ -498,47 +526,47 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   position: relative;
-  z-index:1;
+  z-index: 1;
   border-radius: 10px;
   overflow: hidden;
-  align-items: end;
+  align-items: end
 }
 
 .form-group-flex .form-section .input-group {
   background: var(--black);
   padding: 1rem;
-  border-radius: .5rem;
+  border-radius: .5rem
 }
 
 .form-group-flex .form-section .input-group:not(:last-of-type) {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem
 }
 
 .input-group h4 {
-  margin: 0 0 5px 0;
+  margin: 0 0 5px 0
 }
 
-.form-group-flex > div{
-  margin:1rem;
+.form-group-flex>div {
+  margin: 1rem
 }
 
 .form-group-flex::before {
   content: "";
   position: absolute;
-  top:0;
-  left:0;
-  width:100%;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  display:block;
+  display: block;
   z-index: -1;
   background: var(--white);
-  opacity:.05;
+  opacity: .05
 }
 
 .pool-list a, a.gen {
   margin: auto 5px;
   transform: .1s linear;
-  display: inline-block;
+  display: inline-block
 }
 
 .pool-list a:hover, a.gen:hover {
@@ -546,25 +574,25 @@ p {
   color: #e9e6ee;
   padding: 1px 5px;
   margin: auto 0;
-  border-radius: 5px;
+  border-radius: 5px
 }
 
 .pool-list th, .table th {
   text-align: left;
-  padding: .25rem 1rem;
+  padding: .25rem 1rem
 }
 
 .pool-list-parent {
-  padding: 2rem;
+  padding: 2rem
 }
 
 .pool-list, .table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: collapse
 }
 
 .pool-list td, .table td {
-  padding: 1rem;
+  padding: 1rem
 }
 
 .pool-list tr, .table tr {
@@ -574,57 +602,58 @@ p {
   overflow: hidden;
   position: relative;
   opacity: 0;
-  animation: softAppear 1s ease forwards 1;
+  animation: softAppear 1s ease forwards 1
 }
-#poolCreator tr{
+
+#poolCreator tr {
   transition: .2s linear;
-  animation: softAppear .2s ease forwards 1;
+  animation: softAppear .2s ease forwards 1
 }
 
 .pool-list tr.selected {
   background: var(--medium) !important;
-  color: #e9e6ee;
+  color: #e9e6ee
 }
 
 .pool-list tr:not(.selected)::before {
   opacity: 0;
   transform: scale(0);
-  transition: .2s linear;
+  transition: .2s linear
 }
 
 .pool-list tbody tr:not(.selected):hover, .table tbody tr:not(.selected):hover {
-  background-color: var(--light-20);
+  background-color: var(--light-20)
 }
 
 .pool-list tbody tr:hover>td a {
-  background-color: var(--light-green);
+  background-color: var(--light-green)
 }
 
-#graph, .pool-list, #explorePayloads>div {
+#explorePayloads>div, #graph, .pool-list {
   transform-origin: center;
   opacity: 0;
   transform: scale(.5);
   animation: growIn .2s ease forwards 1;
-  animation-delay: .2s;
+  animation-delay: .2s
 }
 
 @keyframes growIn {
   to {
     opacity: 1;
-    transform: scale(1)translate(0, 0);
+    transform: scale(1) translate(0, 0)
   }
 }
 
 @keyframes growIn-20 {
   to {
     opacity: .2;
-    transform: scale(1)translate(0, 0);
+    transform: scale(1) translate(0, 0)
   }
 }
 
 #graphParent {
   position: relative;
-  padding: 2rem;
+  padding: 2rem
 }
 
 .floating-tooltip-2 {
@@ -634,15 +663,15 @@ p {
   max-width: 220px;
   background: var(--black);
   padding: .5rem;
-  pointer-events: none;
+  pointer-events: none
 }
 
 #receiveDenom, #sendDenom {
-  position: relative;
+  position: relative
 }
 
 #sendDenom, .currentSend span {
-  z-index: 3;
+  z-index: 3
 }
 
 .selection-drawer {
@@ -652,16 +681,16 @@ p {
   transform-origin: center;
   transition: .2s linear;
   opacity: 0;
-  transform: translateY(-20px)scale(.9);
+  transform: translateY(-20px) scale(.9)
 }
 
 .selection-drawer .sel {
   padding: .5rem;
   position: relative;
-  color: var(--white);
+  color: var(--white)
 }
 
-.selection-drawer .sel span, .currentSend span, #currentReceive span {
+#currentReceive span, .currentSend span, .selection-drawer .sel span {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: repeat(3, auto) 1fr;
@@ -671,11 +700,11 @@ p {
   position: relative;
   z-index: 2;
   text-align: left;
-  cursor: pointer;
+  cursor: pointer
 }
 
 .selection-drawer .sel:hover {
-  color: #e9e6ee;
+  color: #e9e6ee
 }
 
 .selection-drawer .sel:hover::before {
@@ -692,7 +721,7 @@ p {
   transform-origin: center;
   opacity: 0;
   transform: scale(.5);
-  animation: growIn .2s ease forwards 1;
+  animation: growIn .2s ease forwards 1
 }
 
 .selection-drawer.open {
@@ -702,7 +731,7 @@ p {
   background: var(--black);
   box-shadow: 0 1rem 2rem var(--shadow-10);
   animation: growIn .2s ease forwards 1;
-  z-index: 2;
+  z-index: 2
 }
 
 .input-group-flex {
@@ -711,30 +740,30 @@ p {
   margin: 10px auto;
   position: relative;
   z-index: 1;
-  align-items: center;
+  align-items: center
 }
 
 #exchangerUI span {
-  cursor: pointer;
+  cursor: pointer
 }
 
 .option-switch>* {
-  cursor: pointer;
+  cursor: pointer
 }
 
 .option-switch>.selected {
   color: #e9e6ee;
   position: relative;
-  z-index: 0;
+  z-index: 0
 }
 
-.option-switch> :not(.selected) {
+.option-switch>:not(.selected) {
   opacity: .5;
-  color: var(--white);
+  color: var(--white)
 }
 
-.option-switch> :not(.selected):hover {
-  opacity: 1;
+.option-switch>:not(.selected):hover {
+  opacity: 1
 }
 
 .option-switch>.selected::before {
@@ -750,7 +779,7 @@ p {
   transform-origin: center;
   opacity: 0;
   transform: scale(.5);
-  animation: growIn .2s ease forwards 1;
+  animation: growIn .2s ease forwards 1
 }
 
 .option-switch.onOff {
@@ -758,28 +787,28 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   border-radius: 100px;
-  box-shadow: 0 .5rem 1rem -.5rem var(--shadow-10), 0 0 2px 0px var(--white);
+  box-shadow: 0 .5rem 1rem -.5rem var(--shadow-10), 0 0 2px 0 var(--white);
   margin: auto auto 2rem auto;
   left: 0;
   right: 0;
   position: relative;
   z-index: 1;
-  background: var(--black);
+  background: var(--black)
 }
 
 .option-switch.onOff>* {
   padding: .5rem 1rem;
   border-radius: 100px;
-  overflow: hidden;
+  overflow: hidden
 }
 
 .sans-serif {
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat, sans-serif
 }
 
 .input-container {
   position: relative;
-  z-index: 1;
+  z-index: 1
 }
 
 .input-container .input-group {
@@ -789,7 +818,7 @@ p {
   box-shadow: 0 5px 15px -10px var(--shadow-10);
   margin: 1rem auto 1rem 1.25rem;
   display: inline-block;
-  width: calc(100% - 4rem);
+  width: calc(100% - 4rem)
 }
 
 .input-container::before {
@@ -805,7 +834,7 @@ p {
   margin-bottom: auto;
   box-shadow: -4px -3px 0 0 var(--medium), -4px 3px 0 0 var(--medium);
   z-index: -1;
-  border-radius: 24px;
+  border-radius: 24px
 }
 
 .input-group input {
@@ -817,10 +846,10 @@ p {
   opacity: .7;
   background-color: transparent;
   transition: .2s ease;
-  width:100%;
+  width: 100%
 }
 
-.sub-ui.input-group input, .sub-ui.input-group.warn input:focus{
+.sub-ui.input-group input, .sub-ui.input-group.warn input:focus {
   box-shadow: 0 0 0 1px;
   display: inline-block;
   background: var(--black) !important;
@@ -830,57 +859,55 @@ p {
   max-width: 50px;
   padding: .5rem .25rem;
   text-align: right;
-  border-radius: .25rem;
+  border-radius: .25rem
 }
 
 .sub-ui.input-group.warn input {
-  color: var(--red) !important;
+  color: var(--red) !important
 }
 
- 
-
 input:focus {
-  outline-width: 0;
+  outline-width: 0
 }
 
 .input-group input:focus {
   background: var(--light-20);
-  opacity: 1;
+  opacity: 1
 }
 
 .current-balance {
   position: absolute;
   transform: translateY(-2.2rem);
-  text-align: right !important;
+  text-align: right !important
 }
 
 .input-container {
-  margin-top: 1.5rem;
+  margin-top: 1.5rem
 }
 
 .input-container>.input-group:nth-child(2) {
-  margin-top: 3rem;
+  margin-top: 3rem
 }
 
 #infoDisplay {
-  flex-direction: column;
+  flex-direction: column
 }
 
 #infoDisplay>h3 {
-  font-family: "Montserrat";
+  font-family: Montserrat;
   margin-bottom: 0;
-  font-size: 2rem;
+  font-size: 2rem
 }
 
 #infoDisplay>h3, #infoDisplay>p {
   margin-left: 2rem;
-  margin-right: 2rem;
+  margin-right: 2rem
 }
 
 .input-group small {
   text-align: left;
   opacity: .5;
-  display: block;
+  display: block
 }
 
 #exchangerUI {
@@ -888,12 +915,12 @@ input:focus {
   border-radius: 2rem;
   background: var(--light-20);
   margin-bottom: auto;
-margin-top: auto;
-overflow: hidden;
+  margin-top: auto;
+  overflow: hidden
 }
 
 #exchangeInputGroup {
-  text-align: center;
+  text-align: center
 }
 
 .btn {
@@ -907,24 +934,23 @@ overflow: hidden;
   color: var(--white);
   opacity: .6;
   font-weight: 500;
-  margin: .5rem;
+  margin: .5rem
 }
 
 .btn, .btn>i {
-  transition: .2s linear;
+  transition: .2s linear
 }
 
 .btn:hover {
   opacity: 1;
-  box-shadow: 0 0 0 1px var(--white), 0 5px 15px -5px var(--shadow-10);
+  box-shadow: 0 0 0 1px var(--white), 0 5px 15px -5px var(--shadow-10)
 }
 
 .btn:hover>i.fa-arrow-right {
-  padding-left: 1rem;
+  padding-left: 1rem
 }
 
-
-.btn.-disable:hover, .btn.-disable {
+.btn.-disable, .btn.-disable:hover {
   box-shadow: none;
   background: var(--grey);
   cursor: not-allowed
@@ -933,7 +959,7 @@ overflow: hidden;
 #graphControlsParent {
   position: absolute;
   right: 2rem;
-  font-size: .7rem;
+  font-size: .7rem
 }
 
 .footer-flex {
@@ -945,17 +971,17 @@ overflow: hidden;
   padding: 2rem;
   border-radius: 1rem;
   color: #e9e6ee;
-  align-items: center;
+  align-items: center
 }
 
 .link-flex {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap
 }
 
 .footer-flex .link-flex {
-  margin-left: auto;
+  margin-left: auto
 }
 
 .footer-flex .link-flex a {
@@ -964,21 +990,21 @@ overflow: hidden;
   opacity: .5;
   transition: .2s linear;
   padding: .5rem;
-  font-size: 1.5rem;
+  font-size: 1.5rem
 }
 
 .footer-flex .link-flex a:hover {
-  opacity: 1;
+  opacity: 1
 }
 
 .web3modal-modal-card, .web3modal-provider-container {
   background: var(--black) !important;
-  box-shadow: 0 5px 15px -10px var(--shadow-10);
+  box-shadow: 0 5px 15px -10px var(--shadow-10)
 }
 
-.web3modal-modal-card, .web3modal-provider-container, .web3modal-modal-card *, .web3modal-provider-container * {
+.web3modal-modal-card, .web3modal-modal-card *, .web3modal-provider-container, .web3modal-provider-container * {
   color: var(--white) !important;
-  border: 0 !important;
+  border: 0 !important
 }
 
 .notification {
@@ -990,7 +1016,7 @@ overflow: hidden;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 98;
+  z-index: 98
 }
 
 .notification-payload {
@@ -1018,7 +1044,7 @@ overflow: hidden;
   transform-origin: center;
   opacity: 0;
   transform: scale(.5);
-  animation: growIn .2s ease forwards 1;
+  animation: growIn .2s ease forwards 1
 }
 
 .notification-payload i {
@@ -1029,7 +1055,7 @@ overflow: hidden;
   border-radius: 100px;
   box-shadow: 0 0 0 2px;
   text-align: center;
-  margin: 2rem;
+  margin: 2rem
 }
 
 .notification-payload i::after {
@@ -1041,12 +1067,12 @@ overflow: hidden;
   position: absolute;
   left: 0;
   top: 0;
-  opacity: .2;
+  opacity: .2
 }
 
 .notification-payload button {
   font-size: 1rem;
-  background: transparent;
+  background: 0 0;
   padding: 2rem;
   border-radius: 0;
   border: 0;
@@ -1059,11 +1085,11 @@ overflow: hidden;
   display: block;
   line-height: 1;
   overflow: hidden;
-  cursor: pointer;
+  cursor: pointer
 }
 
 .notification-payload span {
-  padding: 1rem 2rem;
+  padding: 1rem 2rem
 }
 
 .notification-payload button::before {
@@ -1077,7 +1103,7 @@ overflow: hidden;
   top: 0;
   left: 0;
   transition: .2s ease;
-  z-index: -1;
+  z-index: -1
 }
 
 .notification-payload button:hover {
@@ -1085,7 +1111,7 @@ overflow: hidden;
 }
 
 .notification-payload button:hover::before {
-  opacity: .5;
+  opacity: .5
 }
 
 .notification::before {
@@ -1098,22 +1124,22 @@ overflow: hidden;
   z-index: -1;
   display: block;
   background-color: var(--black);
-  opacity: .5;
+  opacity: .5
 }
 
 .notification.good {
-  color: var(--medium-green);
+  color: var(--medium-green)
 }
 
 .notification.bad {
-  color: var(--red);
+  color: var(--red)
 }
 
 .notification.warn {
-  color: var(--orange);
+  color: var(--orange)
 }
 
-.balance-organiser h3 span, .balance-organiser h2 span, .status-badge {
+.balance-organiser h2 span, .balance-organiser h3 span, .status-badge {
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1122,31 +1148,31 @@ overflow: hidden;
   line-height: 1;
   border-radius: 5px;
   box-shadow: 0 0 5px -4px var(--shadow-10);
-  vertical-align: middle;
+  vertical-align: middle
 }
 
 .status-badge {
   text-transform: uppercase;
   text-align: center;
-  box-shadow: 0 0 5px -4px var(--shadow-10), 0 0 0 1px var(--shadow-10);
+  box-shadow: 0 0 5px -4px var(--shadow-10), 0 0 0 1px var(--shadow-10)
 }
 
 .balance-organiser h3 {
-  margin: 0;
+  margin: 0
 }
 
 .balance-organiser p {
   font-weight: 600;
   font-size: 1rem;
-  margin: 0;
+  margin: 0
 }
 
 .balance-organiser.prominent p {
-  font-size: 3rem;
+  font-size: 3rem
 }
 
 .balance-organiser:not(.prominent)>* {
-  opacity: .7;
+  opacity: .7
 }
 
 .balance-organiser:not(.prominent) {
@@ -1156,7 +1182,7 @@ overflow: hidden;
   padding: 1rem;
   background: var(--black);
   border-radius: 1rem;
-  box-shadow: 0 5px 20px -20px var(--shadow-10);
+  box-shadow: 0 5px 20px -20px var(--shadow-10)
 }
 
 .-flex {
@@ -1164,38 +1190,38 @@ overflow: hidden;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: center
 }
 
 #stakeActions {
   display: none;
-  animation: softAppear 1.3s ease forwards 1;
+  animation: softAppear 1.3s ease forwards 1
 }
 
-#rewardsSummary, #walletSummary, #proposalSummary {
+#proposalSummary, #rewardsSummary, #walletSummary {
   padding: 2rem;
   max-width: 96vw;
   width: 600px;
   background: var(--light-20);
   border-radius: 1rem;
-  box-shadow: 0 10px 30px -25px var(--shadow-10);
+  box-shadow: 0 10px 30px -25px var(--shadow-10)
 }
 
-#stakeActions, #governanceStatistics {
+#governanceStatistics, #stakeActions {
   padding: 2rem;
   align-self: center;
   margin: auto;
   border-radius: 1rem;
-  box-shadow: 0 5px 35px -25px var(--shadow-10), 0 0 0 2px var(--light-20);
+  box-shadow: 0 5px 35px -25px var(--shadow-10), 0 0 0 2px var(--light-20)
 }
 
 #stakeActions .input-group {
-  margin-bottom: 2rem;
+  margin-bottom: 2rem
 }
 
 #stakingManager>.-flex:first-of-type {
   position: relative;
-  z-index: 2;
+  z-index: 2
 }
 
 #governanceStatistics, #proposalVotes {
@@ -1203,22 +1229,22 @@ overflow: hidden;
   flex-grow: .6;
   margin-top: 1rem;
   flex-direction: column;
-  align-items: center;
+  align-items: center
 }
 
 #governanceStatistics .asset-organiser {
   width: 100%;
-  background: var(--shadow-10);
+  background: var(--shadow-10)
 }
 
 .asset-organiser label {
   grid-column: 2/3;
   font-size: 12px;
-  font-family: "Montserrat";
+  font-family: Montserrat;
   opacity: .6;
   font-weight: 400;
   padding: 2px 0 4px 0;
-  color: #e9e6ee;
+  color: #e9e6ee
 }
 
 #governanceStatistics .asset-organiser .bar-gauge::after {
@@ -1230,36 +1256,36 @@ overflow: hidden;
   left: 0;
   background-image: url(bar.svg);
   background-size: 5%;
-  background-repeat: repeat;
+  background-repeat: repeat
 }
 
 #governanceStatistics .asset-organiser:nth-of-type(1) .bar-gauge span {
-  background-color: var(--dark-green);
+  background-color: var(--dark-green)
 }
 
 #governanceStatistics .asset-organiser:nth-of-type(2) .bar-gauge span {
-  background-color: var(--grey);
+  background-color: var(--grey)
 }
 
 #governanceStatistics .asset-organiser:nth-of-type(3) .bar-gauge span {
-  background-color: var(--red);
+  background-color: var(--red)
 }
 
 h1.major {
   font-size: 3rem;
-  margin-left: 1rem;
+  margin-left: 1rem
 }
 
 #poolList3 tr .bar-gauge, #poolList3 tr .bar-gauge span {
-  height: 1rem;
+  height: 1rem
 }
 
 .bar-gauge.for span {
-  background-color: var(--medium-green);
+  background-color: var(--medium-green)
 }
 
 .bar-gauge.against span {
-  background-color: var(--orange);
+  background-color: var(--orange)
 }
 
 .stack-inset {
@@ -1270,46 +1296,52 @@ h1.major {
   color: #e9e6ee;
   display: grid;
   grid-auto-flow: row;
-  grid-row-gap: 2rem;
+  grid-row-gap: 2rem
 }
 
 #proposalVotes .asset-organiser {
-  width: calc(100% - 4rem);
+  width: calc(100% - 4rem)
 }
 
 #proposalSummary p {
   line-height: 2;
-  padding: 2rem 0;
+  padding: 2rem 0
 }
 
-#proposalVotes, #proposalSummary {
-  align-self: start;
+#proposalSummary, #proposalVotes {
+  align-self: start
 }
 
 @media (max-width:750px) {
   .mobile-only {
-    display: block !important;
+    display: block !important
   }
+
   .desktop-only {
-    display: none !important;
+    display: none !important
   }
+
   .menuTrigger {
-    cursor: pointer;
+    cursor: pointer
   }
+
   .menuTrigger i {
     padding: .5rem;
     font-size: 1.5rem;
     opacity: 0;
     transform-origin: center;
     transform: scale(0);
-    animation: growIn .2s ease forwards 1;
+    animation: growIn .2s ease forwards 1
   }
+
   .menuTrigger:not(.open) .fa-times {
-    display: none;
+    display: none
   }
+
   .menuTrigger.open .fa-bars {
-    display: none;
+    display: none
   }
+
   .menu {
     opacity: 0;
     transform-origin: center;
@@ -1323,244 +1355,298 @@ h1.major {
     background: var(--black);
     padding: 1rem;
     border-radius: 1rem;
-    box-shadow: 0 10px 30px -15px var(--shadow-10);
+    box-shadow: 0 10px 30px -15px var(--shadow-10)
   }
+
   .menuTrigger.open~.menu {
-    display: flex !important;
+    display: flex !important
   }
+
   .header {
     margin: .5rem !important;
-    padding: 0;
+    padding: 0
   }
+
   .menu a {
-    margin-right: 0;
+    margin-right: 0
   }
-  .menu a:hover, .menu a:focus {
-    background-color: var(--medium);
+
+  .menu a:focus, .menu a:hover {
+    background-color: var(--medium)
   }
+
   #main {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto
   }
+
   #main>div {
-    padding: 2rem 0;
+    padding: 2rem 0
   }
+
   #graphControls {
-    flex-direction: column;
+    flex-direction: column
   }
+
   .option-switch.onOff {
     border-radius: 1rem;
-    box-shadow: none;
+    box-shadow: none
   }
+
   .floating-tooltip-2 {
     left: 0;
     top: 0;
-    background: none;
+    background: 0 0
   }
+
   #graphParent {
     height: calc(30vh + 4rem);
-    margin-top: 1rem;
+    margin-top: 1rem
   }
+
   #graphControlsParent {
-    right: 0;
+    right: 0
   }
+
   #exchangerUI {
     border-radius: 0;
-    box-shadow: 2.5vw 0 0 var(--light-20), -2.5vw 0 0 var(--light-20);
+    box-shadow: 2.5vw 0 0 var(--light-20), -2.5vw 0 0 var(--light-20)
   }
+
   .badge {
     padding: .25rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap
   }
+
   .l-imp-txt {
     font-weight: 200;
-    font-size: 12px;
+    font-size: 12px
   }
+
   .pool-list-parent {
-    padding: 0;
+    padding: 0
   }
+
   .pool-list tr.selected {
-    font-size: 1rem;
+    font-size: 1rem
   }
+
   .pool-list td {
-    padding: .2rem;
+    padding: .2rem
   }
+
   .input-group input {
-    max-width: auto;
+    max-width: auto
   }
+
   .asset-organiser {
     width: auto;
     padding: .5rem;
-    margin: .5rem;
+    margin: .5rem
   }
+
   .bar-gauge, .bar-gauge>span {
-    height: .75rem;
+    height: .75rem
   }
+
   .asset-organiser h2 {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 0
   }
-  #tradesDisplay .table tbody tr.tr-buy,
-#tradesDisplay .table tbody tr.tr-sell {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
 
-#tradesDisplay .table tbody tr.tr-buy::after,
-#tradesDisplay .table tbody tr.tr-sell::after,
-#tradesDisplay .table tbody tr.tr-buy::before,
-#tradesDisplay .table tbody tr.tr-sell::before  {
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: -2rem;
-  text-align: right;
-  padding: 1rem;
-  font-weight: 900;
-  z-index: 0;
-}
-#tradesDisplay .table tbody tr.tr-buy::after {
-  content: "BUY";
-  color: var(--red);
-}
-#tradesDisplay .table tbody tr.tr-buy::before{
-  content: "";
-  background-color: var(--red);
-  opacity: .2;
-}
-#tradesDisplay .table tbody tr.tr-sell::after {
-  content: "SELL";
-  color: var(--medium-green);
-}
-#tradesDisplay .table tbody tr.tr-sell::before{
-  content: "";
-  background-color: var(--medium-green);
-  opacity: .2;
-}
-.table tbody:not(#poolList) tr,
-  #tradesDisplay .table tbody tr, #swapsDisplay .table tbody tr, #poolList2 tr {
+  #tradesDisplay .table tbody tr.tr-buy, #tradesDisplay .table tbody tr.tr-sell {
+    position: relative;
+    z-index: 1;
+    overflow: hidden
+  }
+
+  #tradesDisplay .table tbody tr.tr-buy::after, #tradesDisplay .table tbody tr.tr-buy::before, #tradesDisplay .table tbody tr.tr-sell::after, #tradesDisplay .table tbody tr.tr-sell::before {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: -2rem;
+    text-align: right;
+    padding: 1rem;
+    font-weight: 900;
+    z-index: 0
+  }
+
+  #tradesDisplay .table tbody tr.tr-buy::after {
+    content: "BUY";
+    color: var(--red)
+  }
+
+  #tradesDisplay .table tbody tr.tr-buy::before {
+    content: "";
+    background-color: var(--red);
+    opacity: .2
+  }
+
+  #tradesDisplay .table tbody tr.tr-sell::after {
+    content: "SELL";
+    color: var(--medium-green)
+  }
+
+  #tradesDisplay .table tbody tr.tr-sell::before {
+    content: "";
+    background-color: var(--medium-green);
+    opacity: .2
+  }
+
+  #poolList2 tr, #swapsDisplay .table tbody tr, #tradesDisplay .table tbody tr, .table tbody:not(#poolList) tr {
     display: flex;
     flex-direction: column;
     background: var(--light-20);
     box-shadow: 0 2px 15px -10px var(--shadow-10);
     margin-bottom: 1rem;
-    padding: 1rem 0;
+    padding: 1rem 0
   }
-  .table tbody tr td input{
+
+  .table tbody tr td input {
     width: 80%;
     max-width: 80% !important;
     padding: .5rem 1rem !important;
-    margin-top: .5rem;
+    margin-top: .5rem
   }
-  #tradesDisplay .table tbody tr td, #swapsDisplay .table tbody tr td, #poolList2 tr td,#poolCreator tbody tr td, #exploreWhalePoolsTable tr td {
-    padding: 0 1rem;
+
+  #exploreWhalePoolsTable tr td, #poolCreator tbody tr td, #poolList2 tr td, #swapsDisplay .table tbody tr td, #tradesDisplay .table tbody tr td {
+    padding: 0 1rem
   }
+
   #rewardsSummary {
     padding: 1rem;
-    text-align: center;
+    text-align: center
   }
-  .balance-organiser h3 span img, .balance-organiser h2 span img {
-    display: none;
+
+  .balance-organiser h2 span img, .balance-organiser h3 span img {
+    display: none
   }
-  #governanceInspector .table tbody tr td, #swapsDisplay .table tbody tr td, #tradesDisplay .table tbody tr td:not(:nth-of-type(3)), #poolList2 tr td:not(:nth-of-type(1)), #poolCreator tbody tr td:not(:nth-of-type(1)), #exploreWhalePoolsTable tr td {
+
+  #exploreWhalePoolsTable tr td, #governanceInspector .table tbody tr td, #poolCreator tbody tr td:not(:nth-of-type(1)), #poolList2 tr td:not(:nth-of-type(1)), #swapsDisplay .table tbody tr td, #tradesDisplay .table tbody tr td:not(:nth-of-type(3)) {
     padding-top: 20px;
     padding-bottom: 1rem;
     position: relative;
     overflow: hidden;
-    z-index: 1;
+    z-index: 1
   }
-  #governanceInspector .table tbody tr td::before, #swapsDisplay .table tbody tr td::before, #tradesDisplay .table tbody tr td:not(:nth-of-type(3))::before, #poolList2 tr td:not(:nth-of-type(1))::before, #poolCreator tbody tr td:not(:nth-of-type(1))::before, #exploreWhalePoolsTable tr td::before {
+
+  #exploreWhalePoolsTable tr td::before, #governanceInspector .table tbody tr td::before, #poolCreator tbody tr td:not(:nth-of-type(1))::before, #poolList2 tr td:not(:nth-of-type(1))::before, #swapsDisplay .table tbody tr td::before, #tradesDisplay .table tbody tr td:not(:nth-of-type(3))::before {
     font-size: 12px;
-    font-family: "Montserrat";
+    font-family: Montserrat;
     font-weight: 400;
     position: absolute;
     top: 5px;
-    opacity: .5;
+    opacity: .5
   }
+
   #exploreWhalePoolsTable tr td:nth-of-type(1)::before {
-    content: "Pool Address";
+    content: "Pool Address"
   }
+
   #exploreWhalePoolsTable tr td:nth-of-type(2)::before {
-    content: "Pool Assets";
+    content: "Pool Assets"
   }
+
   #exploreWhalePoolsTable tr td:nth-of-type(3)::before {
-    content: "Swap fee";
+    content: "Swap fee"
   }
+
   #exploreWhalePoolsTable tr td:nth-of-type(4)::before {
-    content: "Market cap";
+    content: "Market cap"
   }
+
   #exploreWhalePoolsTable tr td:nth-of-type(5)::before {
-    content: "My liquidity";
+    content: "My liquidity"
   }
+
   #exploreWhalePoolsTable tr td:nth-of-type(6)::before {
-    content: "Volume (24hr)";
+    content: "Volume (24hr)"
   }
 
   #poolCreator tbody tr td:nth-of-type(2)::before {
-    content: "My Balance";
+    content: "My Balance"
   }
+
   #poolCreator tbody tr td:nth-of-type(3)::before {
-    content: "Weights";
+    content: "Weights"
   }
+
   #poolCreator tbody tr td:nth-of-type(4)::before {
-    content: "Percent";
+    content: "Percent"
   }
+
   #poolCreator tbody tr td:nth-of-type(5)::before {
-    content: "Amount";
+    content: "Amount"
   }
+
   #poolCreator tbody tr td:nth-of-type(6)::before {
-    content: "Price";
+    content: "Price"
   }
+
   #poolCreator tbody tr td:nth-of-type(7)::before {
-    content: "Total";
+    content: "Total"
   }
+
   #poolList2 tr td:nth-of-type(2)::before {
-    content: "Finishes";
+    content: "Finishes"
   }
+
   #poolList2 tr td:nth-of-type(3)::before {
-    content: "BGW-T Staked";
+    content: "BGW-T Staked"
   }
+
   #poolList2 tr td:nth-of-type(4)::before {
-    content: "Reward";
+    content: "Reward"
   }
+
   #poolList2 tr td:nth-of-type(5)::before {
-    content: "Volume";
+    content: "Volume"
   }
+
   #poolList2 tr td:nth-of-type(6)::before {
-    content: "Pool Address";
+    content: "Pool Address"
   }
+
   #swapsDisplay .table tbody tr td:nth-of-type(1)::before, #tradesDisplay .table tbody tr td:nth-of-type(1)::before {
-    content: "Time";
+    content: "Time"
   }
+
   #swapsDisplay .table tbody tr td:nth-of-type(2)::before, #tradesDisplay .table tbody tr td:nth-of-type(2)::before {
-    content: "Input";
+    content: "Input"
   }
+
   #swapsDisplay .table tbody tr td:nth-of-type(3)::before, #tradesDisplay .table tbody tr td:nth-of-type(4)::before {
-    content: "Output";
+    content: "Output"
   }
+
   #swapsDisplay .table tbody tr td:nth-of-type(4)::before, #tradesDisplay .table tbody tr td:nth-of-type(5)::before {
-    content: "Transaction";
+    content: "Transaction"
   }
+
   #governanceInspector .table tbody tr td:nth-of-type(2)::before {
-    content: "Name";
+    content: "Name"
   }
+
   #governanceInspector .table tbody tr td:nth-of-type(3)::before {
-    content: "For";
+    content: "For"
   }
+
   #governanceInspector .table tbody tr td:nth-of-type(4)::before {
-    content: "Against";
+    content: "Against"
   }
+
   .input-group input {
-    max-width: 100%;
+    max-width: 100%
   }
+
   #stakeActions {
-    margin-top: 2rem;
+    margin-top: 2rem
   }
+
   #appLanguage {
     margin-left: auto;
-    margin-right: 0;
-}
+    margin-right: 0
+  }
 }
